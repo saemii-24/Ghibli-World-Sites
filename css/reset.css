@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+html{
+    font-size: 4px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #2C2C2C;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+p,ul,ol,li,div{
+    margin:0;
+    padding:0;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  
