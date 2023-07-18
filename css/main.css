@@ -13,6 +13,8 @@ header {
     /* background-color: blue; */
     font-size: 4em;
     font-weight: 700;
+    position: fixed;
+    z-index:10;
 }
 
 header .inner {
@@ -33,10 +35,30 @@ header .inner #logo a {
     column-gap: 24px;
 }
 
+header .inner #logo a #logo_img {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+header .inner #logo a #logo_img #logo_img_blue{
+    opacity: 1;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: all 1s;
+}
+
+header .inner #logo a #logo_img #logo_img_white{
+    opacity: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: all 1s;
+}
+
 header .inner #logo a span {
     color: #00B6FF;
 }
-
 header .inner ul {
     display: flex;
     column-gap: 28px;
@@ -49,6 +71,7 @@ header .inner ul li {
     color: #00B6FF;
     position: relative;
     padding: 20px 0;
+    line-height: 120%;
 }
 
 header .inner ul li a {
@@ -58,7 +81,6 @@ header .inner ul li a {
 header .inner ul li #language_icon {
     color: #00B6FF;
     font-size: 20px;
-
 }
 
 header .inner ul #language_select div {
@@ -68,7 +90,13 @@ header .inner ul #language_select div {
     color: #00B6FF;
     line-height: 120%;
 }
-
+header .inner ul #language_select div #language-icon{
+    color: #00B6FF;
+}
+header .inner ul #language_select div #language-korean{
+    color: #00B6FF;
+    width: 55px;
+}
 header .inner ul li .second_category {
     display: flex;
     flex-direction: column;
@@ -81,9 +109,17 @@ header .inner ul li .second_category {
     padding: 16px;
     border-radius: 8px;
     border: 2px solid #00B6FF;
-    background-color: white;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255,0.7);
     width: 170%;
 }
+.first_category,
+#language_icon,
+#language-korean,
+#logo_text{
+ transition: color 1s;
+}
+
 
 header .inner ul li:hover .second_category {
     display: block;
@@ -103,7 +139,7 @@ header .inner ul li .second_category::before {
 
 header .inner ul li .second_category li {
     display: block;
-    padding: 8px 0px;
+    padding: 4px 0px;
     line-height: 140%;
 }
 
@@ -114,54 +150,104 @@ header .inner ul li .second_category li:first-child {
 header .inner ul li .second_category li:last-child {
     padding-bottom: 0px;
 }
-
-header .inner ul li .second_category li:hover {
-    font-weight: 800;
-}
-
 header .inner ul li .second_category li a {
     color: #333333;
 }
 
+header .inner ul li .second_category li a:hover {
+    color:#00B6FF;
+}
 /*MAIN SECTION*/
 body {
     position: relative;
+    height: 10000px;
+    overflow-x: hidden;
 }
 
+#main_section{
+    height: 3500px;
+}
 section .full_inner {
-    position: absolute;
-    top: 0;
-
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
+    position: sticky;
+    top:0px;
+    /* background-color: pink; */
+    width: 100vw;
+    height: 100vh;
 }
-
-@keyframes people_move{
+section .full_inner #img_box{
+    position: absolute;
+    margin:0 auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-image: url('../img/main/howl_background.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    animation: howl_background_move 200s alternate infinite;
+    background-position: 100% 50%;
+    transition:all 1s;
+}
+section .full_inner #img_box img{
+    position: absolute;
+    left:-25%;
+    bottom: 0%;
+    width: 150%;
+    animation: howl_move 1.5s alternate infinite;
+    transition: all 1s;
+}
+@keyframes howl_move{
         to{transform:translate(0,0);}
-        from{transform:translate(30px,50px);}    
+        from{transform:translate(5px,0px);}    
+}
+@keyframes howl_background_move{
+    to{background-position: 0% 50%;}
+    from{background-color: 50% 50%;}
+}
+section .full_inner #studioGhibli_write{
+    position: absolute;
+    width: 600px;
+    top:70%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    transition: opacity 0.5s;
+}
+section .full_inner #scroll_info{
+    position: absolute;
+    bottom:10%;
+    left:50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border:2px solid #00B6FF;
+    background-color: rgba(255, 255, 255,0.9);
+    backdrop-filter: blur(10px);
+    color:#00B6FF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    row-gap:4px;
+    opacity:0;
+    transition: all 0.5s;
 }
 
-section .full_inner #title_move_box {
-background-color: pink;
-
+section .full_inner #scroll_info span{
+    color:#00B6FF;
 }
 
-section .full_inner #title_move_box #title_people {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    z-index:2;
-    animation: people_move 1.8s infinite alternate;  
-   }
-
-section .full_inner #title_move_box #title_background {
-    position: absolute;
-    width: 1200px;
-    height: 312px;
-    background-image: url('../img/main/title_background.png');
-    background-position: center bottom;
-    border-radius: 600px;
-    z-index:1;
+/*Introduce Ghibli*/
+#introduce_ghibli .inner{
+    height: 4000px;
+    padding-top:3500px;
+    background-color: red;
+}
+#introduce_ghibli .inner h1{
+    font-size: 40em;
+    z-index:20;
 }

@@ -8,8 +8,8 @@ html{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Nanum Gothic', sans-serif;
-    color: #2C2C2C;
+    font-family: 'NanumSquare', sans-serif;
+    color: #333333;
 }
 
 ul,ol,li{

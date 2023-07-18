@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
@@ -22,8 +22,11 @@
         <div class="inner">
             <div id="logo">
                 <a href="javascript:void(0)">
-                    <img src="img/main/ghibli_logo_blue.png" alt="ghibli_logo">
-                    <span>Ghibli World</span>
+                    <div id="logo_img">
+                        <img id="logo_img_blue" src="img/main/ghibli_logo_blue.png" alt="ghibli_logo">
+                        <img id="logo_img_white" src="img/main/ghibli_logo_white.png" alt="ghibli_logo">
+                    </div>
+                    <span id="logo_text">Ghibli World</span>
                 </a>
                 <div class="hamburger_menu" id="hamburger_menu_click">
                     <span></span>
@@ -31,8 +34,8 @@
                     <span></span>
                 </div>
             </div>
-            <ul>
-                <li>
+            <ul >
+                <li class="first_category">
                     스튜디오 지브리
                         <ul class="second_category">
                             <li><a href="javascript:void(0)">스튜디오 지브리 소개</a></li>
@@ -40,7 +43,7 @@
                             <li><a href="javascript:void(0)">스튜디오 지브리 연표</a></li>
                         </ul>
                 </li>
-                <li>애니메이션
+                <li class="first_category">애니메이션
                     <ul class="second_category">
                         <li><a href="javascript:void(0)">1980년대</a></li>
                         <li><a href="javascript:void(0)">1990년대</a></li>
@@ -48,18 +51,18 @@
                         <li><a href="javascript:void(0)">2010년대~</a></li>
                     </ul>
                 </li>
-                <li>지브리 여행지
+                <li class="first_category">지브리 여행지
                     <ul class="second_category">
                         <li><a href="javascript:void(0)">지브리 파크</a></li>
                         <li><a href="javascript:void(0)">미타카의 숲<br>지브리 미술관</a></li>
                     </ul>
                 </li>
-                <li id="language_select">
+                <li class="first_category" id="language_select">
                     <div>
-                        <span class="material-icons" id="language_icon">language</span>한국어
+                        <span class="material-icons" id="language_icon">language</span><span id="language-korean">한국어</span>
                     </div>
                     <ul class="second_category">
-                        <li><a href="javascript:void(0)">English</a></li>
+                        <li><a href="javascript:void(0)" id="language-english">English</a></li>
                     </ul>
                 </li>
             </ul>
@@ -68,7 +71,29 @@
     </header>
 
     <!--MAIN SECTION-->
-    <!---->
+    <section id="main_section">
+        <div class="full_inner">
+            <div id="img_box">
+                <img id ="howl" src="img/main/howl.png" alt="howl">
+                <div id="scroll_info">scroll
+                    <span class="material-icons">arrow_downward</span>
+                </div>
+            </div>
+            <img id="studioGhibli_write" src="img/main/studioGhibli_write.png" alt="studioGhibli_write">
+    </div>
+    </section>
+
+    <!--Introduce Ghibli-->
+    <section id="introduce_ghibli">
+        <div class="inner">
+            <h1>당신이 사랑하는,<br>
+                우리의 삶을 사랑하는 지브리
+            </h1>
+        </div>
+    </section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
