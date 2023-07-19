@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/common.css">
@@ -34,14 +37,14 @@
                     <span></span>
                 </div>
             </div>
-            <ul >
+            <ul>
                 <li class="first_category">
                     스튜디오 지브리
-                        <ul class="second_category">
-                            <li><a href="javascript:void(0)">스튜디오 지브리 소개</a></li>
-                            <li><a href="javascript:void(0)">스튜디오 지브리 연혁</a></li>
-                            <li><a href="javascript:void(0)">스튜디오 지브리 연표</a></li>
-                        </ul>
+                    <ul class="second_category">
+                        <li><a href="javascript:void(0)">스튜디오 지브리 소개</a></li>
+                        <li><a href="javascript:void(0)">스튜디오 지브리 연혁</a></li>
+                        <li><a href="javascript:void(0)">스튜디오 지브리 연표</a></li>
+                    </ul>
                 </li>
                 <li class="first_category">애니메이션
                     <ul class="second_category">
@@ -59,14 +62,15 @@
                 </li>
                 <li class="first_category" id="language_select">
                     <div>
-                        <span class="material-icons" id="language_icon">language</span><span id="language-korean">한국어</span>
+                        <span class="material-icons" id="language_icon">language</span><span
+                            id="language-korean">한국어</span>
                     </div>
                     <ul class="second_category">
                         <li><a href="javascript:void(0)" id="language-english">English</a></li>
                     </ul>
                 </li>
             </ul>
-            
+
         </div>
     </header>
 
@@ -74,24 +78,104 @@
     <section id="main_section">
         <div class="full_inner">
             <div id="img_box">
-                <img id ="howl" src="img/main/howl.png" alt="howl">
+                <img id="howl" src="img/main/howl.png" alt="howl">
                 <div id="scroll_info">scroll
                     <span class="material-icons">arrow_downward</span>
                 </div>
             </div>
             <img id="studioGhibli_write" src="img/main/studioGhibli_write.png" alt="studioGhibli_write">
-    </div>
+            <div id="change_img_box"></div>
+            <p id="change_img_text">우리가 사랑하는 지브리의 모든 것</p>
+        </div>
     </section>
 
     <!--Introduce Ghibli-->
     <section id="introduce_ghibli">
         <div class="inner">
-            <h1>당신이 사랑하는,<br>
-                우리의 삶을 사랑하는 지브리
-            </h1>
+            <img src="./img/main/StudioGhibli_logo.png" alt="">
+            <svg class="arrow_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
+                <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
+            </svg>
         </div>
     </section>
-    
+
+
+    <!--About Ghibli-->
+    <section id="about_ghibli">
+        <div class="inner">
+            <div id="about_ghibli_article_align">
+                <article id="about_ghibli_article1">
+                    <h3 class="article_title">회사소개</h3>
+                    <h1 class="article_big_title" id="about_ghibli_korean_name">스튜디오 지브리</h1>
+                    <h1 id="about_ghibli_english_name">STUDIO GHIBLI INC.</h1>
+                    <p class="article_content">일본의 애니메이션 제작사.<br>
+                        세계적인 명성을 가진 미야자키 하야오 감독의<br>
+                        장편 애니메이션 제작 스튜디오로 유명하다. </p>
+                </article>
+                <article id="about_ghibli_article2">
+                    <h3 class="article_title">사업내용</h3>
+                    <ul class="article_content">
+                        <li>애니메이션 기획·제작</li>
+                        <li> 애니메이션 캐릭터 상품화</li>
+                        <li>애니메이션 판매·수출</li>
+                        <li>출판물 기획·제작</li>
+                        <li>「미타카의 숲 지브리 미술관」 감리 운영</li>
+                        <li>「미타카의 숲 지브리 미술관」 전시물 제작</li>
+                        <li>「미타카의 숲 지브리 미술관」 카페 운영</li>
+                    </ul>
+                </article>
+                <article id="about_ghibli_article3">
+                    <h3 class="article_title">연혁</h3>
+                    <p class="article_content">다카하타 이사오, 미야자키 하야오 감독의<br>
+                        애니메이션 영화 제작을 목적으로,<br>
+                        1985년 6월에 활동을 시작했다.<br>
+                        1992년, 현재의 소재지에 스튜디오를 건설했고,<br>
+                        2005년 4월, 지브리 사업 본부로서의<br>
+                        모든 사업을 계승해, 주식회사 스튜디오<br>
+                        지브리로서 새로운 시작을 알렸다.</p>
+                    <button id="about_ghibli_article3_btn" class="button_big">자세히 알아보기</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!--Ghibli Animation-->
+    <section id="ghibli_animation">
+        <div class="inner">
+            <h3 class="article_category">지브리 대표작품</h3>
+            <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
+                <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
+            </svg>
+            <article id="ghibli_animation_article1">
+                <h3 class="article_title">아카데미 장편 애니메이션을 수상한 걸작</h3>
+                <h1 class="article_title_big">센과 치히로의 행방불명</h1>
+                <p class="article_content">
+                    부모님과 이사를 가던 치히로는 가족들과 우연히 수상한 터널을 지나<br>
+                    신들이 사는 세계에 발을 내딛게 된다. 허락없이 그 곳의 음식을 먹은 치히로의<br>
+                    부모님은 돼지가 되어버리고, 사라질 위기에 처한 치히로. 이 때 신비한 소년<br>
+                    하쿠를 만나 신들의 목욕탕에서 일하며 ‘센’이라는 새로운 이름을 얻게되는데...</p>
+                <button class="button_big">자세히 알아보기</button>
+                <div id="ghibli_animation_article1_img">
+                    <div id="ghibli_animation_article1_all">
+                        <img src="./img/main/aniamtion_SpiritedAway1.png" alt="SpiritedAway">
+                    </div>
+                    <div id="ghibli_animation_article1_haku">
+                        <img src="./img/main/aniamtion_SpiritedAway2-1.png" alt="SpiritedAway">
+                        <img src="./img/main/aniamtion_SpiritedAway2-2.png" alt="SpiritedAway">
+                    </div>
+                </div>
+                <div id="ghibli_animation_article1_img_background">
+                    <img id="ghibli_animation_article1_img_background_first" src="./img/main/aniamtion_SpiritedAway_Background1.png" alt="SpiritedAway">
+                </div>
+            </article>
+        </div>
+    </section>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>

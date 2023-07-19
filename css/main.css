@@ -4,6 +4,7 @@
     width: 1200px;
     height: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 /*HEADER*/
@@ -160,12 +161,12 @@ header .inner ul li .second_category li a:hover {
 /*MAIN SECTION*/
 body {
     position: relative;
-    height: 10000px;
+    height: 40000PX;
     overflow-x: hidden;
 }
 
 #main_section{
-    height: 3500px;
+    height: 6500px;
 }
 section .full_inner {
     position: sticky;
@@ -241,13 +242,167 @@ section .full_inner #scroll_info span{
     color:#00B6FF;
 }
 
+#main_section .full_inner #change_img_box{
+    opacity: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    transition: opacity 0.5s;
+}
+#main_section .full_inner #change_img_text{
+    font-size: 30px;
+    font-weight: 800;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition: all 0.5s;
+}
+
 /*Introduce Ghibli*/
 #introduce_ghibli .inner{
-    height: 4000px;
-    padding-top:3500px;
-    background-color: red;
+    height: 1000px;
+    /* background-color: #ffffff; */
+    /* background-color: BLUE; */
 }
-#introduce_ghibli .inner h1{
-    font-size: 40em;
-    z-index:20;
+#introduce_ghibli .inner img{
+    width: 60%;
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    /* background-color: RED; */
+}
+#introduce_ghibli .inner .arrow_down{
+    position: absolute;
+    bottom:200px;
+    left:50%;
+}
+
+/*About Ghibli*/
+#about_ghibli{
+    background-color: rgba(0, 182, 255, 0.1);
+}
+#about_ghibli .inner{
+    height: 1300px;
+}
+#about_ghibli .inner #about_ghibli_article_align{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 6%;
+    justify-content: center;
+    align-content: space-evenly;
+    
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_korean_name{
+    font-size: 12em;
+    font-weight: 800;
+    padding-top:20px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_english_name{
+    font-size: 9em;
+    font-weight: 800;
+    padding-top:4px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article1,
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2{
+    width: 38%;
+    height: 38%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding-top:88px;
+    padding-left:42px;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul{
+    padding-left:4%;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul li{
+    list-style-type: disc;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3{
+    width: 38%;
+    height: 45%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding-top:88px;
+    padding-left:42px;
+}
+#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3 #about_ghibli_article3_btn{
+margin-top:50px;
+}
+
+/*Ghibli Animation*/
+#ghibli_animation #ghibli_animation_article1{
+    text-align: center;
+    position: relative;
+    /* background-color: red; */
+    height: 900PX;
+}
+#ghibli_animation #ghibli_animation_article1 button{
+    margin-top:36px;
+}
+#ghibli_animation img{
+    width: 100%;
+}
+#ghibli_animation #ghibli_animation_article1_all{
+    /* background-color: pink; */
+    position: absolute;
+    bottom:-4px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 1;
+    margin:0;
+    transition: all 0.5s;
+}
+#ghibli_animation #ghibli_animation_article1_img_background{
+   position: absolute;
+   bottom: 0;
+   left:50%;
+    transform:translateX(-50%);
+    width: 80%;
+    height: 25%;
+    border-radius: 500px;
+    overflow: hidden;
+    z-index: -1;
+    background-image: url('../img/main/aniamtion_SpiritedAway_Background2.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#ghibli_animation #ghibli_animation_article1_haku{
+    width: 100%;
+    transition: all 0.5s;
+    }
+#ghibli_animation #ghibli_animation_article1_haku img:nth-child(1){
+    position: absolute;
+    width: 45%;
+    bottom:0;
+    left:15%;
+    z-index: 1;
+}
+#ghibli_animation #ghibli_animation_article1_haku img:nth-child(2){
+    position: absolute;
+    width: 42%;
+    bottom:10%;
+    right:10%;
+    z-index: 1;
+    animation: haku 2s alternate infinite;
+}
+@keyframes haku{
+    to {
+      transform:translateY(-30px);
+    }
+    from {
+      left:translateY(0px);
+    }
+  }
+#ghibli_animation #ghibli_animation_article1_img_background_first{
+    transition: all 0.5s;
 }
