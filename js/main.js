@@ -79,13 +79,14 @@ $(window).on('scroll', function () {
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
             'opacity': '0'
         });
+        $('header').removeClass('header_blur');
     } else {
         $('#change_img_box').css({
-        'opacity': '1',
+            'opacity': '1',
         });
         $('#change_img_text').css({
             'opacity': '1',
-            'fontSize': 30+ scroll/500 +'px'
+            'fontSize': 30 + scroll / 500 + 'px'
         });
         $('#scroll_info,#logo_img_blue').css({
             'opacity': '1',
@@ -96,27 +97,31 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
         });
+        $('header').addClass('header_blur');
     }
 });
 
 /*ghibli_animation*/
 window.addEventListener('scroll', imgChange);
 
-function imgChange(){
-    const article1 = document.getElementById('ghibli_animation_article1_all'); 
+function imgChange() {
+    const article1 = document.getElementById('ghibli_animation_article1_all');
     const articleHaku = document.getElementById('ghibli_animation_article1_haku');
     const articleBackground = document.getElementById('ghibli_animation_article1_img_background_first');
+    const pagination = document.getElementById('pagination');
     let windowHeight = window.innerHeight;
     let article1Top = article1.getBoundingClientRect().top;
-    let trigger = windowHeight/3;
+    let trigger = windowHeight / 1.8;
 
-    if(article1Top<trigger){
+    if (article1Top < trigger) {
         article1.classList.add('opacityToggle');
         articleHaku.classList.remove('opacityToggle');
         articleBackground.classList.add('opacityToggle');
-    }else{
+        pagination.classList.remove('opacityToggle');
+    } else {
         article1.classList.remove('opacityToggle');
         articleHaku.classList.add('opacityToggle');
         articleBackground.classList.remove('opacityToggle');
+        pagination.classList.add('opacityToggle');
     }
 }

@@ -55,4 +55,11 @@
 /*toggle*/
 .opacityToggle{
     opacity:0;
+    transition-delay: background-Color 0s;
+}
+.header_blur{
+    background-color: rgba(255, 255, 255,0.8);
+    backdrop-filter: blur(10px);
+    z-index:20;
+    border-bottom:2px solid #ffffff;
 }
