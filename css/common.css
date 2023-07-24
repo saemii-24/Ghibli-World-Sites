@@ -10,6 +10,8 @@
     background-color: #ffffff;
     transition: background-color 0.3s;
     cursor: pointer;
+    line-height: 150%;
+    margin-top:30px;
 }
 .button_big:hover{
     background-color: rgba(0, 182, 255,0.2);
@@ -57,27 +59,10 @@
     opacity:0;
     transition-delay: background-Color 0s;
 }
-.opacityReverse{
-    opacity:1;
-}
-/* .opacityToggleReverse{
-    opacity:1;
-} */
 .header_blur{
     background-color: rgba(255, 255, 255,0.8);
     backdrop-filter: blur(10px);
     z-index:20;
     border-bottom:2px solid #ffffff;
-}
-/* .ChangeToBlue{
-    color:#00B6FF;
-}
-#howl{
-    bottom:0%;
-    left:-25%;
-    width:150%;
-} */
-
-#ghibli_animation .inner #pagination_area #pagination a.BlueToggle{
-    background-color: #00B6FF;
+    transition-delay: 1s;
 }
