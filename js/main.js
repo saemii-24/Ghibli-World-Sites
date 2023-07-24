@@ -70,7 +70,7 @@ $(window).on('scroll', function () {
             'left': '0%',
             'width': '100%'
         });
-        
+
         $('#scroll_info,#logo_img_white,#img_box').css({
             'opacity': '1',
         });
@@ -87,7 +87,7 @@ $(window).on('scroll', function () {
         });
         $('#change_img_text').css({
             'opacity': '1',
-            'fontSize': 30 + scroll / 500 + 'px'
+            'fontSize': 30 + scroll / 600 + 'px'
         });
         $('#scroll_info,#logo_img_blue').css({
             'opacity': '1',
@@ -112,7 +112,7 @@ function imgChange() {
 
     let windowHeight = window.innerHeight;
     let article1Top = article1.getBoundingClientRect().top;
-    let trigger = windowHeight / 1.5;
+    let trigger = windowHeight / 3;
 
     if (article1Top < trigger) {
         article1.classList.add('opacityToggle');
@@ -125,44 +125,73 @@ function imgChange() {
     }
 }
 
-/*ghibli_animation / toggle*/
-// const paginations = [...document.getElementById('pagination')];
-// const articleArea = [...document.getElementById('article_area')];
-// paginations.getBoundingClientRect().top+window.scrollY
-
-
-/*notice_slide*/
-// const prevBtn = document.getElementById('prev');
-// const nextBtn = document.getElementById('next');
-// const slideContainer = document.querySelector('.conatiner');
-// const slides = document.querySelectorAll('.notice');
-
-// const firstClone = slides[0].cloneNode(true);
-// const lastClone = slides[slides.length-1].cloneNode(true);
-
-// firstClone.id = 'first-clone';
-// lastClone.id = 'last-clone';
-
-// slides.appendChild(firstClone);
-// slides.prependChild(lastClone);
-
-// const slideWidth = slides[index].clientWidth;
-// console.log(slideWidth);
 
 
 /*others scroll slide*/
 const flipRoute = document.querySelector('.others-flip-all');
 const flipRouteTop = window.scrollY + flipRoute.getBoundingClientRect().top;
-const nowScroll = window.scrollY-flipRoute.getBoundingClientRect().top;
-console.log(nowScroll);
+const nowScroll = window.scrollY - flipRoute.getBoundingClientRect().top;
 
-window.addEventListener('scroll',slideLeft);
-function slideLeft(){
-    let leftRoute = 0;
-    if(window.scrollY+3000>flipRouteTop){
-        leftRoute += 0+ window.scrollY/10;
+document.addEventListener('scroll', slideLeft);
+function slideLeft() {
+    let leftRoute = window.scrollY - 14500;
+    // console.log(leftRoute);
+    if(leftRoute < 0){
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-    }else if(leftRoute>=1200){
-        return
+    }else if (leftRoute >= 0 && leftRoute < 600) {
+        flipRoute.style.transform = 'translateX(0px)';
+    } else if (leftRoute>= 600 && leftRoute< 1800) {
+        flipRoute.style.transform = 'translateX(' + (-leftRoute+600) + 'px)';
+    } else {
+        flipRoute.style.transform = 'translateX(-1200px)';
     }
 }
+
+/*notice_slider*/
+//왜 부드럽게 안움직이지? prev
+function prev() {
+    $('#notice_article .notice:last').prependTo('#notice_article');
+    $('#notice_article').css('margin-left', -1200);  
+    $('#notice_article').stop().animate({ marginLeft: -1200 }, 800); 
+  }
+  function next() {
+    $('#notice_article').stop().animate({ marginLeft: -1200 }, 800, function () {
+      $('#notice_article .notice:first').appendTo('#notice_article');
+      $('#notice_article').css({ marginLeft: 0 });
+    });
+  }
+
+  setInterval(next, 5000);  
+
+  $('#prev').click(function () {
+    prev();
+  });
+
+  $('#next').click(function () {
+    next();
+  });
+
+  
+/*ghibli_animation / toggle*/
+const aniArticles = document.querySelectorAll('.ghibli_animation_article');
+const paginations = document.querySelectorAll('#pagination a');
+console.log(paginations);
+
+const paginationLocate = paginations[0].getBoundingClientRect().top +  document.documentElement.scrollTop;
+const articleTop = aniArticles[0].getBoundingClientRect().top+  document.documentElement.scrollTop;
+const articleBottom = aniArticles[0].getBoundingClientRect().bottom+  document.documentElement.scrollTop;
+
+/*pagination의 위치
+paginations[0].getBoundingClientRect().top +  document.documentElement.scrollTop;
+
+article의 위치
+aniArticles[0].getBoundingClientRect().top+  document.documentElement.scrollTop;
+aniArticles[0].getBoundingClientRect().bottom+  document.documentElement.scrollTop;
+*/
+
+console.log(aniArticles[0].getBoundingClientRect().top)
+console.log(window.innerHeight);
+//     article.getBoundingClientRect().bottom>0)
+console.log(window.innerHeight>aniArticles[0].getBoundingClientRect().top+80+window.innerHeight&&
+aniArticles[0].getBoundingClientRect().bottom+80>0);
+

@@ -415,6 +415,10 @@ section .full_inner #scroll_info span {
     width: 100%;
     height: 24px;
     border-radius: 24px;
+    background-color: rgba(0, 182, 255, 0.2);
+}
+
+#pagination a.active {
     background-color: #00B6FF;
 }
 
@@ -644,14 +648,21 @@ section .full_inner #scroll_info span {
 
 /*ghibli_others*/
 #ghibli_others .inner{
-    background-color: pink;
-    height: 5000px;
+    /* background-color: pink; */
+    /* overflow: hidden */
+}
+#ghibli_others .inner .flip-line{
+    /* background-color: gold; */
+    width: 100%;
+    height: 4000px;
     padding-bottom:500px;
+    position: relative;
 }
 .others-flip-all{
     position: sticky;
-    top:40%;
-    transform: translateX(0px);
+    top:30%;
+    bottom:30%;
+    transform: translateX(1200px);
     transition: all 0.5s;
 }
 .others-flip-all .others-flip-align{
@@ -659,7 +670,7 @@ section .full_inner #scroll_info span {
     column-gap: 30px;
     align-items: center;
     width: 1200px;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
 }
 .others-flip-all #others-flip-2{
@@ -821,7 +832,7 @@ section .full_inner #scroll_info span {
 
 #notice_article {
     position: relative;
-    background-color: red;
+    /* background-color: red; */
     width: 3600px;
     height: 560px;
     display: flex;
@@ -840,7 +851,7 @@ section .full_inner #scroll_info span {
 #ghibli_notice #notice_article .notice_poster {
     width: 400px;
     border-radius: 10px;
-    overflow: hidden;
+    
     transform: translateY(-80px);
 }
 
@@ -887,7 +898,7 @@ section .full_inner #scroll_info span {
 
 /*footer*/
 footer {
-    margin-top: 150px;
+    margin-top:50px;
     height: 300px;
 }
 
