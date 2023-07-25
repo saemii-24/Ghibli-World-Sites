@@ -74,7 +74,7 @@ $(window).on('scroll', function () {
         $('#scroll_info,#logo_img_white,#img_box').css({
             'opacity': '1',
         });
-        $('.first_category,#language_icon,#language-korean,#logo_text').css({
+        $('.first_category,#language_icon,#language-korean,#logo_text,').css({
             'color': '#ffffff'
         });
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
@@ -101,6 +101,8 @@ $(window).on('scroll', function () {
         $('header').addClass('header_blur');
     }
 });
+
+
 
 /*ghibli_animation*/
 window.addEventListener('scroll', imgChange);
@@ -130,68 +132,109 @@ function imgChange() {
 /*others scroll slide*/
 const flipRoute = document.querySelector('.others-flip-all');
 const flipRouteTop = window.scrollY + flipRoute.getBoundingClientRect().top;
-const nowScroll = window.scrollY - flipRoute.getBoundingClientRect().top;
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
     let leftRoute = window.scrollY - 14500;
     // console.log(leftRoute);
-    if(leftRoute < 0){
+    if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-    }else if (leftRoute >= 0 && leftRoute < 600) {
+    } else if (leftRoute >= 0 && leftRoute < 600) {
         flipRoute.style.transform = 'translateX(0px)';
-    } else if (leftRoute>= 600 && leftRoute< 1800) {
-        flipRoute.style.transform = 'translateX(' + (-leftRoute+600) + 'px)';
+    } else if (leftRoute >= 600 && leftRoute < 1800) {
+        flipRoute.style.transform = 'translateX(' + (-leftRoute + 600) + 'px)';
     } else {
         flipRoute.style.transform = 'translateX(-1200px)';
     }
 }
 
 /*notice_slider*/
-//왜 부드럽게 안움직이지? prev
 function prev() {
     $('#notice_article .notice:last').prependTo('#notice_article');
-    $('#notice_article').css('margin-left', -1200);  
-    $('#notice_article').stop().animate({ marginLeft: -1200 }, 800); 
-  }
-  function next() {
+    $('#notice_article').css('margin-left', -1200);
+    $('#notice_article').stop().animate({ marginLeft: 0 }, 800);
+}
+function next() {
     $('#notice_article').stop().animate({ marginLeft: -1200 }, 800, function () {
-      $('#notice_article .notice:first').appendTo('#notice_article');
-      $('#notice_article').css({ marginLeft: 0 });
+        $('#notice_article .notice:first').appendTo('#notice_article');
+        $('#notice_article').css({ marginLeft: 0 });
     });
-  }
+}
 
-  setInterval(next, 5000);  
+setInterval(next, 5000);
 
-  $('#prev').click(function () {
+$('#prev').click(function () {
     prev();
-  });
+});
 
-  $('#next').click(function () {
+$('#next').click(function () {
     next();
-  });
+});
 
-  
+
 /*ghibli_animation / toggle*/
 const aniArticles = document.querySelectorAll('.ghibli_animation_article');
 const paginations = document.querySelectorAll('#pagination a');
 console.log(paginations);
+document.addEventListener('scroll', paginationColor);
 
-const paginationLocate = paginations[0].getBoundingClientRect().top +  document.documentElement.scrollTop;
-const articleTop = aniArticles[0].getBoundingClientRect().top+  document.documentElement.scrollTop;
-const articleBottom = aniArticles[0].getBoundingClientRect().bottom+  document.documentElement.scrollTop;
+function paginationColor() {
 
-/*pagination의 위치
-paginations[0].getBoundingClientRect().top +  document.documentElement.scrollTop;
 
-article의 위치
-aniArticles[0].getBoundingClientRect().top+  document.documentElement.scrollTop;
-aniArticles[0].getBoundingClientRect().bottom+  document.documentElement.scrollTop;
-*/
+    for (let i = 0; i < paginations.length; i++) {
+        let paginationLocate = paginations[i].getBoundingClientRect().top + document.documentElement.scrollTop;
+        let articleTop = aniArticles[i].getBoundingClientRect().top + document.documentElement.scrollTop;
+        let articleBottom = aniArticles[i].getBoundingClientRect().bottom + document.documentElement.scrollTop;
 
-console.log(aniArticles[0].getBoundingClientRect().top)
-console.log(window.innerHeight);
-//     article.getBoundingClientRect().bottom>0)
-console.log(window.innerHeight>aniArticles[0].getBoundingClientRect().top+80+window.innerHeight&&
-aniArticles[0].getBoundingClientRect().bottom+80>0);
+        paginations[i].classList.remove('active');
 
+        if (paginationLocate > articleTop &&
+            paginationLocate < articleBottom) {
+            paginations[i].classList.add('active');
+        }
+    }
+}
+
+
+/*article_animation*/
+//toTOP
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('back-to-position');
+      }else{
+        entry.target.classList.remove('back-to-position');
+      }
+    });
+  });
+  
+  const goToTop = document.querySelectorAll('.to-top');
+  goToTop.forEach(toTop => observer.observe(toTop));
+
+//toRight
+let observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('back-to-position');
+      }else{
+        entry.target.classList.remove('back-to-position');
+      }
+    });
+  });
+  
+  const goToRight = document.querySelectorAll('.to-right');
+  goToRight.forEach(toRight => observer2.observe(toRight));
+
+  //toLeft
+  let observer3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('back-to-position');
+      }else{
+        entry.target.classList.remove('back-to-position');
+      }
+    });
+  });
+  
+  const goToLeft = document.querySelectorAll('.to-left');
+  goToLeft.forEach(toLeft => observer2.observe(toLeft));

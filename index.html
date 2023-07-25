@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main_tablet.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="icon" href="img/favicon.png">
 </head>
@@ -24,7 +25,7 @@
     <header>
         <div class="inner">
             <div id="logo">
-                <a href="javascript:void(0)">
+                <a href="#">
                     <div id="logo_img">
                         <img id="logo_img_blue" src="img/main/ghibli_logo_blue.png" alt="ghibli_logo">
                         <img id="logo_img_white" src="img/main/ghibli_logo_white.png" alt="ghibli_logo">
@@ -37,7 +38,7 @@
                     <span></span>
                 </div>
             </div>
-            <ul>
+            <ul id="category">
                 <li class="first_category">
                     스튜디오 지브리
                     <ul class="second_category">
@@ -86,7 +87,7 @@
             <img id="studioGhibli_write" src="img/main/studioGhibli_write.png" alt="studioGhibli_write">
             <div id="change_img_box"></div>
             <div class="inner">
-                <p id="change_img_text">우리가 사랑하는 지브리의 모든 것</p>
+                <p id="change_img_text">우리가 사랑하는<br>지브리의 모든 것</p>
             </div>
         </div>
     </section>
@@ -108,15 +109,15 @@
     <section id="about_ghibli">
         <div class="inner">
             <div id="about_ghibli_article_align">
-                <article id="about_ghibli_article1">
+                <article id="about_ghibli_article1" class="to-top delay-0">
                     <h3 class="article_title">회사소개</h3>
                     <h1 class="article_big_title" id="about_ghibli_korean_name">스튜디오 지브리</h1>
                     <h1 id="about_ghibli_english_name">STUDIO GHIBLI INC.</h1>
-                    <p class="article_content">일본의 애니메이션 제작사.<br>
-                        세계적인 명성을 가진 미야자키 하야오 감독의<br>
+                    <p class="article_content">일본의 애니메이션 제작사.
+                        세계적인 명성을 가진 미야자키 하야오 감독의
                         장편 애니메이션 제작 스튜디오로 유명하다. </p>
                 </article>
-                <article id="about_ghibli_article2">
+                <article id="about_ghibli_article2" class="to-top delay-2">
                     <h3 class="article_title">사업내용</h3>
                     <ul class="article_content">
                         <li>애니메이션 기획·제작</li>
@@ -128,14 +129,14 @@
                         <li>「미타카의 숲 지브리 미술관」 카페 운영</li>
                     </ul>
                 </article>
-                <article id="about_ghibli_article3">
+                <article id="about_ghibli_article3" class="to-top delay-1">
                     <h3 class="article_title">연혁</h3>
                     <p class="article_content">다카하타 이사오, 미야자키 하야오 감독의<br>
-                        애니메이션 영화 제작을 목적으로,<br>
-                        1985년 6월에 활동을 시작했다.<br>
-                        1992년, 현재의 소재지에 스튜디오를 건설했고,<br>
-                        2005년 4월, 지브리 사업 본부로서의<br>
-                        모든 사업을 계승해, 주식회사 스튜디오<br>
+                        애니메이션 영화 제작을 목적으로,
+                        1985년 6월에 활동을 시작했다.
+                        1992년, 현재의 소재지에 스튜디오를 건설했고,
+                        2005년 4월, 지브리 사업 본부로서의
+                        모든 사업을 계승해, 주식회사 스튜디오
                         지브리로서 새로운 시작을 알렸다.</p>
                     <button id="about_ghibli_article3_btn" class="button_big">자세히 알아보기</button>
                 </article>
@@ -165,14 +166,14 @@
 
             <div id="article_area">
                 <article id="ghibli_animation_article1" class="ghibli_animation_article">
-                    <h3 class="article_title">아카데미 장편 애니메이션을 수상한 걸작</h3>
-                    <h1 class="article_title_big">센과 치히로의 행방불명</h1>
-                    <p class="article_content">
+                    <h3 class="article_title to-top delay-0">아카데미 장편 애니메이션을 수상한 걸작</h3>
+                    <h1 class="article_title_big to-top delay-1">센과 치히로의 행방불명</h1>
+                    <p class="article_content to-top delay-2">
                         부모님과 이사를 가던 치히로는 가족들과 우연히 수상한 터널을 지나<br>
                         신들이 사는 세계에 발을 내딛게 된다. 허락없이 그 곳의 음식을 먹은 치히로의<br>
                         부모님은 돼지가 되어버리고, 사라질 위기에 처한 치히로. 이 때 신비한 소년<br>
                         하쿠를 만나 신들의 목욕탕에서 일하며 ‘센’이라는 새로운 이름을 얻게되는데...</p>
-                    <button class="button_big">자세히 알아보기</button>
+                    <button class="button_big to-top delay-3">자세히 알아보기</button>
                     <div id="ghibli_animation_article1_img">
                         <div id="ghibli_animation_article1_all">
                             <img src="./img/main/aniamtion_SpiritedAway1.png" alt="SpiritedAway">
@@ -190,14 +191,14 @@
                 <article id="ghibli_animation_article2" class="article_row ghibli_animation_article">
                     <div class="article_align">
                         <div class="article_left">
-                            <h3 class="article_title">지브리표 성장 로맨스!</h3>
-                            <h1 class="article_title_big">하울의<br>움직이는 성</h1>
-                            <p class="article_content">
-                                19세기 말. 모자 공방 주인의 딸 소피는, 황야의 마녀라<br>
-                                불리는 의문의 여성에게 노파가 되는 저주를 받고 황야로<br>
-                                여행을 떠난다. 그리고 지난 번, 우연히 만났던 하울의 성에<br>
+                            <h3 class="article_title to-right delay-0">지브리표 성장 로맨스!</h3>
+                            <h1 class="article_title_big to-right delay-1">하울의<br>움직이는 성</h1>
+                            <p class="article_content to-right delay-2">
+                                19세기 말. 모자 공방 주인의 딸 소피는, 황야의 마녀라
+                                불리는 의문의 여성에게 노파가 되는 저주를 받고 황야로
+                                여행을 떠난다. 그리고 지난 번, 우연히 만났던 하울의 성에
                                 도착해 그 곳에서 여러 일을 도우며 지내게 되는데...</p>
-                            <button class="button_big">자세히 알아보기</button>
+                            <button class="button_big to-right delay-3">자세히 알아보기</button>
                         </div>
                         <div class="article_right article_background">
                             <img class="article_element" src="./img/main/animation_howl.png" alt="howl">
@@ -207,14 +208,14 @@
                 <article id="ghibli_animation_article3" class="article_row ghibli_animation_article">
                     <div class="article_align">
                         <div class="article_left">
-                            <h3 class="article_title">따뜻한 판타지 드라마</h3>
-                            <h1 class="article_title_big">이웃집<br>토토로</h1>
-                            <p class="article_content">
-                                어머니의 병을 치료하기 위해 시골마을로 이사온 사츠키와<br>
-                                메이는 신비한 생명체 토토로를 만난다. 어느날,<br>
-                                어머니가 위태롭다는 소식이 전해지고 메이가 행방불명이 <br>
+                            <h3 class="article_title to-left delay-0">따뜻한 판타지 드라마</h3>
+                            <h1 class="article_title_big to-left delay-1">이웃집<br>토토로</h1>
+                            <p class="article_content to-left delay-2">
+                                어머니의 병을 치료하기 위해 시골마을로 이사온 사츠키와
+                                메이는 신비한 생명체 토토로를 만난다. 어느날,
+                                어머니가 위태롭다는 소식이 전해지고 메이가 행방불명이
                                 되자 사츠키는 토토로에게 도움을 요청하는데...</p>
-                            <button class="button_big">자세히 알아보기</button>
+                            <button class="button_big to-left delay-3">자세히 알아보기</button>
                         </div>
                         <div class="article_right article_background">
                             <img class="article_element" src="./img/main/aniamtion_totoro1-1.png" alt="totoro">
@@ -225,14 +226,14 @@
                 <article id="ghibli_animation_article4" class="article_row ghibli_animation_article">
                     <div class="article_align">
                         <div class="article_left">
-                            <h3 class="article_title">자연과 인간을 탐구한 대작</h3>
-                            <h1 class="article_title_big">모노노케 히메<br>(원령공주)</h1>
-                            <p class="article_content">
-                                무로마치 시대의 일본. 주인공 아시타카는 에미시 일족의<br>
-                                마을을 습격한 재앙신을 사살하고 저주에 걸리게 된다.<br>
-                                아시타카는 저주를 막기 위해 여행을 떠나고, 인간과<br>
+                            <h3 class="article_title to-right delay-0">자연과 인간을 탐구한 대작</h3>
+                            <h1 class="article_title_big to-right delay-1">모노노케 히메<br>(원령공주)</h1>
+                            <p class="article_content to-right delay-2">
+                                무로마치 시대의 일본. 주인공 아시타카는 에미시 일족의
+                                마을을 습격한 재앙신을 사살하고 저주에 걸리게 된다.
+                                아시타카는 저주를 막기 위해 여행을 떠나고, 인간과
                                 신들의 전쟁 속에서 한 소녀를 만나게 되는데...</p>
-                            <button class="button_big">자세히 알아보기</button>
+                            <button class="button_big to-right delay-3">자세히 알아보기</button>
                         </div>
                         <div class="article_right article_background">
                             <img class="article_element" src="./img/main/aniamtion_mononoke.png" alt="mononoke">
@@ -244,6 +245,7 @@
         </div>
     </section>
 
+    <!--Ghibli others-->
     <section id="ghibli_others">
         <div class="inner">
             <h3 class="article_category">애니메이션 그 밖에</h3>
@@ -325,7 +327,7 @@
         </div>
     </section>
 
-
+    <!--ghibli_world-->
     <section id="ghibli_world">
         <article class="full_inner" id="ghibli_world_background">
             <div class="inner">
@@ -338,7 +340,7 @@
             </div>
         </article>
         <div class="inner inner_article">
-            <article class="ghibli_world_tour">
+            <article class="ghibli_world_tour to-top delay-0" >
                 <h3 class="article_title">
                     <span class="material-icons">location_on</span>
                     일본, 아이치현
@@ -351,7 +353,7 @@
                 <div class="ghibli_world_tour_img_1"></div>
             </article>
 
-            <article class="ghibli_world_tour">
+            <article class="ghibli_world_tour to-top delay-1">
                 <h3 class="article_title">
                     <span class="material-icons">location_on</span>
                     일본, 도쿄
@@ -367,6 +369,7 @@
         </div>
     </section>
 
+    <!--ghibli_notice-->
     <section id="ghibli_notice">
         <div class="inner">
             <h3 class="article_category">지브리 소식</h3>
@@ -445,17 +448,28 @@
             <p id="description">본 사이트는 지브리를 좋아하는 마음을 담아 만든<br>
                 개인 포트폴리오로 상업용 사이트가 아닙니다.</p>
             <p id="ghibli_site">지브리 공식 사이트 바로가기</p>
+            <div id="ghibli">
+                <a href="https://www.ghibli.jp/">
+                    <img src="img/main/footer_ghibli.jpg" alt="ghibli">
+                </a>
+            </div>
+            <div id="museum">
+                <a href="https://www.ghibli-museum.jp/">
+                    <img src="img/main/footer_museum.jpg" alt="museum">
+                </a>
+            </div>
             <div id="line">
                 <a href="https://line.me/R/ti/p/@studioghibli?from=page&openQrModal=true&searchId=studioghibli"
                     target="_blank">
-                    <img src="img/main/footer_line.jpeg" alt="logo">
+                    <img src="img/main/footer_line.jpeg" alt="line">
                 </a>
             </div>
             <div id="twitter">
                 <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FJP_GHIBLI">
-                    <img src="img/main/footer_twitter.jpg" alt="logo">
+                    <img src="img/main/footer_twitter.jpg" alt="twitter">
                 </a>
             </div>
+         
         </div>
     </footer>
 
