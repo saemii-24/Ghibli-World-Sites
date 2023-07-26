@@ -11,8 +11,12 @@
     margin: 0 auto;
     position: relative;
 }
+.article_category {
+    padding-top:300px;
+}
 .button_big{
     padding: 20px 33px;
+    font-size: 5em;
 }
 .button_big:hover{
     background-color: rgba(0, 182, 255,0.2);
@@ -101,6 +105,7 @@ header .inner ul li {
     position: relative;
     padding: 20px 0;
     line-height: 120%;
+    display: flex;
 }
 
 header .inner ul li a {
@@ -120,15 +125,22 @@ header .inner ul #language_select div {
     line-height: 120%;
 }
 
-header .inner ul #language_select div #language-icon {
-    color: #00B6FF;
+header .inner ul #language_select #language_icon,
+header .inner ul #language_select #language-korean{
+    color:#00B6FF;
 }
 
-header .inner ul #language_select div #language-korean {
-    color: #00B6FF;
-    width: 55px;
+header .inner ul #language_select #language-english{
+    color:#333;
 }
-
+header .inner ul #language_select #language-english:hover{
+    color:#00B6FF;
+}
+header .first_category > span{
+    display: flex;
+    align-content: center;
+    gap:4px;
+}
 header .inner ul li .second_category {
     display: flex;
     flex-direction: column;
@@ -239,7 +251,11 @@ section .full_inner #img_box #howl {
     animation: howl_move 1.5s alternate infinite;
     transition: all 1s;
 }
-
+section .full_inner #img_box #howl.position_change {
+    top: 20%;
+    left: 0%;
+    width: 100%
+}
 
 @keyframes howl_move {
     to {
@@ -268,6 +284,7 @@ section .full_inner #studioGhibli_write {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s;
+    opacity: 1;
 }
 
 section .full_inner #scroll_info {
@@ -681,7 +698,7 @@ section .full_inner #scroll_info span {
 #ghibli_others .inner .flip-line{
     /* background-color: gold; */
     width: 100%;
-    height: 4000px;
+    height: 3000px;
     padding-bottom:500px;
     position: relative;
 }
@@ -689,26 +706,26 @@ section .full_inner #scroll_info span {
     position: sticky;
     top:30%;
     bottom:30%;
-    transform: translateX(1200px);
+    /* transform: translateX(1200px); */
     transition: all 0.5s;
+    width: 1200px;
 }
 .others-flip-all .others-flip-align{
     display: flex;
     column-gap: 30px;
     align-items: center;
-    width: 1200px;
+    width: 100%px;
     /* background-color: red; */
     position: absolute;
 }
 .others-flip-all #others-flip-2{
-    left:1200px;
+    left:100%;
 }
 .others-flip-all .others-flip-align .flip-content{
     width: 430px;
     margin-left:30px;
 }
 .others-flip-all .others-flip {
-    background-color: transparent;
     width: 325px;
     height: 460px;
     perspective: 1000px;
@@ -875,12 +892,16 @@ section .full_inner #scroll_info span {
 #ghibli_notice #notice_article .notice_poster {
     width: 400px;
     border-radius: 10px;
-    
     transform: translateY(-80px);
 }
 
 #ghibli_notice #notice_article .notice_poster img {
     width: 100%;
+}
+
+#ghibli_notice #notice_article .notice_right{
+    margin-bottom:70px;
+    width: 40%;
 }
 
 #ghibli_notice .slide_button {

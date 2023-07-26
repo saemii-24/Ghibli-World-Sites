@@ -1,4 +1,4 @@
-/*한국어<->영어*/
+/*korean<->english*/
 const english = document.getElementById('language-english');
 const korean = document.getElementById('language-korean');
 
@@ -14,20 +14,15 @@ english.addEventListener('click', () => {
 
 /*MAIN SECTION*/
 $(window).on('scroll', function () {
-    let scroll = $(window).scrollTop();
+    var scroll = $(window).scrollTop();
     if (scroll >= 0 && scroll <= 400) {
         $('#img_box').css({
             'width': 500 + (scroll * 1.2),
             'height': 500 + (scroll * 1.2),
             'border-radius': '50%'
         });
-        $('#howl').css({
-            'bottom': '0%',
-            'left': '-25%',
-            'width': '150%'
-        });
         $('#studioGhibli_write').css({
-            'opacity': '1',
+            'opacity': '1'
         });
 
     } else if (scroll > 400 && scroll <= 1200) {
@@ -38,8 +33,7 @@ $(window).on('scroll', function () {
             'backgroundSize': 'cover'
         });
         $('#studioGhibli_write').css({
-            'opacity': '0',
-            'transition-delay': '0'
+            'opacity': '0'
         });
         $('#scroll_info, #logo_img_white').css({
             'opacity': '0',
@@ -51,6 +45,9 @@ $(window).on('scroll', function () {
         });
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
+        });
+        $('.hamburger_menu span').css({
+            'background-color': '#00B6FF'
         });
         $('#logo_img').attr(
             'src', 'img/main/ghibli_logo_blue.png'
@@ -70,12 +67,14 @@ $(window).on('scroll', function () {
             'left': '0%',
             'width': '100%'
         });
-
         $('#scroll_info,#logo_img_white,#img_box').css({
             'opacity': '1',
         });
-        $('.first_category,#language_icon,#language-korean,#logo_text,').css({
+        $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#ffffff'
+        });
+        $('.hamburger_menu span').css({
+            'background-color': '#ffffff'
         });
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
             'opacity': '0'
@@ -87,7 +86,7 @@ $(window).on('scroll', function () {
         });
         $('#change_img_text').css({
             'opacity': '1',
-            'fontSize': 30 + scroll / 600 + 'px'
+            'fontSize': 30 + scroll / 500 + 'px'
         });
         $('#scroll_info,#logo_img_blue').css({
             'opacity': '1',
@@ -98,11 +97,12 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
         });
+        $('.hamburger_menu span').css({
+            'background-color': '#00B6FF'
+        });
         $('header').addClass('header_blur');
     }
 });
-
-
 
 /*ghibli_animation*/
 window.addEventListener('scroll', imgChange);
@@ -131,31 +131,35 @@ function imgChange() {
 
 /*others scroll slide*/
 const flipRoute = document.querySelector('.others-flip-all');
-const flipRouteTop = window.scrollY + flipRoute.getBoundingClientRect().top;
+// const flipRouteTop = window.scrollY + flipRoute.getBoundingClientRect().top;
+const flipWidth = document.getElementById('others-flip-1').clientWidth;
+const halfWidth = flipWidth/2;
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
-    let leftRoute = window.scrollY - 14500;
+    let leftRoute = window.scrollY - 13500;
     // console.log(leftRoute);
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-    } else if (leftRoute >= 0 && leftRoute < 600) {
+    } else if (leftRoute >= 0 && leftRoute < halfWidth) {
         flipRoute.style.transform = 'translateX(0px)';
-    } else if (leftRoute >= 600 && leftRoute < 1800) {
-        flipRoute.style.transform = 'translateX(' + (-leftRoute + 600) + 'px)';
+    } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
+        flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
     } else {
-        flipRoute.style.transform = 'translateX(-1200px)';
+        flipRoute.style.transform = `translateX(${-flipWidth}px)`;
     }
 }
 
 /*notice_slider*/
+    let slideWidth = $('.notice').width();
+
 function prev() {
     $('#notice_article .notice:last').prependTo('#notice_article');
-    $('#notice_article').css('margin-left', -1200);
+    $('#notice_article').css('margin-left', -slideWidth);
     $('#notice_article').stop().animate({ marginLeft: 0 }, 800);
 }
 function next() {
-    $('#notice_article').stop().animate({ marginLeft: -1200 }, 800, function () {
+    $('#notice_article').stop().animate({ marginLeft: -slideWidth }, 800, function () {
         $('#notice_article .notice:first').appendTo('#notice_article');
         $('#notice_article').css({ marginLeft: 0 });
     });
@@ -180,7 +184,6 @@ document.addEventListener('scroll', paginationColor);
 
 function paginationColor() {
 
-
     for (let i = 0; i < paginations.length; i++) {
         let paginationLocate = paginations[i].getBoundingClientRect().top + document.documentElement.scrollTop;
         let articleTop = aniArticles[i].getBoundingClientRect().top + document.documentElement.scrollTop;
@@ -197,7 +200,7 @@ function paginationColor() {
 
 
 /*article_animation*/
-//toTOP
+//toTop
   let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -238,3 +241,16 @@ let observer2 = new IntersectionObserver((entries) => {
   
   const goToLeft = document.querySelectorAll('.to-left');
   goToLeft.forEach(toLeft => observer2.observe(toLeft));
+
+ /*hamburger menu*/
+const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
+const hamburgerMenu = document.getElementById('hamburger_menu_click');
+const category = document.getElementById("category");
+hamburgerMenu.addEventListener('click', hamburgerMenuClick);
+
+function hamburgerMenuClick() {
+    hamburgerMenuBars.forEach(function(hamburgerMenuBar){
+        hamburgerMenuBar.classList.toggle('active');
+    });
+    category.classList.toggle('showCategory');
+} 

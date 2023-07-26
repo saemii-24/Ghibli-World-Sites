@@ -1,951 +1,1034 @@
 @charset "utf-8";
+
 @media screen and (min-width:600px) and (max-width:1199px) {
-    html{
+    html {
         font-size: 3px;
         scroll-behavior: smooth;
     }
-    
-.inner {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
 
-.article_category {
-    padding-top:200px;
-}
-.article_content {
-    font-size: 6em;
-}
-
-.button_big{
-    padding: 15px 28px;
-}
-.button_big:hover{
-    background-color: rgba(0, 182, 255,0.2);
-}
-.article_title{
-    font-size: 6em;
-}
-.article_content{
-    font-size: 6em;
-}
-.article_title_big{
-    font-size: 12em;
-}
-.article_category{
-    font-size: 12em;
-}
-/*HEADER*/
-header {
-    width: 100%;
-    height: 72px;
-    /* background-color: blue; */
-    font-size: 6em;
-    font-weight: 700;
-    position: fixed;
-    z-index: 10;
-    transition-property: background-color border;
-
-}
-
-header .inner {
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.hamburger_menu {
-    width: 24px;
-    height: 18px;
-    display: block;
-    position: relative;
-    cursor:pointer;
-    margin-right:30px;
-    z-index: 10;
-}
-
-.hamburger_menu span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: #00B6FF;
-    margin-bottom: 6px;
-    position: absolute;
-    transition: transform 0.3s 0s, top 0.3s 0.4s, opacity 0.3s 0.3s;
+    .inner {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
     }
 
-.hamburger_menu span:nth-of-type(1) {
-    top: 0px;
-}
-
-.hamburger_menu span:nth-of-type(2) {
-    top: 9px;
-}
-
-.hamburger_menu span:nth-of-type(3) {
-    top: 18px;
-}
-.hamburger_menu span.active{
-    transition: top 0.3s 0s, transform 0.3s 0.4s, opacity 0.3s 0.3s;
-}
-.hamburger_menu span:nth-of-type(1).active{
-    top:9px;
-    transform: rotate(45deg);
-}
-.hamburger_menu span:nth-of-type(2).active{
-    opacity: 0;
-}
-.hamburger_menu span:nth-of-type(3).active{
-    top:9px;
-    transform: rotate(-45deg);
-}
-.new-transition{
-    transition: top 0.3s 0s, transform 0.3s 0.4s, opacity 0.3s 0.3s;
-}
-
-header .inner #logo{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header .inner #logo a {
-    display: flex;
-    align-items: center;
-    column-gap: 24px;
-    margin-left:30px;
-}
-
-header .inner #logo a #logo_img {
-    width: 60px;
-    height: 60px;
-    position: relative;
-}
-
-header .inner #logo a #logo_img #logo_img_blue {
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 1s;
-}
-
-header .inner #logo a #logo_img #logo_img_white {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 1s;
-}
-
-header .inner #logo a span {
-    color: #00B6FF;
-}
-
-header .inner #category{
-    position: absolute;
-    right:0;
-    top:0px;
-    height: 100vh;
-    width: 35%;
-    background-color:  rgba(0, 182, 255,0.6);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    align-items: flex-start;
-    display: none;
-}   
-
-header .inner #category .second_category{
-    display: none;
-}
-header .inner #category .first_category{
-    transform: translate(5vw,40vh);
-    border-bottom: 1px solid #ffffff;
-}
-
-header .inner #category .first_category div{
-    display: flex;
-    gap:8px;
-}
-header .inner #category .first_category div span{
-    font-size:16px;
-}
-
-/*MAIN SECTION*/
-body {
-    position: relative;
-    overflow-x: hidden;
-}
-
-#main_section {
-    height: 6500px;
-}
-#main_section p{
-    text-align: center;
-    word-break: keep-all;
-}
-section .full_inner {
-    position: sticky;
-    top: 0px;
-    /* background-color: pink; */
-    width: 100vw;
-    height: 100vh;
-}
-
-section .full_inner #img_box {
-    position: absolute;
-    margin: 0 auto;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: url('../img/main/howl_background.png');
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    animation: howl_background_move 200s alternate infinite;
-    background-position: 100% 50%;
-    transition: all 1s;
-}
-
-section .full_inner #img_box #howl {
-    position: absolute;
-    left: -25%;
-    bottom: 0%;
-    width: 150%;
-    animation: howl_move 1.5s alternate infinite;
-    transition: all 1s;
-}
-
-
-@keyframes howl_move {
-    to {
-        transform: translate(0, 0);
+    .article_category {
+        padding-top: 200px;
     }
 
-    from {
-        transform: translate(5px, 0px);
-    }
-}
-
-@keyframes howl_background_move {
-    to {
-        background-position: 0% 50%;
+    .article_content {
+        font-size: 5em;
     }
 
-    from {
-        background-color: 50% 50%;
-    }
-}
-
-section .full_inner #studioGhibli_write {
-    position: absolute;
-    width: 600px;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.5s;
-}
-
-section .full_inner #scroll_info {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #00B6FF;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    color: #00B6FF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    row-gap: 4px;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-section .full_inner #scroll_info span {
-    color: #00B6FF;
-}
-
-#main_section .full_inner #change_img_box {
-    opacity: 0;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    transition: opacity 0.5s;
-}
-
-#main_section .full_inner #change_img_text {
-    font-size: 30px;
-    font-weight: 800;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition-delay: 0.5s;
-    transition: all 0.5s;
-}
-
-/*Introduce Ghibli*/
-#introduce_ghibli .inner {
-    height: 1000px;
-    /* background-color: #ffffff; */
-    /* background-color: BLUE; */
-}
-
-#introduce_ghibli .inner img {
-    width: 60%;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* background-color: RED; */
-}
-
-#introduce_ghibli .inner .arrow_down {
-    position: absolute;
-    bottom: 200px;
-    left: 50%;
-}
-
-/*About Ghibli*/
-#about_ghibli {
-    background-color: rgba(0, 182, 255, 0.1);
-    width: 100vw;
-}
-
-#about_ghibli .inner {
-    height: 1200px;
-}
-
-#about_ghibli .inner #about_ghibli_article_align {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    row-gap: 3%;
-    justify-content: center;
-    align-content: space-evenly;
-
-}
-#about_ghibli .inner #about_ghibli_article_align .article_content{
-    width: 100%;
-}
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_korean_name {
-    font-size: 12em;
-    font-weight: 800;
-    padding-top: 20px;
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_english_name {
-    font-size: 9em;
-    font-weight: 800;
-    padding-top: 4px;
-    font-family: 'Nanum Gothic', sans-serif;
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article1,
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 {
-    width: 45%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 70px 50px;
-    
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul {
-    padding-left: 4%;
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul li {
-    list-style-type: disc;
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3 {
-    width: 45%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 70px 50px;
-}
-
-#about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3 #about_ghibli_article3_btn {
-    margin-top: 50px;
-}
-
-/*Ghibli Animation*/
-
-#ghibli_animation .inner {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    column-gap:3%;
-}
-
-#ghibli_animation .inner #article_area {
-    width: 90%
-}
-
-#ghibli_animation .inner .article_category,
-#ghibli_animation .inner .arrow_down {
-    width: 100%;
-}
-
-#ghibli_animation .inner #pagination_area {
-    width: 2%;
-}
-
-#ghibli_animation .inner #pagination_area #pagination {
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    width: 20px;
-    row-gap: 15px;
-    /* background-color: red; */
-    top: 45%;
-    transition: all 0.5s;
-}
-
-#ghibli_animation .inner #pagination_area #pagination a {
-    display: block;
-    width: 100%;
-    height: 20px;
-    border-radius: 24px;
-    background-color: rgba(0, 182, 255, 0.2);
-}
-
-#ghibli_animation .inner #pagination_area #pagination a.active {
-    background-color: #00B6FF;
-}
-
-#ghibli_animation #ghibli_animation_article1 {
-    text-align: center;
-    position: relative;
-    height: 700px;
-    scroll-margin-top: 80px;
-    box-sizing: content-box;
-    padding-bottom:200px;
-}
-
-#ghibli_animation #ghibli_animation_article1 button {
-    margin-top: 36px;
-}
-
-#ghibli_animation img {
-    width: 100%;
-}
-
-#ghibli_animation #ghibli_animation_article1_all {
-    /* background-color: pink; */
-    position: absolute;
-    bottom:  106px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    margin: 0;
-    transition: all 0.5s;
-}
-
-#ghibli_animation #ghibli_animation_article1_img_background {
-    position: absolute;
-    bottom: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 25%;
-    border-radius: 500px;
-    overflow: hidden;
-    z-index: -1;
-    background-image: url('../img/main/aniamtion_SpiritedAway_Background2.jpg');
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#ghibli_animation #ghibli_animation_article1_haku {
-    width: 100%;
-    transition: all 0.5s;
-}
-
-#ghibli_animation #ghibli_animation_article1_haku img:nth-child(1) {
-    position: absolute;
-    width: 45%;
-    bottom: 110px;
-    left: 15%;
-    z-index: 1;
-    animation: rightToLeft 3s ease alternate infinite;
-}
-
-#ghibli_animation #ghibli_animation_article1_haku img:nth-child(2) {
-    position: absolute;
-    width: 42%;
-    bottom: 20%;
-    right: 10%;
-    z-index: 1;
-    animation: haku 3s ease alternate infinite;
-}
-
-
-@keyframes haku {
-    to {
-        transform: translateY(-20px);
+    .button_big {
+        padding: 15px 28px;
+        font-size: 6em;
     }
 
-    from {
-        left: translateY(0px);
-    }
-}
-
-#ghibli_animation #ghibli_animation_article1_img_background_first {
-    transition: all 0.5s;
-}
-
-#ghibli_animation .article_row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 600px;
-}
-
-
-#ghibli_animation .article_row#ghibli_animation_article2 {
-    scroll-margin-top: 80px;
-}
-
-#ghibli_animation .article_row .article_align {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 8%;
-}
-#ghibli_animation .article_row .article_left {
-    width: 65%;
-}
-
-
-#ghibli_animation .article_row .article_right {
-    position: relative;
-    height: 350px;
-    width: 40%;
-}
-
-#ghibli_animation .article_row .article_background {
-    z-index: -1;
-    right: 0;
-    border-radius: 400px 400px 0% 0%;
-    background: url('/img/main/animation_howl_Background.jpg') center / cover no-repeat;
-    animation: rightToTopBackground 50s ease alternate infinite;
-}
-
-#ghibli_animation .article_right .article_element {
-    width: 110%;
-    position: absolute;
-    bottom: 0;
-    animation: rightToLeft 3s ease alternate infinite;
-}
-
-@keyframes rightToLeft {
-    to {
-        transform: translateX(-30px);
+    .button_big:hover {
+        background-color: rgba(0, 182, 255, 0.2);
     }
 
-    from {
-        transform: translateX(-20px);
-    }
-}
-
-@keyframes rightToTopBackground {
-    to {
-        background-position: 40% 0%
+    .article_title {
+        font-size: 6em;
     }
 
-    from {
-        background-position: 50% 0%
-    }
-}
-
-#ghibli_animation_article3 {
-    scroll-margin-top: 80px;
-}
-
-#ghibli_animation_article3.article_row .article_align {
-    flex-direction: row-reverse;
-}
-
-#ghibli_animation_article3.article_row .article_background {
-    position: relative;
-    z-index: -1;
-    right: 0;
-    border-radius: 50% 50% 0% 0%;
-    background: url('/img/main/aniamtion_totoro_Background1.png') center / cover no-repeat;
-    animation: righToLeftBackground2 50s ease alternate infinite;
-}
-
-#ghibli_animation_article3.article_row .article_background img:nth-child(1) {
-    position: absolute;
-    top: 0%;
-    left: -10%;
-    width: 40%;
-    animation: bottomToTop 2s alternate infinite;
-}
-
-#ghibli_animation_article3.article_row .article_background img:nth-child(2) {
-    position: absolute;
-    right: -20%;
-    top: 40%;
-    width: 70%;
-    animation: bottomToTop 2s -1s alternate infinite;
-}
-
-@keyframes bottomToTop {
-    to {
-        transform: translateY(0px);
+    .article_title_big {
+        font-size: 12em;
     }
 
-    from {
-        transform: translateY(10px);
-    }
-}
-
-@keyframes righToLeftBackground2 {
-    to {
-        background-position: 50% 0%
+    .article_category {
+        font-size: 12em;
     }
 
-    from {
-        background-position: 60% 0%
-    }
-}
+    /*HEADER*/
+    header {
+        width: 100%;
+        height: 72px;
+        /* background-color: blue; */
+        font-size: 6em;
+        font-weight: 700;
+        color:#333;
+        position: fixed;
+        z-index: 10;
+        transition-property: background-color border;
 
-#ghibli_animation_article4.article_row {
-    scroll-margin-top: 80px;
-}
-
-#ghibli_animation_article4.article_row .article_background {
-    position: relative;
-    z-index: -1;
-    right: 0;
-    border-radius: 50% 50% 0% 0%;
-    background: url('/img/main/aniamtion_mononoke_Background.png') center / cover no-repeat;
-    animation: righToLeftBackground2 50s ease alternate infinite;
-}
-
-#ghibli_animation_article4.article_row .article_background img {
-    position: absolute;
-    bottom: 0;
-    left: -10%;
-    width: 100%;
-    animation: rightToLeft2 3s alternate infinite;
-}
-
-@keyframes rightToLeft2 {
-    to {
-        transform: translateX(20px);
     }
 
-    from {
-        transform: translateX(30px);
+    header .inner {
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
     }
-}
 
-/*ghibli_others*/
-#ghibli_others .inner .flip-line{
-    /* background-color: gold; */
-    width: 100%;
-    height: 4000px;
-    padding-bottom:500px;
-    position: relative;
-}
+    .hamburger_menu {
+        width: 24px;
+        height: 18px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        margin-right: 30px;
+        z-index: 10;
+        transition: all 1s;
+    }
 
-#ghibli_others .inner .article_category{
-    padding-top:100px;
-}
+    .hamburger_menu span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #00B6FF;
+        margin-bottom: 6px;
+        position: absolute;
+        transition: transform 0.3s 0s, top 0.3s 0.4s, opacity 0.3s 0.3s;
+    }
 
-.others-flip-all{
-    position: sticky;
-    top:30%;
-    bottom:30%;
-    transform: translateX(1200px);
-    transition: all 0.5s;
-}
-.others-flip-all .others-flip-align{
-    display: flex;
-    column-gap: 30px;
-    align-items: center;
-    width: 1200px;
-    /* background-color: red; */
-    position: absolute;
-}
-.others-flip-all #others-flip-2{
-    left:1200px;
-}
-.others-flip-all .others-flip-align .flip-content{
-    width: 430px;
-    margin-left:30px;
-}
-.others-flip-all .others-flip {
-    background-color: transparent;
-    width: 325px;
-    height: 460px;
-    perspective: 1000px;
-} 
-.others-flip-all .others-flip:hover {
-    cursor: pointer;
-}
-.others-flip-all .flip-inner {
-    position: relative;
-    width: 100%;
-    height: 460px;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-.others-flip-all .flip-inner img{
-    width: 100%;
-    height: 100%;
-}
-.others-flip:hover .flip-inner {
-    transform: rotateY(180deg);
-}
+    .hamburger_menu span:nth-of-type(1) {
+        top: 0px;
+    }
 
-.others-flip-all .flip-inner .flip-front,
-.others-flip-all .flip-inner .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 20px;
-}
-.others-flip-all .flip-inner .flip-back {
-    transform: rotateY(180deg);
-}
+    .hamburger_menu span:nth-of-type(2) {
+        top: 9px;
+    }
 
-/*ghibli_world*/
-#ghibli_world .inner {
-    height: 1100px;
-}
+    .hamburger_menu span:nth-of-type(3) {
+        top: 18px;
+    }
 
-#ghibli_world .full_inner {
-    position: static;
-}
+    .hamburger_menu span.active {
+        transition: top 0.3s 0s, transform 0.3s 0.4s, opacity 0.3s 0.3s;
+    }
 
-#ghibli_world .full_inner#ghibli_world_background {
-    margin-top: 200px;
-    background-image: url('../img/main/ghibli_world.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 614px;
-    display: flex;
+    .hamburger_menu span:nth-of-type(1).active {
+        top: 9px;
+        transform: rotate(45deg);
+    }
 
-}
+    .hamburger_menu span:nth-of-type(2).active {
+        opacity: 0;
+    }
 
-#ghibli_world .full_inner#ghibli_world_background .inner svg {
-    margin: 0 auto;
-}
+    .hamburger_menu span:nth-of-type(3).active {
+        top: 9px;
+        transform: rotate(-45deg);
+    }
 
-#ghibli_world .full_inner#ghibli_world_background .inner h3 {
-    margin-top: 0px;
-    padding-top: 200px;
-    padding-bottom: 150px;
-    color: #FFFFFF;
-}
+    .new-transition {
+        transition: top 0.3s 0s, transform 0.3s 0.4s, opacity 0.3s 0.3s;
+    }
+
+    header .inner #logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .inner #logo a {
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        margin-left: 30px;
+    }
+
+    header .inner #logo a #logo_img {
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+    header .inner #logo a #logo_img #logo_img_blue {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s;
+    }
+
+    header .inner #logo a #logo_img #logo_img_white {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s;
+    }
+
+    header .inner #logo a span {
+        color: #00B6FF;
+    }
+
+    header .inner ul #language_select #language-english {
+        color: #333;
+    }
+
+    header .inner ul #language_select #language-english:hover {
+        color: #00B6FF;
+    }
+
+    #category{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top:0;
+        right:0;
+        width: 0%;
+        height: 100vh;
+        background-color: #f3fbff;
+        cursor:pointer;
+        transition: all ease-out 0.5s;
+    }
+    #category.showCategory{
+        width: 36%;
+    }
+
+    #category .first_category{
+        position: relative;
+        top:30%;
+        left:60px;
+        display: flex;
+        flex-direction: column;
+        height: 26px;
+        line-height: 26px;
+        margin-bottom:20px;
+        position: relative;
+    }
+    #category .first_category:hover::after{
+        width: 100%;
+    }
+    #category .first_category::after{
+        content: "";
+        position: absolute;
+        bottom:-3px;
+        width: 0%;
+        height: 2px;
+        background-color: #00B6FF;
+        transition: all 0.3s;
+    }
+
+    .material-icons{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    /* #category a{
+        display: block;
+        height: 26px;
+        margin-top:10px;
+    } */
+
+    header .first_category > span{
+        display: flex;
+        align-content: center;
+        gap:4px;
+        line-height: 26px;
+    }
+
+    .second_category{
+        display: none;
+    }
+    /*MAIN SECTION*/
+    body {
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    #main_section {
+        height: 6500px;
+    }
+
+    #main_section p {
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    section .full_inner {
+        position: sticky;
+        top: 0px;
+        /* background-color: pink; */
+        width: 100vw;
+        height: 100vh;
+    }
+
+    section .full_inner #img_box {
+        position: absolute;
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../img/main/howl_background.png');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        animation: howl_background_move 200s alternate infinite;
+        background-position: 100% 50%;
+        transition: all 1s;
+    }
+
+    section .full_inner #img_box #howl {
+        position: absolute;
+        left: -25%;
+        bottom: 0%;
+        width: 150%;
+        animation: howl_move 1.5s alternate infinite;
+        transition: all 1s;
+    }
 
 
-#ghibli_world .inner_article {
-    position: relative;
-}
+    @keyframes howl_move {
+        to {
+            transform: translate(0, 0);
+        }
 
-.ghibli_world_tour:nth-child(1) {
-    width: 40%;
-    /* background-color: red; */
-    position: absolute;
-    top: 250px;
-    left: 5%;
-    
-}
+        from {
+            transform: translate(5px, 0px);
+        }
+    }
 
-.ghibli_world_tour:nth-child(2) {
-    width: 40%;
-    /* background-color: red; */
-    position: absolute;
-    top: 350px;
-    right: 5%;
-    
-}
+    @keyframes howl_background_move {
+        to {
+            background-position: 0% 50%;
+        }
 
-.ghibli_world_tour .material-icons {
-    color: #00B6FF;
-    transform: translateY(4px);
-}
+        from {
+            background-color: 50% 50%;
+        }
+    }
 
-.ghibli_world_tour button {
-    margin: 30px auto;
-}
+    section .full_inner #studioGhibli_write {
+        position: absolute;
+        width: 600px;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.5s;
+        opacity: 1;
+    }
 
-.ghibli_world_tour .ghibli_world_tour_img_1 {
-    width: 100%;
-    height: 350px;
-    background: url('../img/main/ghibli_world_tour_1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 0 20px 20px;
-}
+    section .full_inner #scroll_info {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #00B6FF;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        color: #00B6FF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 4em;
+        row-gap: 4px;
+        opacity: 0;
+        transition: all 0.5s;
+    }
 
-.ghibli_world_tour .ghibli_world_tour_img_2 {
-    width: 100%;
-    height: 350px;
-    background: url('../img/main/ghibli_world_tour_2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 0 20px 20px;
-}
+    section .full_inner #scroll_info span {
+        color: #00B6FF;
+    }
 
-/*ghibli_notice*/
-#ghibli_notice {
-    position: relative;
-}
+    #main_section .full_inner #change_img_box {
+        opacity: 0;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        transition: opacity 0.5s;
+    }
 
-#ghibli_notice .inner {
-    overflow: hidden;
-    /* background-color: yellow; */
-    padding-bottom: 100px;
-}
+    #main_section .full_inner #change_img_text {
+        font-size: 30px;
+        font-weight: 800;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition-delay: 0.5s;
+        transition: all 0.5s;
+    }
 
-#ghibli_notice svg {
-    margin-bottom: 300px;
-}
+    /*Introduce Ghibli*/
+    #introduce_ghibli .inner {
+        height: 1000px;
+        /* background-color: #ffffff; */
+        /* background-color: BLUE; */
+    }
 
-#ghibli_notice .ghibli_notice_background {
-    position: absolute;
-    bottom: -150px;
-    z-index: -1;
-    width: 100vw;
-    height: 760px;
-    transform: translateY(-100px);
-    background-color: rgba(0, 182, 255, 0.1);
-}
+    #introduce_ghibli .inner img {
+        width: 60%;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: RED; */
+    }
 
-#notice_article {
-    position: relative;
-    /* background-color: red; */
-    width: 3600px;
-    height: 560px;
-    display: flex;
-}
+    #introduce_ghibli .inner .arrow_down {
+        position: absolute;
+        bottom: 200px;
+        left: 50%;
+    }
 
-#notice_article .notice {
-    /* position:absolute; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1200px;
-    height: 560px;
-}
+    /*About Ghibli*/
+    #about_ghibli {
+        background-color: rgba(0, 182, 255, 0.1);
+        width: 100vw;
+    }
+
+    #about_ghibli .inner {
+        height: 1200px;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        row-gap: 3%;
+        justify-content: center;
+        align-content: space-evenly;
+
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align .article_content {
+        width: 100%;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_korean_name {
+        font-size: 12em;
+        font-weight: 800;
+        padding-top: 20px;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_english_name {
+        font-size: 9em;
+        font-weight: 800;
+        padding-top: 4px;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article1,
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 {
+        width: 45%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 70px 50px;
+
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul {
+        padding-left: 4%;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article2 ul li {
+        list-style-type: disc;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3 {
+        width: 45%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 70px 50px;
+    }
+
+    #about_ghibli .inner #about_ghibli_article_align #about_ghibli_article3 #about_ghibli_article3_btn {
+        margin-top: 50px;
+    }
+
+    /*Ghibli Animation*/
+
+    #ghibli_animation .inner {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        column-gap: 3%;
+    }
+
+    #ghibli_animation .inner #article_area {
+        width: 90%
+    }
+
+    #ghibli_animation .inner .article_category,
+    #ghibli_animation .inner .arrow_down {
+        width: 100%;
+    }
+
+    #ghibli_animation .inner #pagination_area {
+        width: 2%;
+    }
+
+    #ghibli_animation .inner #pagination_area #pagination {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        width: 20px;
+        row-gap: 15px;
+        /* background-color: red; */
+        top: 45%;
+        transition: all 0.5s;
+    }
+
+    #ghibli_animation .inner #pagination_area #pagination a {
+        display: block;
+        width: 100%;
+        height: 20px;
+        border-radius: 24px;
+        background-color: rgba(0, 182, 255, 0.2);
+    }
+
+    #ghibli_animation .inner #pagination_area #pagination a.active {
+        background-color: #00B6FF;
+    }
+
+    #ghibli_animation #ghibli_animation_article1 {
+        text-align: center;
+        position: relative;
+        height: 700px;
+        scroll-margin-top: 80px;
+        box-sizing: content-box;
+        padding-bottom: 200px;
+    }
+
+    #ghibli_animation #ghibli_animation_article1 button {
+        margin-top: 36px;
+    }
+
+    #ghibli_animation img {
+        width: 100%;
+    }
+
+    #ghibli_animation #ghibli_animation_article1_all {
+        /* background-color: pink; */
+        position: absolute;
+        bottom: 106px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        margin: 0;
+        transition: all 0.5s;
+    }
+
+    #ghibli_animation #ghibli_animation_article1_img_background {
+        position: absolute;
+        bottom: 110px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 25%;
+        border-radius: 500px;
+        overflow: hidden;
+        z-index: -1;
+        background-image: url('../img/main/aniamtion_SpiritedAway_Background2.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #ghibli_animation #ghibli_animation_article1_haku {
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    #ghibli_animation #ghibli_animation_article1_haku img:nth-child(1) {
+        position: absolute;
+        width: 45%;
+        bottom: 110px;
+        left: 15%;
+        z-index: 1;
+        animation: rightToLeft 3s ease alternate infinite;
+    }
+
+    #ghibli_animation #ghibli_animation_article1_haku img:nth-child(2) {
+        position: absolute;
+        width: 42%;
+        bottom: 20%;
+        right: 10%;
+        z-index: 1;
+        animation: haku 3s ease alternate infinite;
+    }
 
 
-#ghibli_notice #notice_article .notice_poster {
-    width: 400px;
-    border-radius: 10px;
-    
-    transform: translateY(-80px);
-}
+    @keyframes haku {
+        to {
+            transform: translateY(-20px);
+        }
 
-#ghibli_notice #notice_article .notice_poster img {
-    width: 100%;
-}
+        from {
+            left: translateY(0px);
+        }
+    }
 
-#ghibli_notice .slide_button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
+    #ghibli_animation #ghibli_animation_article1_img_background_first {
+        transition: all 0.5s;
+    }
 
-#ghibli_notice button#prev {
-    margin-right: 60px;
-}
+    #ghibli_animation .article_row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 600px;
+    }
 
-#ghibli_notice button#prev,
-#ghibli_notice button#next {
-    width: 80px;
-    height: 80px;
-    background-color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    outline: none;
-    transition: all 0.3s;
-    cursor: pointer;
-}
 
-#ghibli_notice button#prev:hover,
-#ghibli_notice button#next:hover {
-    border: 2px solid #00B6FF;
-}
+    #ghibli_animation .article_row#ghibli_animation_article2 {
+        scroll-margin-top: 80px;
+    }
 
-#ghibli_notice button span {
-    color: #00B6FF;
-    font-size: 3em;
-    transform: translateY(2px);
-}
+    #ghibli_animation .article_row .article_align {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 8%;
+    }
 
-#ghibli_notice button#prev span {
-    transform: translate(6px, 2px);
-}
+    #ghibli_animation .article_row .article_left {
+        width: 65%;
+    }
 
-/*footer*/
-footer {
-    margin-top:50px;
-    height: 300px;
-}
 
-footer .inner {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+    #ghibli_animation .article_row .article_right {
+        position: relative;
+        height: 300px;
+        width: 40%;
+    }
 
-footer .inner #description {
-    flex-grow: 1;
-    font-size: 4em;
-    color: #00B6FF;
-    font-weight: 700;
-    line-height: 160%;
-}
+    #ghibli_animation .article_row .article_background {
+        z-index: -1;
+        right: 0;
+        border-radius: 400px 400px 0% 0%;
+        background: url('/img/main/animation_howl_Background.jpg') center / cover no-repeat;
+        animation: rightToTopBackground 50s ease alternate infinite;
+    }
 
-footer .inner #ghibli_site {
-    font-size: 4em;
-    color: #333333;
-    font-weight: 700;
-}
+    #ghibli_animation .article_right .article_element {
+        width: 110%;
+        position: absolute;
+        bottom: 0;
+        animation: rightToLeft 3s ease alternate infinite;
+    }
 
-footer .inner div {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    overflow: hidden;
-}
+    @keyframes rightToLeft {
+        to {
+            transform: translateX(-30px);
+        }
 
-footer .inner div img {
-    width: 100%;
-}
+        from {
+            transform: translateX(-20px);
+        }
+    }
+
+    @keyframes rightToTopBackground {
+        to {
+            background-position: 40% 0%
+        }
+
+        from {
+            background-position: 50% 0%
+        }
+    }
+
+    #ghibli_animation_article3 {
+        scroll-margin-top: 80px;
+    }
+
+    #ghibli_animation_article3.article_row .article_align {
+        flex-direction: row-reverse;
+    }
+
+    #ghibli_animation_article3.article_row .article_background {
+        position: relative;
+        z-index: -1;
+        right: 0;
+        border-radius: 400px 400px 0% 0%;
+        background: url('/img/main/aniamtion_totoro_Background1.png') center / cover no-repeat;
+        animation: righToLeftBackground2 50s ease alternate infinite;
+    }
+
+    #ghibli_animation_article3.article_row .article_background img:nth-child(1) {
+        position: absolute;
+        top: 0%;
+        left: -10%;
+        width: 40%;
+        animation: bottomToTop 2s alternate infinite;
+    }
+
+    #ghibli_animation_article3.article_row .article_background img:nth-child(2) {
+        position: absolute;
+        right: -20%;
+        top: 40%;
+        width: 70%;
+        animation: bottomToTop 2s -1s alternate infinite;
+    }
+
+    @keyframes bottomToTop {
+        to {
+            transform: translateY(0px);
+        }
+
+        from {
+            transform: translateY(10px);
+        }
+    }
+
+    @keyframes righToLeftBackground2 {
+        to {
+            background-position: 50% 0%
+        }
+
+        from {
+            background-position: 60% 0%
+        }
+    }
+
+    #ghibli_animation_article4.article_row {
+        scroll-margin-top: 80px;
+    }
+
+    #ghibli_animation_article4.article_row .article_background {
+        position: relative;
+        z-index: -1;
+        right: 0;
+        border-radius: 400px 400px 0% 0%;
+        background: url('/img/main/aniamtion_mononoke_Background.png') center / cover no-repeat;
+        animation: righToLeftBackground2 50s ease alternate infinite;
+    }
+
+    #ghibli_animation_article4.article_row .article_background img {
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 100%;
+        animation: rightToLeft2 3s alternate infinite;
+    }
+
+    @keyframes rightToLeft2 {
+        to {
+            transform: translateX(20px);
+        }
+
+        from {
+            transform: translateX(30px);
+        }
+    }
+
+    /*ghibli_others*/
+    #ghibli_others .inner .flip-line {
+        /* background-color: gold; */
+        width: 100%;
+        height: 4000px;
+        padding-bottom: 500px;
+        position: relative;
+    }
+
+    #ghibli_others .inner .article_category {
+        padding-top: 100px;
+    }
+
+    .others-flip-all {
+        position: sticky;
+        top: 30%;
+        bottom: 30%;
+        transform: translateX(1200px);
+        transition: all 0.5s;
+        width: 100%;
+    }
+
+    .others-flip-all .others-flip-align {
+        display: flex;
+        column-gap: 30px;
+        width: 200%;
+        background-color: gold;
+        position: absolute;
+    }
+    .others-flip-all #others-flip-1,
+    .others-flip-all #others-flip-2 {
+        width: 100%;
+        
+    }
+    .others-flip-all #others-flip-2 {
+        left: 1000px;
+        background-color: pink;
+    }
+
+    .others-flip-all .others-flip-align .flip-content {
+        width: 430px;
+        margin-left: 30px;
+    }
+    .others-flip-all .others-flip-align .flip-content .article_content{
+        width: 90%;
+    }
+    .others-flip-all .others-flip-align .flip-content .button_big{
+       margin-top:20px;
+    }
+    .others-flip-all .others-flip {
+        width: 20%;
+        height: auto;
+        perspective: 1000px;
+    }
+
+    .others-flip-all .others-flip:hover {
+        cursor: pointer;
+    }
+
+    .others-flip-all .flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .others-flip-all .flip-inner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .others-flip:hover .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .others-flip-all .flip-inner .flip-front,
+    .others-flip-all .flip-inner .flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .others-flip-all .flip-inner .flip-back {
+        transform: rotateY(180deg);
+    }
+
+    /*ghibli_world*/
+    #ghibli_world .inner {
+        height: 1100px;
+    }
+
+    #ghibli_world .full_inner {
+        position: static;
+    }
+
+    #ghibli_world .full_inner#ghibli_world_background {
+        margin-top: 200px;
+        background-image: url('../img/main/ghibli_world.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 614px;
+        display: flex;
+
+    }
+
+    #ghibli_world .full_inner#ghibli_world_background .inner svg {
+        margin: 0 auto;
+    }
+
+    #ghibli_world .full_inner#ghibli_world_background .inner h3 {
+        margin-top: 0px;
+        padding-top: 200px;
+        padding-bottom: 150px;
+        color: #FFFFFF;
+    }
+
+
+    #ghibli_world .inner_article {
+        position: relative;
+    }
+
+    .ghibli_world_tour:nth-child(1) {
+        width: 40%;
+        /* background-color: red; */
+        position: absolute;
+        top: 250px;
+        left: 5%;
+
+    }
+
+    .ghibli_world_tour:nth-child(2) {
+        width: 40%;
+        /* background-color: red; */
+        position: absolute;
+        top: 350px;
+        right: 5%;
+
+    }
+
+    .ghibli_world_tour button {
+        margin: 30px auto;
+    }
+
+    .ghibli_world_tour .ghibli_world_tour_img_1 {
+        width: 100%;
+        height: 350px;
+        background: url('../img/main/ghibli_world_tour_1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .ghibli_world_tour .ghibli_world_tour_img_2 {
+        width: 100%;
+        height: 350px;
+        background: url('../img/main/ghibli_world_tour_2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0 0 20px 20px;
+    }
+
+    /*ghibli_notice*/
+    #ghibli_notice {
+        position: relative;
+    }
+
+    #ghibli_notice .inner {
+        overflow: hidden;
+        /* background-color: yellow; */
+        padding-bottom: 100px;
+    }
+
+    #ghibli_notice svg {
+        margin-bottom: 200px;
+    }
+
+    #ghibli_notice .ghibli_notice_background {
+        position: absolute;
+        bottom: -50px;
+        z-index: -1;
+        width: 100vw;
+        height: 600px;
+        transform: translateY(-100px);
+        background-color: rgba(0, 182, 255, 0.1);
+    }
+
+    #notice_article {
+        position: relative;
+        /* background-color: red; */
+        width: 300%;
+        height: 560px;
+        display: flex;
+
+    }
+
+    #notice_article .notice {
+        /* position:absolute; */
+        display: flex;
+        justify-content: center;
+        gap: 10%;
+        align-items: center;
+        width: 100%;
+        height: 560px;
+    }
+
+
+    #ghibli_notice #notice_article .notice_poster {
+        width: 300px;
+        border-radius: 10px;
+        transform: translateY(-80px);
+    }
+
+    #ghibli_notice #notice_article .notice_poster img {
+        width: 100%;
+    }
+
+    #ghibli_notice #notice_article .notice_right {
+        margin-bottom: 70px;
+        width: 40%;
+    }
+
+    #ghibli_notice .slide_button {
+        position: absolute;
+        bottom: 110px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #ghibli_notice button#prev {
+        margin-right: 60px;
+    }
+
+    #ghibli_notice button#prev,
+    #ghibli_notice button#next {
+        width: 80px;
+        height: 80px;
+        background-color: #ffffff;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        outline: none;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    #ghibli_notice button#prev:hover,
+    #ghibli_notice button#next:hover {
+        border: 2px solid #00B6FF;
+    }
+
+    #ghibli_notice button span {
+        color: #00B6FF;
+        font-size: 3em;
+        transform: translateY(6px);
+    }
+
+    #ghibli_notice button#prev span {
+        transform: translate(6px, 6px);
+    }
+
+    /*footer*/
+    footer {
+        margin-top: -50px;
+        height: 300px;
+    }
+
+    footer .inner {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    footer .inner #description {
+        flex-grow: 1;
+        font-size: 4em;
+        color: #00B6FF;
+        font-weight: 700;
+        line-height: 160%;
+        width: 40%;
+    }
+
+    footer .inner #ghibli_site {
+        font-size: 4em;
+        color: #333333;
+        font-weight: 700;
+        text-align: right;
+    }
+
+    footer .inner div {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    footer .inner div img {
+        width: 100%;
+        height: 100%;
+    }
 }
