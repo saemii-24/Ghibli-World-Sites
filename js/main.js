@@ -1,3 +1,10 @@
+/*size reload*/
+// $(function() {
+//     $(window).resize(function() {
+//       location.reload(); 
+//         });
+//     });
+
 /*korean<->english*/
 const english = document.getElementById('language-english');
 const korean = document.getElementById('language-korean');
@@ -57,8 +64,8 @@ $(window).on('scroll', function () {
         });
     } else if (scroll > 1200 && scroll <= 3000) {
         $('#img_box').css({
-            'width': '100vw',
-            'height': '100vh',
+            'width': '100%',
+            'height': '100%',
             'border-radius': '0',
             'backgroundSize': 'cover'
         });
@@ -130,10 +137,35 @@ function imgChange() {
 
 
 /*others scroll slide*/
+// const flipRoute = document.querySelector('.others-flip-all');
+// const flipWidth = document.getElementById('others-flip-1').clientWidth;
+// const halfWidth = flipWidth/2;
+
+// document.addEventListener('scroll', slideLeft);
+// function slideLeft() {
+//     let leftRoute = window.scrollY - 13500;
+//     // console.log(leftRoute);
+//     if (leftRoute < 0) {
+//         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
+//     } else if (leftRoute >= 0 && leftRoute < halfWidth) {
+//         flipRoute.style.transform = 'translateX(0px)';
+//     } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
+//         flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
+//     } else {
+//         flipRoute.style.transform = `translateX(${-flipWidth}px)`;
+//     }
+// }
+
 const flipRoute = document.querySelector('.others-flip-all');
-// const flipRouteTop = window.scrollY + flipRoute.getBoundingClientRect().top;
 const flipWidth = document.getElementById('others-flip-1').clientWidth;
 const halfWidth = flipWidth/2;
+
+let changeHeight = 0;
+if(window.innerWidth>=1200){
+    changeHeight = 13500;
+}else{
+    changeHeight = 12000
+}
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {

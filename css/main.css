@@ -17,6 +17,7 @@
 .button_big{
     padding: 20px 33px;
     font-size: 5em;
+    margin-top:30px;
 }
 .button_big:hover{
     background-color: rgba(0, 182, 255,0.2);
@@ -26,6 +27,7 @@
 }
 .article_content{
     font-size: 4.5em;
+    padding-top:36px;
 }
 .article_title_big{
     font-size: 12em;

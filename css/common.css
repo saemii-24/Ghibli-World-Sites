@@ -10,7 +10,6 @@
     transition: background-color 0.3s;
     cursor: pointer;
     line-height: 150%;
-    margin-top:30px;
 }
 .button_big:hover{
     background-color: rgba(0, 182, 255,0.2);
@@ -21,7 +20,6 @@
 }
 .article_content{
     line-height: 190%;
-    padding-top:36px;
     font-weight: 400;
 }
 .article_title_big{

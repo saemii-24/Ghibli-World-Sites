@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media screen and (min-width:768px) and (max-width:1199px) {
+@media screen and (max-width:767px){
     html {
         font-size: 3px;
         scroll-behavior: smooth;
@@ -24,7 +24,7 @@
 
     .button_big {
         padding: 15px 28px;
-        font-size: 6em;
+        font-size: 5em;
         margin-top:16px;
     }
 
@@ -180,10 +180,10 @@
         height: 100vh;
         background-color: #f3fbff;
         cursor:pointer;
-        transition: all ease-out 0.5s;
+        transition: all ease-out 0.7s;
     }
     #category.showCategory{
-        width: 36%;
+        width: 100%;
     }
 
     #category .first_category{
@@ -389,7 +389,7 @@
     }
 
     #about_ghibli .inner {
-        height: 1200px;
+        height: 1350px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -460,7 +460,9 @@
     #ghibli_animation .inner #article_area {
         width: 90%
     }
-
+    #article_area .article_content{
+        display: none;
+    }
     #ghibli_animation .inner .article_category,
     #ghibli_animation .inner .arrow_down {
         width: 100%;
@@ -468,6 +470,7 @@
 
     #ghibli_animation .inner #pagination_area {
         width: 2%;
+        display: none;
     }
 
     #ghibli_animation .inner #pagination_area #pagination {
@@ -496,7 +499,7 @@
     #ghibli_animation #ghibli_animation_article1 {
         text-align: center;
         position: relative;
-        height: 700px;
+        height: 400px;
         scroll-margin-top: 80px;
         box-sizing: content-box;
         padding-bottom: 200px;
@@ -507,7 +510,7 @@
     }
 
     #ghibli_animation img {
-        width: 100%;
+        width: 120%;
     }
 
     #ghibli_animation #ghibli_animation_article1_all {
@@ -526,7 +529,7 @@
         bottom: 110px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80%;
+        width: 90%;
         height: 25%;
         border-radius: 500px;
         overflow: hidden;
@@ -544,7 +547,7 @@
 
     #ghibli_animation #ghibli_animation_article1_haku img:nth-child(1) {
         position: absolute;
-        width: 45%;
+        width: 60%;
         bottom: 110px;
         left: 15%;
         z-index: 1;
@@ -579,7 +582,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 600px;
+        height: 500px;
     }
 
 
@@ -589,26 +592,30 @@
 
     #ghibli_animation .article_row .article_align {
         display: flex;
+        flex-flow: row;
         justify-content: center;
         align-items: center;
-        column-gap: 8%;
     }
 
     #ghibli_animation .article_row .article_left {
         width: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
     }
 
 
     #ghibli_animation .article_row .article_right {
         position: relative;
         height: 300px;
-        width: 40%;
+        width: 70%;
     }
 
     #ghibli_animation .article_row .article_background {
         z-index: -1;
         right: 0;
-        border-radius: 400px 400px 0% 0%;
+        border-radius: 400px 400px 0px 0px;
         background: url('/img/main/animation_howl_Background.jpg') center / cover no-repeat;
         animation: rightToTopBackground 50s ease alternate infinite;
     }
@@ -646,6 +653,7 @@
 
     #ghibli_animation_article3.article_row .article_align {
         flex-direction: row-reverse;
+        gap:50px;
     }
 
     #ghibli_animation_article3.article_row .article_background {
@@ -726,7 +734,7 @@
 
     /*ghibli_others*/
     #ghibli_others .inner .flip-line {
-        /* background-color: gold; */
+        background-color: gold;
         width: 100%;
         height: 2000px;
         padding-bottom: 400px;
@@ -738,9 +746,7 @@
     }
 
     .others-flip-all {
-        position: sticky;
-        top: 30%;
-        bottom: 30%;
+
         transition: all 0.5s;
         width: 100%;
     }
@@ -853,30 +859,34 @@
 
     #ghibli_world .inner_article {
         position: relative;
+        height: 1450px;
+        margin-top:-50px;
     }
     
     .ghibli_world_tour h3{
         display: flex;
+        
         align-items: center;
         gap:10px;
     }
 
     .ghibli_world_tour:nth-child(1) {
-        width: 42%;
+        width: 90%;
         /* background-color: red; */
         position: absolute;
         top: 250px;
-        left: 5%;
+        left:50%;
+        transform: translateX(-50%);
 
     }
 
     .ghibli_world_tour:nth-child(2) {
-        width: 42%;
+        width: 90%;
         /* background-color: red; */
         position: absolute;
-        top: 350px;
-        right: 5%;
-
+        top: 900px;
+        left:50%;
+        transform: translateX(-50%);
     }
 
     .ghibli_world_tour button {
@@ -890,7 +900,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        border-radius: 0 0 20px 20px;
+        border-radius: 20px;
     }
 
     .ghibli_world_tour .ghibli_world_tour_img_2 {
@@ -900,7 +910,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        border-radius: 0 0 20px 20px;
+        border-radius: 20px;
     }
 
     /*ghibli_notice*/
@@ -924,7 +934,7 @@
         z-index: -1;
         width: 100vw;
         height: 600px;
-        transform: translateY(-100px);
+        transform: translateY(-160px);
         background-color: rgba(0, 182, 255, 0.1);
     }
 
@@ -941,15 +951,15 @@
         /* position:absolute; */
         display: flex;
         justify-content: center;
-        gap: 10%;
+        gap: 40px;
         align-items: center;
-        width: 100%;
+        width: 100vw;
         height: 560px;
     }
 
 
     #ghibli_notice #notice_article .notice_poster {
-        width: 300px;
+        width: 240px;
         border-radius: 10px;
         transform: translateY(-80px);
     }
@@ -959,13 +969,13 @@
     }
 
     #ghibli_notice #notice_article .notice_right {
-        margin-bottom: 70px;
+        margin-bottom: 160px;
         width: 40%;
     }
 
     #ghibli_notice .slide_button {
         position: absolute;
-        bottom: 110px;
+        bottom: 160px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1002,33 +1012,30 @@
     }
 
     /*footer*/
-    footer {
-        margin-top: -50px;
-        height: 300px;
-    }
+       
 
     footer .inner {
+        margin-top:-60px;
         display: flex;
-        align-items: center;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-self: center;
         gap: 16px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-bottom: 40px;
     }
 
     footer .inner #description {
-        flex-grow: 1;
+        margin: 0 auto;
         font-size: 4em;
         color: #00B6FF;
         font-weight: 700;
-        line-height: 160%;
-        width: 40%;
+        width: 100%;
+        height: 50px;
+        text-align: center;
     }
 
     footer .inner #ghibli_site {
-        font-size: 4em;
-        color: #333333;
-        font-weight: 700;
-        text-align: right;
+        display: none;
     }
 
     footer .inner div {
