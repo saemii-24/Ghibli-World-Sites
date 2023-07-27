@@ -499,7 +499,11 @@
         height: 700px;
         scroll-margin-top: 80px;
         box-sizing: content-box;
-        padding-bottom: 200px;
+        padding-bottom: 100px;
+    }
+    #ghibli_animation #ghibli_animation_article1 .article_content{
+        width: 80%;
+        margin: 0 auto;
     }
 
     #ghibli_animation #ghibli_animation_article1 button {

@@ -162,14 +162,14 @@ const halfWidth = flipWidth/2;
 
 let changeHeight = 0;
 if(window.innerWidth>=1200){
-    changeHeight = 13500;
+    changeHeight = 13000;
 }else{
     changeHeight = 12000
 }
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
-    let leftRoute = window.scrollY - 13500;
+    let leftRoute = window.scrollY - 13000;
     // console.log(leftRoute);
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
@@ -197,7 +197,7 @@ function next() {
     });
 }
 
-setInterval(next, 5000);
+// setInterval(next, 5000);
 
 $('#prev').click(function () {
     prev();
