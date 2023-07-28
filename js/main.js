@@ -21,7 +21,7 @@ english.addEventListener('click', () => {
 
 /*MAIN SECTION*/
 $(window).on('scroll', function () {
-    var scroll = $(window).scrollTop();
+    let scroll = $(window).scrollTop();
     if (scroll >= 0 && scroll <= 400) {
         $('#img_box').css({
             'width': 500 + (scroll * 1.2),
@@ -53,9 +53,9 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
         });
-        $('.hamburger_menu span').css({
-            'background-color': '#00B6FF'
-        });
+        // $('.hamburger_menu span').css({
+        //     'background-color': '#00B6FF'
+        // });
         $('#logo_img').attr(
             'src', 'img/main/ghibli_logo_blue.png'
         );
@@ -80,9 +80,9 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#ffffff'
         });
-        $('.hamburger_menu span').css({
-            'background-color': '#ffffff'
-        });
+        // $('.hamburger_menu span').css({
+        //     'background-color': '#ffffff'
+        // });
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
             'opacity': '0'
         });
@@ -93,7 +93,7 @@ $(window).on('scroll', function () {
         });
         $('#change_img_text').css({
             'opacity': '1',
-            'fontSize': 30 + scroll / 500 + 'px'
+            'fontSize': 20 + scroll / 500 + 'px'
         });
         $('#scroll_info,#logo_img_blue').css({
             'opacity': '1',
@@ -108,6 +108,21 @@ $(window).on('scroll', function () {
             'background-color': '#00B6FF'
         });
         $('header').addClass('header_blur');
+    }
+});
+
+/*MAIN SECTION-middle-small*/
+$(window).on('scroll', function () {
+    let scrollMiddle = $(window).scrollTop();
+    let mainHeight = $("#img_box-middle").width();
+    console.log(mainHeight);
+    if (scrollMiddle >= 0 && scrollMiddle <= mainHeight) {
+        // $('#logo_img').attr(
+        //     'src', 'img/main/ghibli_logo_blue.png'
+        // );
+        // $('#logo_img_blue').css({
+        //     'opacity': '1'
+        // });
     }
 });
 
@@ -160,16 +175,9 @@ const flipRoute = document.querySelector('.others-flip-all');
 const flipWidth = document.getElementById('others-flip-1').clientWidth;
 const halfWidth = flipWidth/2;
 
-let changeHeight = 0;
-if(window.innerWidth>=1200){
-    changeHeight = 13000;
-}else{
-    changeHeight = 12000
-}
-
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
-    let leftRoute = window.scrollY - 13000;
+    let leftRoute = window.scrollY - 13500;
     // console.log(leftRoute);
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
@@ -211,7 +219,6 @@ $('#next').click(function () {
 /*ghibli_animation / toggle*/
 const aniArticles = document.querySelectorAll('.ghibli_animation_article');
 const paginations = document.querySelectorAll('#pagination a');
-console.log(paginations);
 document.addEventListener('scroll', paginationColor);
 
 function paginationColor() {
@@ -277,7 +284,7 @@ let observer2 = new IntersectionObserver((entries) => {
  /*hamburger menu*/
 const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
 const hamburgerMenu = document.getElementById('hamburger_menu_click');
-const category = document.getElementById("category");
+const category = document.getElementById("category_wrap");
 hamburgerMenu.addEventListener('click', hamburgerMenuClick);
 
 function hamburgerMenuClick() {
@@ -286,3 +293,4 @@ function hamburgerMenuClick() {
     });
     category.classList.toggle('showCategory');
 } 
+

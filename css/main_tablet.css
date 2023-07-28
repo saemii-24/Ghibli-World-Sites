@@ -5,7 +5,15 @@
         font-size: 3px;
         scroll-behavior: smooth;
     }
-
+    body {
+        position: relative;
+        overflow-x: hidden;
+    }
+    .wrap{
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    
     .inner {
         width: 100%;
         height: 100%;
@@ -55,7 +63,7 @@
         position: fixed;
         z-index: 10;
         transition-property: background-color border;
-
+        box-sizing: content-box;
     }
 
     header .inner {
@@ -135,11 +143,15 @@
         margin-left: 30px;
     }
 
+    
     header .inner #logo a #logo_img {
         width: 60px;
         height: 60px;
         position: relative;
+        border-radius: 60px;
+        overflow: hidden;
     }
+
 
     header .inner #logo a #logo_img #logo_img_blue {
         opacity: 1;
@@ -147,6 +159,7 @@
         top: 0;
         left: 0;
         transition: all 1s;
+        width: 100%;
     }
 
     header .inner #logo a #logo_img #logo_img_white {
@@ -155,59 +168,71 @@
         top: 0;
         left: 0;
         transition: all 1s;
+        width: 100%;
     }
 
     header .inner #logo a span {
         color: #00B6FF;
     }
 
-    header .inner ul #language_select #language-english {
-        color: #333;
+    header #category{
+        display: none;
     }
+    
 
-    header .inner ul #language_select #language-english:hover {
-        color: #00B6FF;
-    }
-
-    #category{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    header #category_wrap{
+        width: 100vw;
+        height: 0vh;
+        
+        background-color: #f3fbff;
         position: absolute;
         top:0;
-        right:0;
-        width: 0%;
-        height: 100vh;
-        background-color: #f3fbff;
-        cursor:pointer;
-        transition: all ease-out 0.5s;
+        padding: 0vh 5vw;
+        display: block;
+        transition: all 0.6s ease-out;
+        overflow: hidden;
     }
-    #category.showCategory{
-        width: 36%;
+    header #category_wrap.showCategory{
+        height: 100vh;
+        padding: 10vh 5vw;
+        visibility: visible;
+    }
+    header #category-middle {
+        display: flex;
+        flex-flow: column;
+        gap:50px;
+        margin-left:70px;
+        line-height: 26px;
+        position: relative;
+        
     }
 
-    #category .first_category{
+    header #category-middle>.first_category-middle{
+        color:#00B6FF;
+        font-size: 18px;
         position: relative;
-        top:30%;
-        left:60px;
+    }
+
+    header #category-middle .second_category-middle{
+        /* display: none; */
+        margin-top:20px;
+        line-height: 20px;
+    }
+
+    header #category-middle .second_category-middle li{
+        line-height: 30px;
+        font-size: 0.9em;
+    }
+    header #category-middle .second_category-middle li a:hover{
+        color: #00B6FF;
+    }
+    header #language_select-middle span{
         display: flex;
-        flex-direction: column;
-        height: 26px;
-        line-height: 26px;
-        margin-bottom:20px;
-        position: relative;
+        color: #00B6FF;
     }
-    #category .first_category:hover::after{
-        width: 100%;
-    }
-    #category .first_category::after{
-        content: "";
-        position: absolute;
-        bottom:-3px;
-        width: 0%;
-        height: 2px;
-        background-color: #00B6FF;
-        transition: all 0.3s;
+    header #language_select-middle #language-english-middle:hover{
+        color:#00B6FF;
+        cursor:pointer;
     }
 
     .material-icons{
@@ -216,27 +241,16 @@
         color:#00B6FF;
     }
 
-    /* #category a{
-        display: block;
-        height: 26px;
-        margin-top:10px;
-    } */
-
-    header .first_category > span{
+    header .first_category-middle > span{
         display: flex;
         align-content: center;
-        gap:4px;
+        gap:6px;
         line-height: 26px;
     }
 
-    .second_category{
-        display: none;
-    }
+
     /*MAIN SECTION*/
-    body {
-        position: relative;
-        overflow-x: hidden;
-    }
+    
 
     #main_section {
         height: 6500px;
@@ -342,8 +356,8 @@
     #main_section .full_inner #change_img_box {
         opacity: 0;
         position: absolute;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         background-color: white;
         transition: opacity 0.5s;
     }
@@ -385,7 +399,8 @@
     /*About Ghibli*/
     #about_ghibli {
         background-color: rgba(0, 182, 255, 0.1);
-        width: 100vw;
+        padding-top:30px;
+        padding-bottom:30px;
     }
 
     #about_ghibli .inner {
@@ -455,10 +470,11 @@
         flex-flow: row wrap;
         justify-content: space-evenly;
         column-gap: 3%;
+        overflow: hidden;
     }
 
     #ghibli_animation .inner #article_area {
-        width: 90%
+        width: 90%;
     }
 
     #ghibli_animation .inner .article_category,
@@ -586,9 +602,9 @@
         height: 600px;
     }
 
-
     #ghibli_animation .article_row#ghibli_animation_article2 {
         scroll-margin-top: 80px;
+
     }
 
     #ghibli_animation .article_row .article_align {
@@ -613,7 +629,7 @@
         z-index: -1;
         right: 0;
         border-radius: 400px 400px 0% 0%;
-        background: url('/img/main/animation_howl_Background.jpg') center / cover no-repeat;
+        background: url('../img/main/animation_howl_Background.jpg') center / cover no-repeat;
         animation: rightToTopBackground 50s ease alternate infinite;
     }
 
@@ -657,7 +673,7 @@
         z-index: -1;
         right: 0;
         border-radius: 400px 400px 0% 0%;
-        background: url('/img/main/aniamtion_totoro_Background1.png') center / cover no-repeat;
+        background: url('../img/main/aniamtion_totoro_Background1.png') center / cover no-repeat;
         animation: righToLeftBackground2 50s ease alternate infinite;
     }
 
@@ -706,7 +722,7 @@
         z-index: -1;
         right: 0;
         border-radius: 400px 400px 0% 0%;
-        background: url('/img/main/aniamtion_mononoke_Background.png') center / cover no-repeat;
+        background: url('../img/main/aniamtion_mononoke_Background.png') center / cover no-repeat;
         animation: righToLeftBackground2 50s ease alternate infinite;
     }
 
@@ -728,59 +744,46 @@
         }
     }
 
+    #article_area-middle{
+        display: none;
+    }
+
     /*ghibli_others*/
+
+    #ghibli_others .inner{
+            width: 100vw;
+            /* background-color: gold; */
+    }
+    #ghibli_others .inner .flip-line{
+        display: none;
+    }
     #ghibli_others .inner .flip-line {
         /* background-color: gold; */
         width: 100%;
-        height: 2000px;
-        padding-bottom: 400px;
+        height: 3000px;
+        padding-bottom: 500px;
         position: relative;
-    }
-
-    #ghibli_others .inner .article_category {
-        padding-top: 100px;
-    }
-
-    .others-flip-all {
-        position: sticky;
-        top: 30%;
-        bottom: 30%;
-        transition: all 0.5s;
-        width: 100%;
     }
 
     .others-flip-all .others-flip-align {
         display: flex;
-        width: 200%;
-        /* background-color: gold; */
-        position: absolute;
+        column-gap: 50px;
+        align-items: center;
         justify-content: center;
-        gap:10px;
-
-    }
-    .others-flip-all #others-flip-1,
-    .others-flip-all #others-flip-2 {
         width: 100%;
-        
-    }
-    .others-flip-all #others-flip-2 {
-        left: 100%;
-        /* background-color: pink; */
+        margin-bottom:200px;
     }
 
+    .flip-line-middle{
+        display: flex;
+        justify-content: center;
+    }
     .others-flip-all .others-flip-align .flip-content {
-        width: 430px;
-        margin-left: 30px;
+        width: 50%;
     }
-    .others-flip-all .others-flip-align .flip-content .article_content{
-        width: 90%;
-    }
-    .others-flip-all .others-flip-align .flip-content .button_big{
-       margin-top:20px;
-    }
+
     .others-flip-all .others-flip {
-        width: 30%;
-        height: auto;
+        width: 280px;
         perspective: 1000px;
     }
 
@@ -791,14 +794,18 @@
     .others-flip-all .flip-inner {
         position: relative;
         width: 100%;
-        height: 100%;
+        height: 400px;
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
     }
+    .others-flip:nth-child(2n){
+        display: none;
+    }
 
     .others-flip-all .flip-inner img {
-        width: 110%;
+        width: 100%;
+        height: 100%;
     }
 
     .others-flip:hover .flip-inner {
@@ -819,9 +826,7 @@
     .others-flip-all .flip-inner .flip-back {
         transform: rotateY(180deg);
     }
-    .others-flip-align .others-flip:nth-of-type(2){
-        display: none;
-    }
+
 
     /*ghibli_world*/
     #ghibli_world .inner {
@@ -833,7 +838,7 @@
     }
 
     #ghibli_world .full_inner#ghibli_world_background {
-        margin-top: 200px;
+        margin-top: 100px;
         background-image: url('../img/main/ghibli_world.jpg');
         background-position: center;
         background-size: cover;
