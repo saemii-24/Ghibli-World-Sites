@@ -19,8 +19,44 @@ english.addEventListener('click', () => {
     }
 });
 
+/*hover category*/
+const firstCategory = document.querySelectorAll('#category_wrap .first_category-middle');
+const secondCategory =  document.querySelectorAll('#category_wrap .second_category-middle');
+const plus = document.querySelectorAll('.plus');
+
+
+for(let i=0; i<firstCategory.length; i++){
+    firstCategory[i].addEventListener('click',function(event){
+        for(let j=0; j<firstCategory.length; j++){
+        if(firstCategory[j]===event.target){
+            secondCategory[j].classList.add('showCategory');
+            plus[j].classList.add('showCategory');
+        }else{
+            secondCategory[j].classList.remove('showCategory');
+            plus[j].classList.remove('showCategory');
+        }
+        }
+    });
+};
+
+
 /*MAIN SECTION*/
-$(window).on('scroll', function () {
+
+
+
+function headerJs(){
+    let windowSize = window.innerWidth;
+    if(windowSize>1200){
+       window.addEventListener('scroll', headerChangeBig);
+    }else{
+        window.addEventListener('scroll',headerChangeMiddle);
+    }
+}
+headerJs();
+window.addEventListener('resize',headerJs);
+
+
+function headerChangeBig() {
     let scroll = $(window).scrollTop();
     if (scroll >= 0 && scroll <= 400) {
         $('#img_box').css({
@@ -109,22 +145,25 @@ $(window).on('scroll', function () {
         });
         $('header').addClass('header_blur');
     }
-});
+};
 
-/*MAIN SECTION-middle-small*/
-$(window).on('scroll', function () {
-    let scrollMiddle = $(window).scrollTop();
-    let mainHeight = $("#img_box-middle").width();
-    console.log(mainHeight);
-    if (scrollMiddle >= 0 && scrollMiddle <= mainHeight) {
-        // $('#logo_img').attr(
-        //     'src', 'img/main/ghibli_logo_blue.png'
-        // );
-        // $('#logo_img_blue').css({
-        //     'opacity': '1'
-        // });
+
+function headerChangeMiddle(){
+    let scrollMiddle = window.scrollY;
+    let curHeight = window.innerHeight;
+    const headerMiddle = document.querySelectorAll('.header-middle');
+
+    if(scrollMiddle>curHeight){
+        headerMiddle.forEach(function(header){
+            header.classList.add('change');
+        });
+    }else{
+        headerMiddle.forEach(function(header){
+            header.classList.remove('change');
+        });
     }
-});
+}
+
 
 /*ghibli_animation*/
 window.addEventListener('scroll', imgChange);
@@ -152,28 +191,7 @@ function imgChange() {
 
 
 /*others scroll slide*/
-// const flipRoute = document.querySelector('.others-flip-all');
-// const flipWidth = document.getElementById('others-flip-1').clientWidth;
-// const halfWidth = flipWidth/2;
-
-// document.addEventListener('scroll', slideLeft);
-// function slideLeft() {
-//     let leftRoute = window.scrollY - 13500;
-//     // console.log(leftRoute);
-//     if (leftRoute < 0) {
-//         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-//     } else if (leftRoute >= 0 && leftRoute < halfWidth) {
-//         flipRoute.style.transform = 'translateX(0px)';
-//     } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
-//         flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
-//     } else {
-//         flipRoute.style.transform = `translateX(${-flipWidth}px)`;
-//     }
-// }
-
 const flipRoute = document.querySelector('.others-flip-all');
-const flipWidth = document.getElementById('others-flip-1').clientWidth;
-const halfWidth = flipWidth/2;
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
@@ -181,17 +199,19 @@ function slideLeft() {
     // console.log(leftRoute);
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-    } else if (leftRoute >= 0 && leftRoute < halfWidth) {
+    } else if (leftRoute >= 0 && leftRoute < 600) {
         flipRoute.style.transform = 'translateX(0px)';
-    } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
-        flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
+    } else if (leftRoute >= 600 && leftRoute < 1800) {
+        flipRoute.style.transform = 'translateX(' + (-leftRoute + 600) + 'px)';
     } else {
-        flipRoute.style.transform = `translateX(${-flipWidth}px)`;
+        flipRoute.style.transform = 'translateX(-1200px)';
     }
 }
 
+
+
 /*notice_slider*/
-    let slideWidth = $('.notice').width();
+    let slideWidth = $('.notice').outerWidth(true);
 
 function prev() {
     $('#notice_article .notice:last').prependTo('#notice_article');
@@ -205,7 +225,7 @@ function next() {
     });
 }
 
-// setInterval(next, 5000);
+setInterval(next, 5000);
 
 $('#prev').click(function () {
     prev();
@@ -239,8 +259,9 @@ function paginationColor() {
 
 
 /*article_animation*/
+/*article_animation*/
 //toTop
-  let observer = new IntersectionObserver((entries) => {
+let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('back-to-position');
@@ -254,43 +275,46 @@ function paginationColor() {
   goToTop.forEach(toTop => observer.observe(toTop));
 
 //toRight
+  const goToRight = document.querySelectorAll('.to-right');
+  goToRight.forEach(toRight => observer.observe(toRight));
+
+  //toLeft
+  const goToLeft = document.querySelectorAll('.to-left');
+  goToLeft.forEach(toLeft => observer.observe(toLeft));
+
+//color-change
 let observer2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('back-to-position');
+        entry.target.classList.add('colorChange');
       }else{
-        entry.target.classList.remove('back-to-position');
+        entry.target.classList.remove('colorChange');
       }
     });
   });
   
-  const goToRight = document.querySelectorAll('.to-right');
-  goToRight.forEach(toRight => observer2.observe(toRight));
+  const colorChange = document.querySelectorAll('#change_img_text-middle');
+  colorChange.forEach(change => observer2.observe(change));
 
-  //toLeft
-  let observer3 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('back-to-position');
-      }else{
-        entry.target.classList.remove('back-to-position');
-      }
-    });
-  });
-  
-  const goToLeft = document.querySelectorAll('.to-left');
-  goToLeft.forEach(toLeft => observer2.observe(toLeft));
+
+
 
  /*hamburger menu*/
-const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
-const hamburgerMenu = document.getElementById('hamburger_menu_click');
-const category = document.getElementById("category_wrap");
-hamburgerMenu.addEventListener('click', hamburgerMenuClick);
+ const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
+ const hamburgerMenu = document.getElementById('hamburger_menu_click');
+ const category = document.getElementById("category_wrap");
+ hamburgerMenu.addEventListener('click', hamburgerMenuClick);
+ 
+ function hamburgerMenuClick() {
 
-function hamburgerMenuClick() {
-    hamburgerMenuBars.forEach(function(hamburgerMenuBar){
-        hamburgerMenuBar.classList.toggle('active');
-    });
-    category.classList.toggle('showCategory');
-} 
+     hamburgerMenuBars.forEach(function(hamburgerMenuBar){
+         hamburgerMenuBar.classList.toggle('active');
+     });
 
+     category.classList.toggle('showCategory');
+     for(j=0; j<secondCategory.length; j++){
+     secondCategory[j].classList.remove('showCategory');
+     plus[j].classList.remove('showCategory');
+    }
+ } 
+  

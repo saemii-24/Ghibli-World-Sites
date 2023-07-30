@@ -62,6 +62,7 @@
         z-index: 10;
         transition-property: background-color border;
         box-sizing: content-box;
+        
     }
 
     header .inner {
@@ -282,11 +283,11 @@
         transition: all 1s;
     }
 
-    #main_section .full_inner #img_box #howl.position_change {
+    /* #main_section .full_inner #img_box #howl.position_change {
         top: 20%;
         left: 0%;
         width: 100%
-    }
+    } */
 
     @keyframes howl_move {
         to {
@@ -304,7 +305,7 @@
         }
 
         from {
-            background-color: 50% 50%;
+            background-position: 50% 50%;
         }
     }
 
@@ -364,6 +365,10 @@
         transition-delay: 0.5s;
         transition: all 0.5s;
     }
+    .full_inner-middle{
+        display: none;
+    }
+
 
     /*Introduce Ghibli*/
     #introduce_ghibli .inner {
@@ -376,9 +381,7 @@
         width: 60%;
         position: absolute;
         top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        /* background-color: RED; */
+        left: 20%;
     }
 
     #introduce_ghibli .inner .arrow_down {
@@ -452,7 +455,9 @@
     }
 
     /*Ghibli Animation*/
-
+    #article_area-middle{
+        display: none;
+    }
     #ghibli_animation .inner {
         display: flex;
         flex-flow: row wrap;
@@ -500,7 +505,7 @@
         text-align: center;
         position: relative;
         height: 900px;
-        scroll-margin-top: 80px;
+        scroll-margin-top: 120px;
         box-sizing: content-box;
         padding-bottom: 140px;
     }
@@ -590,9 +595,6 @@
     }
 
 
-    #ghibli_animation .article_row#ghibli_animation_article2 {
-        scroll-margin-top: 80px;
-    }
 
     #ghibli_animation .article_row .article_align {
         display: flex;
@@ -646,10 +648,6 @@
         }
     }
 
-    #ghibli_animation_article3 {
-        scroll-margin-top: 80px;
-    }
-
     #ghibli_animation_article3.article_row .article_align {
         flex-direction: row-reverse;
     }
@@ -699,9 +697,6 @@
         }
     }
 
-    #ghibli_animation_article4.article_row {
-        scroll-margin-top: 80px;
-    }
 
     #ghibli_animation_article4.article_row .article_background {
         position: relative;

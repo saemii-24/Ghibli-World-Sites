@@ -24,25 +24,24 @@
 <body>
     <div class="wrap">
         <!--HEADER-->
-        <header>
+        <header class="header-middle">
             <div class="inner">
                 <div id="logo">
                     <a href="#">
                         <div id="logo_img">
-                            <img id="logo_img_blue" src="img/main/ghibli_logo_blue.png" alt="ghibli_logo">
-                            <img id="logo_img_white" src="img/main/ghibli_logo_white.png" alt="ghibli_logo">
+                            <img id="logo_img_blue" class="header-middle" src="img/main/ghibli_logo_blue.png" alt="ghibli_logo">
+                            <img id="logo_img_white" class="header-middle" src="img/main/ghibli_logo_white.png" alt="ghibli_logo">
                         </div>
-                        <span id="logo_text">Ghibli World</span>
+                        <span id="logo_text" class="header-middle">Ghibli World</span>
                     </a>
                     <div class="hamburger_menu" id="hamburger_menu_click">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span class="header-middle"></span>
+                        <span class="header-middle"></span>
+                        <span class="header-middle"></span>
                     </div>
                 </div>
                 <ul id="category">
                     <li class="first_category">스튜디오 지브리
-        
                         <ul class="second_category">
                             <li><a href="javascript:void(0)">스튜디오 지브리 소개</a></li>
                             <li><a href="javascript:void(0)">스튜디오 지브리 연혁</a></li>
@@ -64,10 +63,10 @@
                         </ul>
                     </li>
                     <li class="first_category" id="language_select">
-                            <span>
-                                <span class="material-icons" id="language_icon">language</span>
-                                <span id="language-korean">한국어</span>
-                            </span>
+                        <span>
+                            <span class="material-icons" id="language_icon">language</span>
+                            <span id="language-korean">한국어</span>
+                        </span>
                         <ul class="second_category">
                             <li id="language-english">English</li>
                         </ul>
@@ -77,32 +76,32 @@
             <div id="category_wrap">
                 <div class="inner">
                     <ul id="category-middle">
-                        <li class="first_category-middle">스튜디오 지브리
+                        <li class="first_category-middle">스튜디오 지브리<span class="plus">+</span>
                             <ul class="second_category-middle">
                                 <li><a href="javascript:void(0)">스튜디오 지브리 소개</a></li>
                                 <li><a href="javascript:void(0)">스튜디오 지브리 연혁</a></li>
                                 <li><a href="javascript:void(0)">스튜디오 지브리 연표</a></li>
                             </ul>
                         </li>
-                        <li class="first_category-middle">애니메이션
-                            <ul class="second_category-middle">
+                        <li class="first_category-middle">애니메이션<span class="plus">+</span>
+                            <ul class="second_category-middle ">
                                 <li><a href="javascript:void(0)">1980년대</a></li>
                                 <li><a href="javascript:void(0)">1990년대</a></li>
                                 <li><a href="javascript:void(0)">2000년대</a></li>
                                 <li><a href="javascript:void(0)">2010년대~</a></li>
                             </ul>
                         </li>
-                        <li class="first_category-middle">지브리 여행지
+                        <li class="first_category-middle">지브리 여행지<span class="plus">+</span>
                             <ul class="second_category-middle">
                                 <li><a href="javascript:void(0)">지브리 파크</a></li>
                                 <li><a href="javascript:void(0)">지브리 미술관</a></li>
                             </ul>
                         </li>
                         <li class="first_category-middle" id="language_select-middle">
-                                <span>
-                                    <span class="material-icons" id="language_icon-middle">language</span>
-                                    <span id="language-korean-middle">한국어</span>
-                                </span>
+                            <span>
+                                <span class="material-icons" id="language_icon-middle">language</span>
+                                <span id="language-korean-middle">한국어</span>
+                            </span><span class="plus">+</span>
                             <ul class="second_category-middle">
                                 <li id="language-english-middle">English</li>
                             </ul>
@@ -111,6 +110,7 @@
                 </div>
             </div>
         </header>
+        
         <!--MAIN SECTION-->
         <section id="main_section">
             <div class="full_inner" id="main-big">
@@ -131,13 +131,13 @@
                 <div id="img_box-middle">
                     <img id="howl-middle" src="img/main/howl.png" alt="howl">
                 </div>
-                <img id="studioGhibli_write-middle" src="img/main/studioGhibli_write.png" alt="studioGhibli_write">
-                <div id="change_img_box-middle"></div>
+                <img id="studioGhibli_write-middle" src="img/main/studioGhibli_write_white.png"
+                    alt="studioGhibli_write">
                 <div class="inner-middle">
                     <p id="change_img_text-middle">우리가 사랑하는<br>지브리의 모든 것</p>
                 </div>
             </div>
-            
+
         </section>
         <!--Introduce Ghibli-->
         <section id="introduce_ghibli">
@@ -215,7 +215,7 @@
                             신들이 사는 세계에 발을 내딛게 된다. 허락없이 그 곳의 음식을 먹은 치히로의
                             부모님은 돼지가 되어버리고, 사라질 위기에 처한 치히로. 이 때 신비한 소년
                             하쿠를 만나 신들의 목욕탕에서 일하며 ‘센’이라는 새로운 이름을 얻게되는데...</p>
-                        
+
                         <button class="button_big to-top delay-3">자세히 알아보기</button>
                         <div id="ghibli_animation_article1_img">
                             <div id="ghibli_animation_article1_all">
@@ -258,7 +258,7 @@
                                     메이는 신비한 생명체 토토로를 만난다. 어느날,
                                     어머니가 위태롭다는 소식이 전해지고 메이가 행방불명이
                                     되자 사츠키는 토토로에게 도움을 요청하는데...</p>
-                              
+
                                 <button class="button_big to-left delay-3">자세히 알아보기</button>
                             </div>
                             <div class="article_right article_background">
@@ -284,58 +284,51 @@
                             </div>
                         </div>
                     </article>
-
-
-                    <!--article_area_middle-->
                 </div>
-                 <div id="article_area-middle">
-                    <article id="ghibli_animation_article1" class="ghibli_animation_article">
-                        <h3 class="article_title to-top delay-0">아카데미 장편 애니메이션을 수상한 걸작</h3>
-                        <h1 class="article_title_big to-top delay-1">센과 치히로의 행방불명</h1>
-                        <p class="article_content to-top delay-2">
+
+                <!--article_area_middle-->
+                <div id="article_area-middle">
+                    <article id="ghibli_animation_article1" class="ghibli_animation_article to-top delay-0">
+                        <h3 class="article_title">아카데미 장편 애니메이션을 수상한 걸작</h3>
+                        <h1 class="article_title_big">센과 치히로의 행방불명</h1>
+                        <p class="article_content">
                             치히로는 가족들과 이사를 가던 중 우연히 수상한 터널을 지나
                             신들이 사는 세계에 발을 내딛게 된다. 치히로의
                             부모님은 돼지가 되어버리고, 사라질 위기에 처한 치히로. 이 때 신비한 소년
-                            하쿠를 만나 신들의 목욕탕에서 일하게 되는데...</p>  
-                        <button class="button_big to-top delay-3">자세히 알아보기</button>
-                        <div id="ghibli_animation_article1_img">
-                            <div id="ghibli_animation_article1_all">
-                                <img src="./img/main/aniamtion_SpiritedAway1.png" alt="SpiritedAway">
-                            </div>
-                        </div>
-                        <div id="ghibli_animation_article1_img_background">
-                            <img id="ghibli_animation_article1_img_background_first"
-                                src="./img/main/aniamtion_SpiritedAway_Background1.png" alt="SpiritedAway">
+                            하쿠를 만나 신들의 목욕탕에서 일하게 되는데...</p>
+                        <button class="button_big">자세히 알아보기</button>
+                        <div class="article_right article_background">
+                            <img class="article_element" src="./img/main/aniamtion_SpiritedAway1.png" alt="howl">
                         </div>
                     </article>
-                    <article id="ghibli_animation_article2" class="article_row ghibli_animation_article">
+                    <article id="ghibli_animation_article2" class="article_row ghibli_animation_article  to-top delay-0">
                         <div class="article_align">
                             <div class="article_left">
-                                <h3 class="article_title to-top delay-0">지브리표 성장 로맨스!</h3>
-                                <h1 class="article_title_big to-top delay-1">하울의<br>움직이는 성</h1>
-                                <p class="article_content to-top delay-2">
+                                <h3 class="article_title">지브리표 성장 로맨스!</h3>
+                                <h1 class="article_title_big">하울의 움직이는 성</h1>
+                                <p class="article_content">
                                     19세기 말. 모자 공방 주인의 딸 소피는, 황야의 마녀라
                                     불리는 의문의 여성에게 노파가 되는 저주를 받고 황야로
                                     여행을 떠난다. 그리고 지난 번, 우연히 만났던 하울의 성에
                                     도착해 그 곳에서 여러 일을 도우며 지내게 되는데...</p>
-                                <button class="button_big to-top delay-3">자세히 알아보기</button>
+                                <button class="button_big">자세히 알아보기</button>
                             </div>
                             <div class="article_right article_background">
                                 <img class="article_element" src="./img/main/animation_howl.png" alt="howl">
                             </div>
                         </div>
                     </article>
-                    <article id="ghibli_animation_article3" class="article_row ghibli_animation_article">
+                    <article id="ghibli_animation_article3" class="article_row ghibli_animation_article to-top delay-0">
                         <div class="article_align">
                             <div class="article_left">
-                                <h3 class="article_title to-top delay-0">따뜻한 판타지 드라마</h3>
-                                <h1 class="article_title_big to-top delay-1">이웃집<br>토토로</h1>
-                                <p class="article_content to-top delay-2">
+                                <h3 class="article_title">따뜻한 판타지 드라마</h3>
+                                <h1 class="article_title_big">이웃집 토토로</h1>
+                                <p class="article_content">
                                     어머니의 병을 치료하기 위해 시골마을로 이사온 사츠키와
                                     메이는 신비한 생명체 토토로를 만난다. 어느날,
                                     어머니가 위태롭다는 소식이 전해지고 메이가 행방불명이
                                     되자 사츠키는 토토로에게 도움을 요청하는데...</p>
-                                <button class="button_big to-top delay-3">자세히 알아보기</button>
+                                <button class="button_big">자세히 알아보기</button>
                             </div>
                             <div class="article_right article_background">
                                 <img class="article_element" src="./img/main/aniamtion_totoro1-1.png" alt="totoro">
@@ -343,17 +336,17 @@
                             </div>
                         </div>
                     </article>
-                    <article id="ghibli_animation_article4" class="article_row ghibli_animation_article">
+                    <article id="ghibli_animation_article4" class="article_row ghibli_animation_article to-top delay-0">
                         <div class="article_align">
                             <div class="article_left">
-                                <h3 class="article_title to-top delay-0">자연과 인간을 탐구한 대작</h3>
-                                <h1 class="article_title_big to-top delay-1">모노노케 히메<br>(원령공주)</h1>
-                                <p class="article_content to-top delay-2">
+                                <h3 class="article_title">자연과 인간을 탐구한 대작</h3>
+                                <h1 class="article_title_big">모노노케 히메 (원령공주)</h1>
+                                <p class="article_content">
                                     무로마치 시대의 일본. 주인공 아시타카는 에미시 일족의
                                     마을을 습격한 재앙신을 사살하고 저주에 걸리게 된다.
                                     아시타카는 저주를 막기 위해 여행을 떠나고, 인간과
                                     신들의 전쟁 속에서 한 소녀를 만나게 되는데...</p>
-                                <button class="button_big to-top delay-3">자세히 알아보기</button>
+                                <button class="button_big">자세히 알아보기</button>
                             </div>
                             <div class="article_right article_background">
                                 <img class="article_element" src="./img/main/aniamtion_mononoke.png" alt="mononoke">
@@ -362,292 +355,291 @@
                     </article>
                 </div>
             </div>
-        </section>
-        <!--Ghibli others-->
-        <section id="ghibli_others">
+    </div>
+    </section>
+    <!--Ghibli others-->
+    <section id="ghibli_others">
+        <div class="inner">
+            <h3 class="article_category">애니메이션 그 밖에</h3>
+            <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
+                <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
+            </svg>
+            <div class=flip-line>
+                <article class="others-flip-all">
+                    <div class="others-flip-align " id="others-flip-1">
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_musical_1.jpg" alt="센과치히로의 행방불명_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_musical_1-1.jpg" alt="센과치히로의 행방불명_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_musical_2.jpg" alt="센과치히로의 행방불명_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_musical_2-1.jpg" alt="센과치히로의 행방불명_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-content">
+                            <h3 class="article_title">연극</h3>
+                            <h1 class="article_title_big">센과 치히로의<br>행방불명</h1>
+                            <p class="article_content">
+                                아카데미 상을 수상한 센과 치히로의 행방불명을 최초
+                                무대 각색한 것으로, 놀라운 싱크로율을 자랑하며 전석
+                                매진을 달성했다. 주인공 치히로 역은 인기 배우 하시모토
+                                칸나와 카미시라이시 모네 더블캐스팅으로 진행된다.</p>
+                            <button class="button_big">자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div class="others-flip-align" id="others-flip-2">
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_movie_1.jpg" alt="귀를기울이면_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_movie_1-1.jpg" alt="귀를기울이면_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_movie_2.jpg" alt="귀를기울이면_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_movie_2-1.jpg" alt="귀를기울이면_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-content">
+                            <h3 class="article_title">실사 영화</h3>
+                            <h1 class="article_title_big">귀를<br>기울이면</h1>
+                            <p class="article_content">
+                                만화 '귀를 기울이면'을 원작으로 하며, 지브리의 '귀를
+                                기울이면' 과는 같은 원작의 별개의 작품이지만 주인공
+                                시즈쿠의 복장이 애니메이션 버전의 시즈쿠 복장과 높은
+                                싱크로율을 보이며 지브리의 팬도 충분히 즐길 수 있다.</p>
+                            <button class="button_big">자세히 알아보기</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class=flip-line-middle>
+                <article class="others-flip-all">
+                    <div class="others-flip-align to-top delay-0" id="others-flip-1">
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_musical_1.jpg" alt="센과치히로의 행방불명_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_musical_1-1.jpg" alt="센과치히로의 행방불명_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_musical_2.jpg" alt="센과치히로의 행방불명_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_musical_2-1.jpg" alt="센과치히로의 행방불명_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-content">
+                            <h3 class="article_title">연극</h3>
+                            <h1 class="article_title_big">센과 치히로의 행방불명</h1>
+                            <p class="article_content">
+                                아카데미 상을 수상한 센과 치히로의 행방불명을 최초
+                                무대 각색한 것으로, 놀라운 싱크로율을 자랑하며 전석
+                                매진을 달성했다. 주인공 치히로 역은 인기 배우 하시모토
+                                칸나와 카미시라이시 모네 더블캐스팅으로 진행된다.</p>
+                            <button class="button_big">자세히 알아보기</button>
+                        </div>
+                    </div>
+                    <div class="others-flip-align to-top delay-1" id="others-flip-2">
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front" id="flip-img-2">
+                                    <img src="img/main/ghibli_movie_1.jpg" alt="귀를기울이면_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_movie_1-1.jpg" alt="귀를기울이면_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="others-flip">
+                            <div class="flip-inner">
+                                <div class="flip-front">
+                                    <img src="img/main/ghibli_movie_2.jpg" alt="귀를기울이면_앞면">
+                                </div>
+                                <div class="flip-back">
+                                    <img src="img/main/ghibli_movie_2-1.jpg" alt="귀를기울이면_뒷면">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-content">
+                            <h3 class="article_title">실사 영화</h3>
+                            <h1 class="article_title_big">귀를 기울이면</h1>
+                            <p class="article_content">
+                                만화 '귀를 기울이면'을 원작으로 하며, 지브리의 '귀를
+                                기울이면' 과는 같은 원작의 별개의 작품이지만 주인공
+                                시즈쿠의 복장이 애니메이션 버전의 시즈쿠 복장과 높은
+                                싱크로율을 보이며 지브리의 팬도 충분히 즐길 수 있다.</p>
+                            <button class="button_big">자세히 알아보기</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </section>
+    <!--ghibli_world-->
+    <section id="ghibli_world">
+        <article class="full_inner" id="ghibli_world_background">
             <div class="inner">
-                <h3 class="article_category">애니메이션 그 밖에</h3>
+                <h3 class="article_category">지브리 세계속으로</h3>
                 <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
-                    <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
+                    <path d="M13 74L13 0" stroke="#FFFFFF" stroke-width="3" />
+                    <path d="M24 63L13 74L2 63" stroke="#FFFFFF" stroke-width="3" />
                 </svg>
-                    <div class=flip-line>
-                        <article class="others-flip-all" >
-                                <div class="others-flip-align " id="others-flip-1">
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_musical_1.jpg" alt="센과치히로의 행방불명_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_musical_1-1.jpg" alt="센과치히로의 행방불명_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_musical_2.jpg" alt="센과치히로의 행방불명_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_musical_2-1.jpg" alt="센과치히로의 행방불명_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-content">
-                                        <h3 class="article_title">연극</h3>
-                                        <h1 class="article_title_big">센과 치히로의<br>행방불명</h1>
-                                        <p class="article_content">
-                                            아카데미 상을 수상한 센과 치히로의 행방불명을 최초
-                                            무대 각색한 것으로, 놀라운 싱크로율을 자랑하며 전석
-                                            매진을 달성했다. 주인공 치히로 역은 인기 배우 하시모토
-                                            칸나와 카미시라이시 모네 더블캐스팅으로 진행된다.</p>
-                                        <button class="button_big">자세히 알아보기</button>
-                                    </div>
-                                </div>
-                                <div class="others-flip-align" id="others-flip-2">
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_movie_1.jpg" alt="귀를기울이면_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_movie_1-1.jpg" alt="귀를기울이면_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_movie_2.jpg" alt="귀를기울이면_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_movie_2-1.jpg" alt="귀를기울이면_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-content">
-                                        <h3 class="article_title">실사 영화</h3>
-                                        <h1 class="article_title_big">귀를<br>기울이면</h1>
-                                        <p class="article_content">
-                                            만화 '귀를 기울이면'을 원작으로 하며, 지브리의 '귀를
-                                            기울이면' 과는 같은 원작의 별개의 작품이지만 주인공
-                                            시즈쿠의 복장이 애니메이션 버전의 시즈쿠 복장과 높은
-                                            싱크로율을 보이며 지브리의 팬도 충분히 즐길 수 있다.</p>
-                                        <button class="button_big">자세히 알아보기</button>
-                                    </div>
-                                </div>
-                        </article>
+            </div>
+        </article>
+        <div class="inner inner_article">
+            <article class="ghibli_world_tour to-top delay-0">
+                <h3 class="article_title">
+                    <span class="material-icons">location_on</span>
+                    일본, 아이치현
+                </h3>
+                <h1 class="article_title_big">지브리 파크</h1>
+                <p class="article_content">
+                    지브리 애니메이션 속 건축물이 재현된
+                    스튜디오 지브리의 세계를 대표하는 공원이다.</p>
+                <button class="button_big">입장권 예매하기</button>
+                <div class="ghibli_world_tour_img_1"></div>
+            </article>
+            <article class="ghibli_world_tour to-top delay-1">
+                <h3 class="article_title">
+                    <span class="material-icons">location_on</span>
+                    일본, 도쿄
+                </h3>
+                <h1 class="article_title_big">지브리 미술관</h1>
+                <p class="article_content">
+                    미야자키 하야오 감독이 직접 디자인한 공간으로,
+                    상설전시와 특별전시가 진행된다.</p>
+                <button class="button_big">입장권 예매하기</button>
+                <div class="ghibli_world_tour_img_2"></div>
+            </article>
+        </div>
+        </div>
+    </section>
+    <!--ghibli_notice-->
+    <section id="ghibli_notice">
+        <div class="inner">
+            <h3 class="article_category">지브리 소식</h3>
+            <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
+                <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
+            </svg>
+            <div id="notice_article">
+                <article class="notice" id="notice_1">
+                        <div class="notice_poster">
+                            <img src="img/main/notice_article_1.jpg" alt="그대들, 어떻게 살 것인가">
+                        </div>
+                    <div class="notice_right">
+                        <h3 class="article_title">영화</h3>
+                        <h1 class="article_title_big">그대들,<br>어떻게 살 것인가</h1>
+                        <p class="article_content">
+                            미야자키 하야오 감독이 자신의 은퇴선언을 뒤집고
+                            10년만에 발표한 작품으로, 미야자키 하야오 감독
+                            연출의 애니메이션 중 최고의 작화라고 평가받고있다.</p>
+                        <button class="button_big">자세히 알아보기</button>
                     </div>
+                </article>
+                <article class="notice" id="notice_2">
+                        <div class="notice_poster">
+                            <img src="img/main/notice_article_2.jpg" alt="그대들, 어떻게 살 것인가">
+                        </div>
+                    <div class="notice_right">
+                        <h3 class="article_title">전시회</h3>
+                        <h1 class="article_title_big">지브리 파크와<br>지브리 전시회</h1>
+                        <p class="article_content">
+                            2022년 11월 개원한 지브리 파크의 제작 현장의
+                            지휘자이자 애니메이션 감독인 미야자키 고로 감독의
+                            일화와 지브리 파크 제작 자료를 소개한다.</p>
+                        <button class="button_big">자세히 알아보기</button>
+                    </div>
+                </article>
+                <article class="notice" id="notice_3">
+                        <div class="notice_poster">
+                            <img src="img/main/notice_article_3.jpg" alt="그대들, 어떻게 살 것인가">
+                        </div>
 
-                    <div class=flip-line-middle>
-                        <article class="others-flip-all" >
-                                <div class="others-flip-align to-top delay-0" id="others-flip-1">
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_musical_1.jpg" alt="센과치히로의 행방불명_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_musical_1-1.jpg" alt="센과치히로의 행방불명_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_musical_2.jpg" alt="센과치히로의 행방불명_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_musical_2-1.jpg" alt="센과치히로의 행방불명_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-content">
-                                        <h3 class="article_title">연극</h3>
-                                        <h1 class="article_title_big">센과 치히로의<br>행방불명</h1>
-                                        <p class="article_content">
-                                            아카데미 상을 수상한 센과 치히로의 행방불명을 최초
-                                            무대 각색한 것으로, 놀라운 싱크로율을 자랑하며 전석
-                                            매진을 달성했다. 주인공 치히로 역은 인기 배우 하시모토
-                                            칸나와 카미시라이시 모네 더블캐스팅으로 진행된다.</p>
-                                        <button class="button_big">자세히 알아보기</button>
-                                    </div>
-                                </div>
-                                <div class="others-flip-align to-top delay-1" id="others-flip-2">
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front" id="flip-img-2">
-                                                <img src="img/main/ghibli_movie_1.jpg" alt="귀를기울이면_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_movie_1-1.jpg" alt="귀를기울이면_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="others-flip">
-                                        <div class="flip-inner">
-                                            <div class="flip-front">
-                                                <img src="img/main/ghibli_movie_2.jpg" alt="귀를기울이면_앞면">
-                                            </div>
-                                            <div class="flip-back">
-                                                <img src="img/main/ghibli_movie_2-1.jpg" alt="귀를기울이면_뒷면">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flip-content">
-                                        <h3 class="article_title">실사 영화</h3>
-                                        <h1 class="article_title_big">귀를<br>기울이면</h1>
-                                        <p class="article_content">
-                                            만화 '귀를 기울이면'을 원작으로 하며, 지브리의 '귀를
-                                            기울이면' 과는 같은 원작의 별개의 작품이지만 주인공
-                                            시즈쿠의 복장이 애니메이션 버전의 시즈쿠 복장과 높은
-                                            싱크로율을 보이며 지브리의 팬도 충분히 즐길 수 있다.</p>
-                                        <button class="button_big">자세히 알아보기</button>
-                                    </div>
-                                </div>
-                        </article>
+                    <div class="notice_right">
+                        <h3 class="article_title">콘서트</h3>
+                        <h1 class="article_title_big">히사이시 조<br>영화음악 콘서트</h1>
+                        <p class="article_content">
+                            미야자키 하야오 감독의 애니메이션 음악을 담당하며
+                            애니메이션을 더욱 아름답게 만들었던
+                            히사이시 조의 음악을 필하모닉 오케스트라를 통해 만나볼 수 있다.</p>
+                        <button class="button_big">자세히 알아보기</button>
                     </div>
+                </article>
             </div>
             
-        </section>
-        <!--ghibli_world-->
-        <section id="ghibli_world">
-            <article class="full_inner" id="ghibli_world_background">
-                <div class="inner">
-                    <h3 class="article_category">지브리 세계속으로</h3>
-                    <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 74L13 0" stroke="#FFFFFF" stroke-width="3" />
-                        <path d="M24 63L13 74L2 63" stroke="#FFFFFF" stroke-width="3" />
-                    </svg>
-                </div>
-            </article>
-            <div class="inner inner_article">
-                <article class="ghibli_world_tour to-top delay-0" >
-                    <h3 class="article_title">
-                        <span class="material-icons">location_on</span>
-                        일본, 아이치현
-                    </h3>
-                    <h1 class="article_title_big">지브리 파크</h1>
-                    <p class="article_content">
-                        지브리 애니메이션 속 건축물이 재현된
-                        스튜디오 지브리의 세계를 대표하는 공원이다.</p>
-                    <button class="button_big">입장권 예매하기</button>
-                    <div class="ghibli_world_tour_img_1"></div>
-                </article>
-                <article class="ghibli_world_tour to-top delay-1">
-                    <h3 class="article_title">
-                        <span class="material-icons">location_on</span>
-                        일본, 도쿄
-                    </h3>
-                    <h1 class="article_title_big">지브리 미술관</h1>
-                    <p class="article_content">
-                        미야자키 하야오 감독이 직접 디자인한 공간으로,
-                        상설전시와 특별전시가 진행된다.</p>
-                    <button class="button_big">입장권 예매하기</button>
-                    <div class="ghibli_world_tour_img_2"></div>
-                </article>
+            <div class="slide_button">
+                <button id="prev"><span class="material-icons">arrow_back_ios</span></button>
+                <button id="next"><span class="material-icons">arrow_forward_ios</span></button>
             </div>
+        </div>
+        <div class="ghibli_notice_background"></div>
+    </section>
+
+    <!--footer-->
+    <footer>
+        <div class="inner">
+            <div><a href="#"><img src="img/main/ghibli_logo_blue.png" alt="logo"></a></div>
+            <p id="description">본 사이트는 지브리를 좋아하는 마음을 담아 만든<br>
+                개인 포트폴리오로 상업용 사이트가 아닙니다.</p>
+            <p id="ghibli_site">지브리 공식 사이트 바로가기</p>
+            <div id="ghibli">
+                <a href="https://www.ghibli.jp/">
+                    <img src="img/main/footer_ghibli.jpg" alt="ghibli">
+                </a>
             </div>
-        </section>
-        <!--ghibli_notice-->
-        <section id="ghibli_notice">
-            <div class="inner">
-                <h3 class="article_category">지브리 소식</h3>
-                <svg class="arrow_down article_down" width="26" height="77" viewBox="0 0 26 77" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 74L13 0" stroke="#00B6FF" stroke-width="3" />
-                    <path d="M24 63L13 74L2 63" stroke="#00B6FF" stroke-width="3" />
-                </svg>
-                <div id="notice_article">
-                    <article class="notice" id="notice_1">
-                        <div class="notice_left">
-                            <div class="notice_poster">
-                                <img src="img/main/notice_article_1.jpg" alt="그대들, 어떻게 살 것인가">
-                            </div>
-                        </div>
-                        <div class="notice_right">
-                            <h3 class="article_title">영화</h3>
-                            <h1 class="article_title_big">그대들,<br>어떻게 살 것인가</h1>
-                            <p class="article_content">
-                                미야자키 하야오 감독이 자신의 은퇴선언을 뒤집고
-                                10년만에 발표한 작품으로, 미야자키 하야오 감독
-                                연출의 애니메이션 중 최고의 작화라고 평가받고있다.</p>
-                            <button class="button_big">자세히 알아보기</button>
-                        </div>
-                    </article>
-                    <article class="notice" id="notice_2">
-                        <div class="notice_left">
-                            <div class="notice_poster">
-                                <img src="img/main/notice_article_2.jpg" alt="그대들, 어떻게 살 것인가">
-                            </div>
-                        </div>
-                        <div class="notice_right">
-                            <h3 class="article_title">전시회</h3>
-                            <h1 class="article_title_big">지브리 파크와<br>지브리 전시회</h1>
-                            <p class="article_content">
-                                2022년 11월 개원한 지브리 파크의 제작 현장의
-                                지휘자이자 애니메이션 감독인 미야자키 고로 감독의
-                                일화와 지브리 파크 제작 자료를 소개한다.</p>
-                            <button class="button_big">자세히 알아보기</button>
-                        </div>
-                    </article>
-                    <article class="notice" id="notice_3">
-                        <div class="notice_left">
-                            <div class="notice_poster">
-                                <img src="img/main/notice_article_3.jpg" alt="그대들, 어떻게 살 것인가">
-                            </div>
-                        </div>
-                        <div class="notice_right">
-                            <h3 class="article_title">콘서트</h3>
-                            <h1 class="article_title_big">히사이시 조<br>영화음악 콘서트</h1>
-                            <p class="article_content">
-                                미야자키 하야오 감독의 애니메이션 음악을 담당하며
-                                애니메이션을 더욱 아름답게 만들었던
-                                히사이시 조의 음악을 필하모닉 오케스트라를 통해 만나볼 수 있다.</p>
-                            <button class="button_big">자세히 알아보기</button>
-                        </div>
-                    </article>
-                </div>
-                <div class="slide_button">
-                    <button id="prev"><span class="material-icons">arrow_back_ios</span></button>
-                    <button id="next"><span class="material-icons">arrow_forward_ios</span></button>
-                </div>
+            <div id="museum">
+                <a href="https://www.ghibli-museum.jp/">
+                    <img src="img/main/footer_museum.jpg" alt="museum">
+                </a>
             </div>
-            <div class="ghibli_notice_background"></div>
-        </section>
-        <footer>
-            <div class="inner">
-                <div><a href="#"><img src="img/main/ghibli_logo_blue.png" alt="logo"></a></div>
-                <p id="description">본 사이트는 지브리를 좋아하는 마음을 담아 만든<br>
-                    개인 포트폴리오로 상업용 사이트가 아닙니다.</p>
-                <p id="ghibli_site">지브리 공식 사이트 바로가기</p>
-                <div id="ghibli">
-                    <a href="https://www.ghibli.jp/">
-                        <img src="img/main/footer_ghibli.jpg" alt="ghibli">
-                    </a>
-                </div>
-                <div id="museum">
-                    <a href="https://www.ghibli-museum.jp/">
-                        <img src="img/main/footer_museum.jpg" alt="museum">
-                    </a>
-                </div>
-                <div id="line">
-                    <a href="https://line.me/R/ti/p/@studioghibli?from=page&openQrModal=true&searchId=studioghibli"
-                        target="_blank">
-                        <img src="img/main/footer_line.jpeg" alt="line">
-                    </a>
-                </div>
-                <div id="twitter">
-                    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FJP_GHIBLI">
-                        <img src="img/main/footer_twitter.jpg" alt="twitter">
-                    </a>
-                </div>
-        
+            <div id="line">
+                <a href="https://line.me/R/ti/p/@studioghibli?from=page&openQrModal=true&searchId=studioghibli"
+                    target="_blank">
+                    <img src="img/main/footer_line.jpeg" alt="line">
+                </a>
             </div>
-        </footer>
+            <div id="twitter">
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FJP_GHIBLI">
+                    <img src="img/main/footer_twitter.jpg" alt="twitter">
+                </a>
+            </div>
+
+        </div>
+    </footer>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
