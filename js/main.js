@@ -1,9 +1,9 @@
 /*size reload*/
-// $(function() {
-//     $(window).resize(function() {
-//       location.reload(); 
-//         });
-//     });
+$(function() {
+    $(window).resize(function() {
+      location.reload(); 
+        });
+    });
 
 /*korean<->english*/
 const english = document.getElementById('language-english');
@@ -24,25 +24,37 @@ const firstCategory = document.querySelectorAll('#category_wrap .first_category-
 const secondCategory =  document.querySelectorAll('#category_wrap .second_category-middle');
 const plus = document.querySelectorAll('.plus');
 
-
-for(let i=0; i<firstCategory.length; i++){
-    firstCategory[i].addEventListener('click',function(event){
-        for(let j=0; j<firstCategory.length; j++){
-        if(firstCategory[j]===event.target){
-            secondCategory[j].classList.add('showCategory');
-            plus[j].classList.add('showCategory');
-        }else{
-            secondCategory[j].classList.remove('showCategory');
-            plus[j].classList.remove('showCategory');
-        }
-        }
+firstCategory.forEach(function(first, indexFirst){
+    first.addEventListener('click',function(){
+        secondCategory.forEach(function(second, indexSecond){
+              if(second.classList.contains('showCategory')){
+                second.classList.remove('showCategory');
+              }else if(indexFirst === indexSecond){
+                second.classList.add('showCategory');
+            }
+        });
     });
-};
+});
+
+
+
+
+// for(let i=0; i<firstCategory.length; i++){
+//     firstCategory[i].addEventListener('click',function(event){
+//         for(let j=0; j<firstCategory.length; j++){
+//         if(firstCategory[j]===event.target){
+//             secondCategory[j].classList.add('showCategory');
+//             plus[j].classList.add('showCategory');
+//         }else{
+//             secondCategory[j].classList.remove('showCategory');
+//             plus[j].classList.remove('showCategory');
+//         }
+//         }
+//     },{capture:true});
+// };
 
 
 /*MAIN SECTION*/
-
-
 
 function headerJs(){
     let windowSize = window.innerWidth;
@@ -55,7 +67,29 @@ function headerJs(){
 headerJs();
 window.addEventListener('resize',headerJs);
 
+// function headerChangeBig() {
+//     let scroll=window.scrollY;
+//     let changeEls = document.querySelectorAll('.change');
+//     if(scroll>400&&scroll<=1200){
+//         changeEls.forEach(function(El){
+//             El.classList.add('first');
+//         });
+//     }
+// }
 
+
+// function headerChangeBig() {
+//     let scroll = $(window).scrollTop();
+//     if (scroll >= 0 && scroll <= 400) {
+        
+//     }else if (scroll > 400 && scroll <= 1200) {
+
+//     }else if (scroll > 1200 && scroll <= 3000) {
+
+//     }else {
+
+//     }
+// }
 function headerChangeBig() {
     let scroll = $(window).scrollTop();
     if (scroll >= 0 && scroll <= 400) {
@@ -89,9 +123,6 @@ function headerChangeBig() {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
         });
-        // $('.hamburger_menu span').css({
-        //     'background-color': '#00B6FF'
-        // });
         $('#logo_img').attr(
             'src', 'img/main/ghibli_logo_blue.png'
         );
@@ -116,9 +147,6 @@ function headerChangeBig() {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#ffffff'
         });
-        // $('.hamburger_menu span').css({
-        //     'background-color': '#ffffff'
-        // });
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
             'opacity': '0'
         });
@@ -144,8 +172,7 @@ function headerChangeBig() {
             'background-color': '#00B6FF'
         });
         $('header').addClass('header_blur');
-    }
-};
+    }};
 
 
 function headerChangeMiddle(){
