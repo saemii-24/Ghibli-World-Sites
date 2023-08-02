@@ -225,7 +225,6 @@
         column-gap: 28px;
         position: relative;
         cursor: pointer;
-        align-items: center;
     }
 
     header li {

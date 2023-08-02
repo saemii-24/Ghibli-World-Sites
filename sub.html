@@ -113,6 +113,8 @@
                 </div>
             </div>
         </header>
+
+
         <!--movie_poster-->
         <article id="movie_poster">
             <div class="full_inner"></div>
@@ -127,14 +129,16 @@
         <!--movie_video-->
         <article id="movie_video">
             <div class="full_inner">
-                <div class="video"></div>
+                <span class="material-symbols-outlined close">close</span>
+                <div id="player"></div>
+                <p class="article_title">센과 치히로의 행방불명 | 멀티 오디오 영상: 숨을 참아, 치히로! | Netflix</p>
             </div>
-        </article>
+            </article>
 
         <!--movie_profile-->
         <article id="movie_profile">
             <div class="inner">
-                    <h3 class="article_category">영화 프로필</h3>
+                <h3 class="article_category">영화 프로필</h3>
                 <div class="box_align">
                     <div class="profile_box">
                         <h3 class="article_title">제작사</h3>
@@ -143,15 +147,13 @@
                     <div class="profile_box">
                         <h3 class="article_title">배급사</h3>
                         <p class="article_content">대한민국: 키다리이엔티<br>
-                        일본: 도호</p>
+                            일본: 도호</p>
                     </div>
                     <div class="profile_box">
                         <h3 class="article_title">감독&middot;각본</h3>
                         <p class="article_content">미야자키 하야오</p>
-                        <h3 class="article_title">프로듀서</h3>
+                        <h3 class="article_title titletop">프로듀서</h3>
                         <p class="article_content">스즈키 토시오</p>
-                        <h3 class="article_title">음악</h3>
-                        <p class="article_content">히사이시 조</p>
                     </div>
                     <div class="profile_box">
                         <h3 class="article_title">개봉</h3>
@@ -161,6 +163,139 @@
                     </div>
                 </div>
             </div>
+        </article>
+
+        <!--Synopsis-->
+        <article id="synopsis">
+            <div class="full_inner">
+
+                <h3 class="article_category">시놉시스</h3>
+                <section>
+                        <div class="synopsis_box synopsis_img"></div>
+                        <div class="synopsis_box synopsis_content">
+                            <h1>01</h1>
+                            <h4>신들의 세계로</h4>
+                            <p class="article_content">시골로 이사하게 되어 운전하던
+                                치히로의 아버지는 순간 길을 잘못들어
+                                의문의 터널 앞에 도착한다.
+                                가족들은 이끌리듯 그 터널을 건너
+                                신들의 세계에 들어가게 된다.
+                            </p>
+                        </div>
+                    
+                    <div class="synopsis_box synopsis_img"></div>
+                    <div class="synopsis_box synopsis_content">
+                        <h1>02</h1>
+                        <h4>돼지가 되어버린 부모님</h4>
+                        <p class="article_content">허락없이 그 곳의 음식을 먹던
+                            부모님은 돼지가 되어버리고,
+                            치히로는 놀라 도망치다 주변이 점점 어두워지고,
+                            자신이 투명하게 사라지고 있다는 것을 알게된다.
+                        </p>
+                    </div>
+
+                    <div class="synopsis_box synopsis_img"></div>
+                    <div class="synopsis_box synopsis_content">
+                        <h1>03</h1>
+                        <h4>신비한 소년, 하쿠</h4>
+                        <p class="article_content">겁에 질린 치히로에게 다가온 
+                            신비한 소년 하쿠는 치히로에게 이 세계의 음식을 먹여 사라지지 않게 도와주고,
+                            여관에 잠입할 수 있도록 도와준다.
+                        </p>
+                    </div>
+
+                    <div class="synopsis_box synopsis_img"></div>
+                    <div class="synopsis_box synopsis_content">
+                        <h1>04</h1>
+                        <h4>신들의 목욕탕</h4>
+                        <p class="article_content">
+                            치히로는 온천의 주인 유바바에게 센이라는 새로운 이름을 받고
+                            그 곳에서 일하게 된다. 
+                            과연 센은 부모님을 구하고 인간세상으로 돌아갈 수 있을까?
+                        </p>
+                    </div>
+                </section>
+                <!--scrollbar-->
+                <div id="scrollbar">
+                    <div class="circle_box">
+                        <div class="circle active"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="line_progress"></div>
+                </div>
+            </div>
+        </article>
+
+        <!--Character-->
+        <article id="character">
+            <div class="inner">
+                <h3 class="article_category">등장인물</h3>
+                <div class="character_box">
+                    <div class="showCharacter">
+                        <!-- <h1>치히로(센)</h1> -->
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </article>
+
+        <!--music-->
+        <article id="music">
+            <div class="inner">
+                <h3 class="article_category">음악</h3>
+                <p class="article_content">주제곡 ‘언제나 몇 번이라도’를 제외한 모든 삽입곡은
+                    작곡가 히사이시 조에 의해 탄생했다.
+                    현재도 많이 사랑받는 음악들로, 다양한 매체에서 사용되고 있으며, 
+                    각 캐릭터의 서사를 떠오르게 하는 아름다운 테마곡들이 특징이다.
+                </p>
+
+                <p>음악: 어느 여름날</p>
+            </div>
+        </article>
+        
+        <!--award-->
+        <article id="award">
+            <div class="inner">
+                <h3 class="article_category">수상</h3>
+                <div class="award_box">
+                    <div>
+                        <p class="award_name">황금곰상</p>
+                        <p class="year">2002</p>
+                    </div>
+                    <div>
+                        <p class="award_name">아카데미 장편 애니메이션상</p>
+                        <p class="year">2003</p>
+                    </div>
+                    <div>
+                        <p class="award_name">일본 아카데미 작품상</p>
+                        <p class="year">2003</p>
+                    </div>
+                    <div>
+                        <p class="award_name">크리스틱 초이스 영화상 최우수 장편 애니메이션상</p>
+                        <p class="year">2003</p>
+                    </div>
+                    <div>
+                        <p class="award_name">새틀라이트상 애니메이션 및 복합 미디어 영화상</p>
+                        <p class="year">2003</p>
+                    </div>
+                    <div>
+                        <p class="award_name">홍콩 영화 금상장 아시아영화상</p>
+                        <p class="year">2003</p>
+                    </div>
+                </div>
+                <p class="article_content">그 외 다수</p>
+            </div>
+        </article>
+
+        <!--image-->
+        <article id="image">
+            <div class="full_inner"></div>
         </article>
 
         <!--footer-->
@@ -194,6 +329,7 @@
             </div>
         </footer>
     </div>
+    <script src="js/sub.js"></script>
 </body>
 
 </html>
