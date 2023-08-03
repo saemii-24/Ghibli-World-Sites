@@ -120,7 +120,7 @@
             <div class="full_inner"></div>
             <div class="inner">
                 <div class="movie_title">
-                    <span class="material-symbols-outlined">play_circle</span>센과 치히로의 행방불명
+                    <span class="material-symbols-outlined" id="play">play_circle</span>센과 치히로의 행방불명
                 </div>
                 <div class="movie_description">2001&nbsp;&nbsp;|&nbsp;&nbsp;전체관람가&nbsp;&nbsp;|&nbsp;&nbsp;2시간 6분</div>
             </div>
@@ -129,8 +129,10 @@
         <!--movie_video-->
         <article id="movie_video">
             <div class="full_inner">
-                <span class="material-symbols-outlined close">close</span>
-                <div id="player"></div>
+                <span class="material-symbols-outlined" id="close">close</span>
+                <div class="player_box">
+                    <div id="player1"></div>
+                </div>
                 <p class="article_title">센과 치히로의 행방불명 | 멀티 오디오 영상: 숨을 참아, 치히로! | Netflix</p>
             </div>
             </article>
@@ -187,7 +189,7 @@
                     <div class="synopsis_box synopsis_content">
                         <h1>02</h1>
                         <h4>돼지가 되어버린 부모님</h4>
-                        <p class="article_content">허락없이 그 곳의 음식을 먹던
+                        <p class="article_content">허락없이 그 곳의 음식을 먹은
                             부모님은 돼지가 되어버리고,
                             치히로는 놀라 도망치다 주변이 점점 어두워지고,
                             자신이 투명하게 사라지고 있다는 것을 알게된다.
@@ -209,7 +211,7 @@
                         <h1>04</h1>
                         <h4>신들의 목욕탕</h4>
                         <p class="article_content">
-                            치히로는 온천의 주인 유바바에게 센이라는 새로운 이름을 받고
+                            치히로는 목욕탕의 주인 유바바에게 센이라는 새로운 이름을 받고
                             그 곳에서 일하게 된다. 
                             과연 센은 부모님을 구하고 인간세상으로 돌아갈 수 있을까?
                         </p>
@@ -217,31 +219,22 @@
                 </section>
                 <!--scrollbar-->
                 <div id="scrollbar">
+                    <input type="range", id="story_scroll" value="0" min="0" max="100" >
                     <div class="circle_box">
                         <div class="circle active"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+                        <div class="circle small"></div>
+                        <div class="circle small"></div>
                         <div class="circle"></div>
                     </div>
-                    <div class="line"></div>
-                    <div class="line_progress"></div>
                 </div>
             </div>
         </article>
 
         <!--Character-->
         <article id="character">
-            <div class="inner">
+            <div class="full_inner">
                 <h3 class="article_category">등장인물</h3>
-                <div class="character_box">
-                    <div class="showCharacter">
-                        <!-- <h1>치히로(센)</h1> -->
-                    </div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                
             </div>
         </article>
 
@@ -254,8 +247,11 @@
                     현재도 많이 사랑받는 음악들로, 다양한 매체에서 사용되고 있으며, 
                     각 캐릭터의 서사를 떠오르게 하는 아름다운 테마곡들이 특징이다.
                 </p>
-
-                <p>음악: 어느 여름날</p>
+                <div class="music_box">
+                    <a href="https://www.youtube.com/watch?v=TK1Ij_-mank" target="_blank"><span class="material-symbols-outlined">headphones</span></a>
+                    <img id="music_img" src="img/sub/music.jpg" alt="music">
+                </div>
+                <p class="article_content music_name">음악: 어느 여름날</p>
             </div>
         </article>
         
@@ -295,7 +291,11 @@
 
         <!--image-->
         <article id="image">
-            <div class="full_inner"></div>
+            <div class="full_inner">
+                <div class="inner">
+                    <p>일찍이 10살이었던 사람들과, 앞으로 10살이 될 사람들에게</p>
+                </div>
+            </div>
         </article>
 
         <!--footer-->
