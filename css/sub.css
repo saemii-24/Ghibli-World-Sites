@@ -347,9 +347,210 @@
 
     /*character_box*/
     #character .full_inner{
-        background-color: red;
+        margin-top:150px;
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 1200px;
+        position: relative;
+    }
+    #character .full_inner::before{
+        content:'';
+        background-image: url('../img/sub/character.png');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:-1;
+        width:100%;
+        height: 100%;
+    }
+    #character .inner{
+        height: auto;
+    }
+    /*basic*/
+        #character section{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            row-gap:30px;
+        }
+        .character_box{
+            width: 570px;
+            height: 150px;
+            background-color: #ffff;
+            border-radius: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left:calc(25px/2);
+            cursor: pointer;
+        }
+        #character .main_thumbnail{
+            border-radius: 50%;
+            width: 125px;
+            height: 125px;
+            overflow: hidden;
+        }
+        .main_thumbnail img{
+            height: 100%;
+            transform: translateX(-20%);
+        }
+        .actor,
+        .introduce,
+        .talk,
+        .ch_close,
+        .ch_button,
+        .sub_thumbnail{
+            display: none;
+        }
+        .name{
+            font-size: 8rem;
+            margin-right: 66px;
+            font-weight: 600;
+        }
+    /*click*/
+    /* .character_box{
+        width:1200px;
+        height:760px;
+        background-color: #fff;
+        border-radius: 20px;
     }
 
+    #character .main_thumbnail{
+        border-radius: 10px;
+        width: 100%;
+        height: 366px;
+        overflow: hidden;
+    }
+    .main_thumbnail img{
+        height: 100%;
+    }
+    .sub_thumbnail{
+        display: flex;
+        width:100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-top:20px;
+    }
+    .sub_thumbnail div{
+        cursor: pointer;
+        width: 184px;
+        height: 184px;
+        overflow: hidden;
+        border-radius: 10px;
+    } 
+    .sub_thumbnail img{
+        height:100%;
+        transform: translateX(-22%);
+    }
+
+    .character_box{
+        display: flex;
+    }
+    #character .ch_left{
+        width:54%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left:55px;
+    }
+    #character .ch_right{
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        width:46%;
+        padding:110px 80px 50px 50px;
+        position: relative;
+    }
+    #character .name{
+        font-weight: 800;
+        font-size: 12rem;
+    }
+    #character .actor{
+        padding: 12px 22px;
+        background-color: #eee;
+        border-radius: 50px;
+        font-size: 4rem;
+        margin-top:16px;
+    }
+    #character .introduce{
+        font-size: 4rem;
+        margin-top:25px;
+        line-height: 160%;
+    }
+    #character .ch_close{
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border:none;
+        outline: none;
+        position: absolute;
+        top:50px;
+        right:50px;
+        cursor: pointer;
+    }
+    .ch_close span{
+        font-size: 10rem;
+        line-height: 10rem;
+        text-align: center;
+        color:#bbb;
+    }
+    .ch_close span:hover{
+        color:#00B6FF;
+    }
+    #character .next,
+    #character .prev{
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        outline: none;
+        border: 2px solid #bbb;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    #character .next span,
+    #character .prev span{
+        font-size: 8rem;
+        line-height: 8rem;
+        color:#bbb;
+        margin-top:4px;
+        transition: all 0.3s;
+    }
+    #character .next:hover,
+    #character .prev:hover{
+        border: 2px solid #00B6FF;
+    }
+    #character .next:hover span,
+    #character .prev:hover span{
+        color:#00B6FF;
+    }
+    #character .ch_button{
+        position: absolute;
+        display: flex;
+        gap:40px;
+        right:50px;
+        bottom:50px;
+    }
+    #character .talk p{
+        position: absolute;
+        font-size: 10rem;
+        padding: 5px 20px 8px;
+        background-color: #00B6FF;
+        color:#fff;
+        margin-top:10px;
+        bottom:35%;
+    }
+    #character .talk p:nth-of-type(1){
+        left:-30px;
+    }
+    #character .talk p:nth-of-type(2){
+        bottom:25%;
+        left:60px;
+    } */
 
     /*award*/
     .award_box{

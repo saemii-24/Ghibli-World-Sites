@@ -1,3 +1,6 @@
+ import characters from '../data/character.js'
+ 
+
  /*youtube API*/
  let tag = document.createElement('script');
  tag.src = "https://www.youtube.com/iframe_api";
@@ -6,7 +9,7 @@
 
  let player;
  function onYouTubeIframeAPIReady() {
-   player1 = new YT.Player('player1', {
+   player = new YT.Player('player', {
      videoId: '70NhEBzLKU8',
      playerVars:{ 
       autoplay: true, 
@@ -77,3 +80,71 @@ openPopup.addEventListener('click', function(){
 
 
 });
+
+
+/*character html*/
+
+const itemsEl = document.querySelector('#character section');
+characters.forEach(function (character, index) {
+  const itemEl = document.createElement('div');
+  itemEl.classList.add(`character_${index+1}`);
+  itemEl.classList.add(`character_box`);
+  itemEl.innerHTML = /*html*/`
+
+<div class="ch_left">
+    <div class="main_thumbnail">
+       <img src="${character.picture}" alt="${character.name}+이미지">
+    </div>
+
+    <div class="sub_thumbnail">
+      <div><img src="${character.picture_1}" alt="${character.name}+이미지"></div>
+      <div><img src="${character.picture_2}" alt="${character.name}+이미지"></div>
+      <div><img src="${character.picture_3}" alt="${character.name}+이미지"></div>
+    </div>
+</div>
+
+<div class="ch_right">
+    <p class="name">
+     ${character.name}
+    </p>
+    <p class="actor">
+     ${character.actor}
+    </p>
+    <p class="introduce">
+     ${character.introduce}
+    </p>
+
+    <div class="talk">
+     ${character.talk}
+    </div>
+
+<button class="ch_close">
+    <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="ch_button">
+      <button class="prev">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <button class="next">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    <div>
+
+</div>
+  `
+  itemsEl.append(itemEl);
+
+});
+
+/*character click*/
+
+for(let i=0;i<6;i++){
+  let mainImgs = document.querySelector(`.character_${i+1} .main_thumbnail img`);
+  let subImgs = document.querySelectorAll(`.character_${i+1} .sub_thumbnail div img`);
+  subImgs.forEach(function(sub, index){
+    sub.addEventListener('click',function(){
+      mainImgs.src = sub.src;
+    });
+  });
+}
