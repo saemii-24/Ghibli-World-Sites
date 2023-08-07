@@ -78,25 +78,32 @@ function paginationColor() {
   goToTop.forEach(toTop => observer.observe(toTop));
 
 //toRight
+let observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('back-to-position');
+      }else{
+        entry.target.classList.remove('back-to-position');
+      }
+    });
+  });
+  
   const goToRight = document.querySelectorAll('.to-right');
-  goToRight.forEach(toRight => observer.observe(toRight));
+  goToRight.forEach(toRight => observer2.observe(toRight));
 
   //toLeft
+  let observer3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('back-to-position');
+      }else{
+        entry.target.classList.remove('back-to-position');
+      }
+    });
+  });
+  
   const goToLeft = document.querySelectorAll('.to-left');
-  goToLeft.forEach(toLeft => observer.observe(toLeft));
-
-//color-change
-let observer4 = new IntersectionObserver((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('colorChange');
-    }else{
-      entry.target.classList.remove('colorChange');
-    }
-});
-
-const colorChange = document.getElementById('change_img_text_middle');
-observer4.observe(colorChange);
-
+  goToLeft.forEach(toLeft => observer2.observe(toLeft));
 
  /*hamburger menu*/
 const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
