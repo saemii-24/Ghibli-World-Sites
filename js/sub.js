@@ -21,9 +21,11 @@ const scrollBar = document.querySelector('#story_scroll');
 const synopsis = document.querySelector('#synopsis section');
 const circle = document.querySelectorAll('.circle');
 
+
 scrollBar.addEventListener('input', function () {
   let scrollValue = parseInt(scrollBar.value);
-  synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
+  // synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
+  synopsis.style.transition = 'none';
   scrollBar.style.background = `linear-gradient(to right, #00B6FF ${scrollValue}%, #eeeeee ${scrollValue}%)`;
 
   if (scrollValue >= scrollBar.max) {
@@ -44,6 +46,12 @@ scrollBar.addEventListener('input', function () {
     circle[1].classList.remove('active');
   }
 
+  if(window.innerWidth>=1200){
+    synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
+  }else{
+    synopsis.style.transform = `translateX(${-scrollValue * 19}px)`;
+  }
+
 
 });
 
@@ -53,8 +61,8 @@ const itemsEl = document.querySelector('#character section');
 
 characters.forEach(function (character, index) {
   const itemEl = document.createElement('div');
-  itemEl.classList.add(`character_${index + 1}`);
-  itemEl.classList.add(`character_box`);
+  itemEl.classList.add('character_box', `character_${index + 1}`);
+
   itemEl.innerHTML = /*html*/`
 
 <div class="ch_left">
@@ -217,14 +225,24 @@ activeMore(secondBoxes,secondEl);
 function activeClose(DivBoxes,parentEl){
 closes.forEach(function(close){
   close.addEventListener('click',function(event){
+    const Chtarget = event.currentTarget.closest(".character_box"); //이벤트 요소
+    const targetParent = Chtarget.parentNode;
+    const targetChildren = targetParent.childNodes; ; //이벤트 요소의 형제들
     const section = document.querySelector('#character section');
     event.stopPropagation();
+
     DivBoxes.forEach(function(box){
+      if(Chtarget.classList.contains('second')){
+        Chtarget.classList.remove('second');
+        targetParent.classList.remove('second');
+        targetChildren.forEach((target)=>target.classList.remove('other'));
+      }else{
       section.classList.remove('third');
-      box.classList.remove('other','second','third');
-      parentEl.classList.remove('second','third');
+      box.classList.remove('third');
+      parentEl.classList.remove('third');
       box.style.zIndex = '1';
-    })
+    }
+    });
   });
 });
 }
@@ -291,4 +309,19 @@ window.addEventListener('scroll',function(){
 }
 });
 
-/*scroll_animation*/
+/*tuning tag location*/
+
+
+let elCount = document.querySelectorAll('.character_box');
+for (let i = 1; i <= elCount.length; i++) {
+  let moveParent = document.querySelector(`.character_${i}`); //이동하게 될 부모 요소
+  console.log(moveParent);
+  let moveButton = document.querySelector('.characater_1 button');
+  console.log(moveButton);
+  let moveClose = document.querySelector(`.characater_${i} .ch_close`);
+  let moveTalk = document.querySelector(`.characater_${i} .talk`);
+
+  if (window.innerWidth <= 949) {
+    moveParent.append(moveButton, moveClose);
+  }
+}

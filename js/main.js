@@ -53,9 +53,6 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#00B6FF'
         });
-        // $('.hamburger_menu span').css({
-        //     'background-color': '#00B6FF'
-        // });
         $('#logo_img').attr(
             'src', 'img/main/ghibli_logo_blue.png'
         );
@@ -80,9 +77,7 @@ $(window).on('scroll', function () {
         $('.first_category,#language_icon,#language-korean,#logo_text').css({
             'color': '#ffffff'
         });
-        // $('.hamburger_menu span').css({
-        //     'background-color': '#ffffff'
-        // });
+
         $('#logo_img_blue, #change_img_box, #change_img_text').css({
             'opacity': '0'
         });
@@ -108,21 +103,6 @@ $(window).on('scroll', function () {
             'background-color': '#00B6FF'
         });
         $('header').addClass('header_blur');
-    }
-});
-
-/*MAIN SECTION-middle-small*/
-$(window).on('scroll', function () {
-    let scrollMiddle = $(window).scrollTop();
-    let mainHeight = $("#img_box-middle").width();
-    console.log(mainHeight);
-    if (scrollMiddle >= 0 && scrollMiddle <= mainHeight) {
-        // $('#logo_img').attr(
-        //     'src', 'img/main/ghibli_logo_blue.png'
-        // );
-        // $('#logo_img_blue').css({
-        //     'opacity': '1'
-        // });
     }
 });
 
@@ -152,41 +132,20 @@ function imgChange() {
 
 
 /*others scroll slide*/
-// const flipRoute = document.querySelector('.others-flip-all');
-// const flipWidth = document.getElementById('others-flip-1').clientWidth;
-// const halfWidth = flipWidth/2;
-
-// document.addEventListener('scroll', slideLeft);
-// function slideLeft() {
-//     let leftRoute = window.scrollY - 13500;
-//     // console.log(leftRoute);
-//     if (leftRoute < 0) {
-//         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-//     } else if (leftRoute >= 0 && leftRoute < halfWidth) {
-//         flipRoute.style.transform = 'translateX(0px)';
-//     } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
-//         flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
-//     } else {
-//         flipRoute.style.transform = `translateX(${-flipWidth}px)`;
-//     }
-// }
 
 const flipRoute = document.querySelector('.others-flip-all');
-const flipWidth = document.getElementById('others-flip-1').clientWidth;
-const halfWidth = flipWidth/2;
 
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
-    let leftRoute = window.scrollY - 13500;
-    // console.log(leftRoute);
+    let leftRoute = window.scrollY - 16500;
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
-    } else if (leftRoute >= 0 && leftRoute < halfWidth) {
+    } else if (leftRoute >= 0 && leftRoute < 600) {
         flipRoute.style.transform = 'translateX(0px)';
-    } else if (leftRoute >= halfWidth && leftRoute < halfWidth+flipWidth) {
-        flipRoute.style.transform = 'translateX(' + (-leftRoute + halfWidth) + 'px)';
+    } else if (leftRoute >= 600 && leftRoute < 1800) {
+        flipRoute.style.transform = 'translateX(' + (-leftRoute + 600) + 'px)';
     } else {
-        flipRoute.style.transform = `translateX(${-flipWidth}px)`;
+        flipRoute.style.transform = 'translateX(-1200px)';
     }
 }
 
@@ -205,7 +164,7 @@ function next() {
     });
 }
 
-// setInterval(next, 5000);
+setInterval(next, 5000);
 
 $('#prev').click(function () {
     prev();
