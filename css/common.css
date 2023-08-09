@@ -69,6 +69,15 @@
     opacity:0;
     transition: opacity 0.5s, transform 1s;
 }
+.to-top-chr{
+    transform: translateY(100px);
+    opacity:0;
+    transition: opacity 0.5s, transform 1s;
+}
+.back-to-position.to-top-chr{
+    opacity:1 !important;
+    transform: translate(0,0);
+}
 .back-to-position.to-top{
     opacity:1 !important;
     transform: translate(0,0);

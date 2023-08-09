@@ -1,5 +1,7 @@
 import characters from '../data/character.js'
 
+
+
 /*youtube_popup*/
 const closePopup = document.getElementById("close");
 const openPopup = document.getElementById("play");
@@ -48,8 +50,10 @@ scrollBar.addEventListener('input', function () {
 
   if(window.innerWidth>=1200){
     synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
-  }else{
+  }else if(window.innerWidth>=768){
     synopsis.style.transform = `translateX(${-scrollValue * 19}px)`;
+  }else{
+    synopsis.style.transform = `translateX(${-scrollValue * 15}px)`;
   }
 
 
@@ -61,7 +65,7 @@ const itemsEl = document.querySelector('#character section');
 
 characters.forEach(function (character, index) {
   const itemEl = document.createElement('div');
-  itemEl.classList.add('character_box', `character_${index + 1}`);
+  itemEl.classList.add('character_box', `character_${index + 1}`, 'to-top-chr');
 
   itemEl.innerHTML = /*html*/`
 
@@ -119,6 +123,7 @@ characters.forEach(function (character, index) {
 
 });
 
+
 /*make group character_box*/
 function makeDiv() {
   const chrBoxes = document.querySelectorAll('.character_box');
@@ -149,6 +154,18 @@ function makeDiv() {
   itemsEl.appendChild(secondDiv);
 }
 makeDiv();
+
+/*put delay class*/
+/*인덱스 번호를 활용해 지그재그로 delay 0, 1, 클래스명 넣기*/
+function putDelay(){
+  const firstDivs = document.querySelectorAll('.firstDiv .character_box');
+  const secondDivs = document.querySelectorAll('.secondDiv .character_box');
+    firstDivs.forEach((first)=>{first.classList.add('delay-0')});
+    secondDivs.forEach((second)=>{second.classList.add('delay-1')});
+  }
+  putDelay()
+  
+
 
 /*character thumbnail click*/
 for (let i = 0; i < 6; i++) {
@@ -203,7 +220,7 @@ mores.forEach(function(more){
   more.addEventListener('click',function(event){
     const section = document.querySelector('#character section');
     const targetDiv = event.target.closest('.character_box');
-    console.log(targetDiv);
+    // console.log(targetDiv);
     DivBoxes.forEach(function(box){
       section.classList.add('third');
       box.classList.remove('other','second');
@@ -258,7 +275,7 @@ nextBtns.forEach(function(next){
   next.addEventListener('click',function(event){
     let nowBox = event.currentTarget.closest('.character_box');
     let chrIndex = chrBoxes.indexOf(nowBox);
-
+    
     if(chrIndex===chrBoxes.length-1){
       chrBoxes[0].style.zIndex = '3';
       chrBoxes[chrIndex].style.zIndex = '1';
@@ -295,11 +312,12 @@ prevBtns.forEach(function(prev){
 
 
 /*header_blur*/
+/*첫 메인 페이지를 지나면 header에 blur를 추가한다*/
 let mainHeight = document.querySelector('#movie_poster .full_inner').offsetHeight;
 const header = document.querySelector('.header-middle');
 window.addEventListener('resize',function(){
   mainHeight = document.querySelector('#movie_poster .full_inner').offsetHeight;
-})
+});
 
 window.addEventListener('scroll',function(){
   if(this.scrollY<mainHeight){
@@ -309,19 +327,69 @@ window.addEventListener('scroll',function(){
 }
 });
 
-/*tuning tag location*/
+
+/*moving tag location*/
+/*window width 값이 949 이하면 요소 위치를 옮겨 배치한다.*/
+movingTag();
+function movingTag() {
+  const chrBoxes = document.querySelectorAll('.character_box');
+  let nowWidth = window.innerWidth;
+
+  window.addEventListener('resize', function () {
+    nowWidth = window.innerWidth;
+  });
+  chrBoxes.forEach(function(chrBox){
+    
+    if (nowWidth <= 949) {
+      let moveParent = chrBox;
+      let moveButton = moveParent.querySelector(`.ch_button`);
+      let moveClose = moveParent.querySelector(`.ch_close`);
+      let moveTalk = moveParent.querySelector(`.talk`);
+      moveParent.append(moveButton, moveClose, moveTalk);
+    }else{
+      return;
+    };
+  });
+}
+
+/*stop Animation*/
+/*Character article은 나타난 후 화면에서 보이지 않아도, 다시 사라지지 않음*/
+
+ let observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('back-to-position');
+    }else if(!(entry.isIntersecting && entry.classList.contains('third','second'))){
+      entry.target.classList.remove('back-to-position');
+    }
+  });
+});
+
+const goToTop = document.querySelectorAll('.to-top-chr');
+goToTop.forEach(toTop => observer.observe(toTop));
 
 
-let elCount = document.querySelectorAll('.character_box');
-for (let i = 1; i <= elCount.length; i++) {
-  let moveParent = document.querySelector(`.character_${i}`); //이동하게 될 부모 요소
-  console.log(moveParent);
-  let moveButton = document.querySelector('.characater_1 button');
-  console.log(moveButton);
-  let moveClose = document.querySelector(`.characater_${i} .ch_close`);
-  let moveTalk = document.querySelector(`.characater_${i} .talk`);
+/*award delay*/
+/*작은 사이즈에서 award의 애니메이션 delay 수정*/
+awardDelay();
+function awardDelay(){
+  const awards = document.querySelectorAll('.award_box div');
+  let nowWidth = window.innerWidth;
 
-  if (window.innerWidth <= 949) {
-    moveParent.append(moveButton, moveClose);
-  }
+  window.addEventListener('resize', function () {
+    nowWidth = window.innerWidth;
+  });
+
+  awards.forEach((award, index) => {
+    if (nowWidth <= 767) {
+      award.classList.remove('delay-0', 'delay-1', 'delay-2')
+      if (index % 2 === 0) {
+        award.classList.add('delay-0');
+      } else {
+        award.classList.add('delay-1');
+      }
+    } else {
+      return;
+    }
+  });
 }

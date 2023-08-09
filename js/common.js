@@ -73,15 +73,47 @@ let observer2 = new IntersectionObserver((entries) => {
   const goToOne = document.querySelectorAll('.to-one');
   goToOne.forEach(toOne => observer4.observe(toOne));
 
- /*hamburger menu*/
-const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
-const hamburgerMenu = document.getElementById('hamburger_menu_click');
-const category = document.getElementById("category");
-hamburgerMenu.addEventListener('click', hamburgerMenuClick);
 
-function hamburgerMenuClick() {
-    hamburgerMenuBars.forEach(function(hamburgerMenuBar){
-        hamburgerMenuBar.classList.toggle('active');
+  
+ /*hamburger menu*/
+ const hamburgerMenuBars = document.querySelectorAll('.hamburger_menu span');
+ const hamburgerMenu = document.getElementById('hamburger_menu_click');
+ const category = document.getElementById("category_wrap");
+ hamburgerMenu.addEventListener('click', hamburgerMenuClick);
+ 
+ function hamburgerMenuClick() {
+
+     hamburgerMenuBars.forEach(function(hamburgerMenuBar){
+         hamburgerMenuBar.classList.toggle('active');
+     });
+
+     category.classList.toggle('showCategory');
+     for(j=0; j<secondCategory.length; j++){
+     secondCategory[j].classList.remove('showCategory');
+     plus[j].classList.remove('showCategory');
+    }
+ } 
+
+ /*hover category*/
+const firstCategory = document.querySelectorAll('#category_wrap .first_category-middle');
+const secondCategory =  document.querySelectorAll('#category_wrap .second_category-middle');
+const plus = document.querySelectorAll('.plus');
+
+firstCategory.forEach(function(first, indexFirst){
+    first.addEventListener('click',function(){
+        secondCategory.forEach(function(second, indexSecond){
+              if(second.classList.contains('showCategory')){
+                second.classList.remove('showCategory');
+              }else if(indexFirst === indexSecond){
+                second.classList.add('showCategory');
+            }
+        });
+        plus.forEach(function(el, indexplus){
+            if(el.classList.contains('showCategory')){
+              el.classList.remove('showCategory');
+            }else if(indexFirst === indexplus){
+              el.classList.add('showCategory');
+          }
+        });
     });
-    category.classList.toggle('showCategory');
-} 
+});
