@@ -9,8 +9,8 @@
 
     /*common*/
     .article_category{
-        padding-top:300px;
-        margin-bottom:200px;
+        padding-top: 200px;
+        margin-bottom: 150px;
     }
     /*movie_poster*/
     #movie_poster>.full_inner {
@@ -356,6 +356,88 @@
         font-size: 7rem;
     }
 
+
+    /*character_background_setting*/
+    .character_1 .main_thumbnail{
+        background: url('../img/sub/ch1-1.jpg') center/cover no-repeat;
+    }
+    .character_1 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch1-1.jpg') center/cover no-repeat;
+    }
+    .character_1 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch1-2.jpg') center/cover no-repeat;
+    }
+    .character_1 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch1-3.jpg') center/cover no-repeat;
+    }
+
+    .character_2 .main_thumbnail{
+        background: url('../img/sub/ch2-1.jpg') center/cover no-repeat;
+    }
+    .character_2 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch2-1.jpg') center/cover no-repeat;
+    }
+    .character_2 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch2-2.jpg') center/cover no-repeat;
+    }
+    .character_2 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch2-3.jpg') center/cover no-repeat;
+    }
+
+    .character_3 .main_thumbnail{
+        background: url('../img/sub/ch3-1.jpg') center/cover no-repeat;
+    }
+    .character_3 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch3-1.jpg') center/cover no-repeat;
+    }
+    .character_3 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch3-2.jpg') center/cover no-repeat;
+    }
+    .character_3 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch3-3.jpg') center/cover no-repeat;
+    }
+
+    .character_4 .main_thumbnail{
+        background: url('../img/sub/ch4-1.jpg') center/cover no-repeat;
+    }
+    .character_4 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch4-1.jpg') center/cover no-repeat;
+    }
+    .character_4 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch4-2.jpg') center/cover no-repeat;
+    }
+    .character_4 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch4-3.jpg') center/cover no-repeat;
+    }
+
+    .character_5 .main_thumbnail{
+        background: url('../img/sub/ch5-1.jpg') center/cover no-repeat;
+    }
+    .character_5 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch5-1.jpg') center/cover no-repeat;
+    }
+    .character_5 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch5-2.jpg') center/cover no-repeat;
+    }
+    .character_5 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch5-3.jpg') center/cover no-repeat;
+    }
+
+
+    .character_6 .main_thumbnail{
+        background: url('../img/sub/ch6-1.png') center/cover no-repeat;
+    }
+    .character_6 .sub_thumbnail div:nth-child(1){
+        background: url('../img/sub/ch6-1.png') center/cover no-repeat;
+    }
+    .character_6 .sub_thumbnail div:nth-child(2){
+        background: url('../img/sub/ch6-2.png') center/cover no-repeat;
+    }
+    .character_6 .sub_thumbnail div:nth-child(3){
+        background: url('../img/sub/ch6-3.jpg') center/cover no-repeat;
+    }
+
+
     /*character_box*/
     #character section{
         /* overflow: hidden; */
@@ -580,6 +662,7 @@
         height: 366px;
         overflow: hidden;
     }
+
     .character_box.third .main_thumbnail img{
         height: 100%;
         transform:translateX(0px);

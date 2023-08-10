@@ -1,21 +1,35 @@
+import character from '../data/character.js';
 import characters from '../data/character.js'
 
-
-
 /*youtube_popup*/
-const closePopup = document.getElementById("close");
-const openPopup = document.getElementById("play");
-const popup = document.querySelector('#movie_video .full_inner');
+youtubeOpen();
 
-openPopup.addEventListener('click', function () {
-  popup.classList.add('active');
-  openPopup.innerText = ('stop_circle');
-});
+function youtubeOpen() {
+  const closePopup = document.getElementById("close");
+  const openPopup = document.getElementById("play");
+  const popup = document.querySelector('#movie_video .full_inner');
+  let nowWidth = window.innerWidth; /*현재 윈도우 사이즈 판단*/
 
-closePopup.addEventListener('click', function () {
-  popup.classList.remove('active');
-  openPopup.innerText = ('play_circle');
-});
+  window.addEventListener('resize', function () {
+    nowWidth = window.innerWidth;
+  });
+
+  if (nowWidth <= 767) { /*유튜브 링크로 이동*/
+    openPopup.addEventListener('click',()=>{
+      window.location.assign("https://www.youtube.com/watch?v=70NhEBzLKU8");
+    });
+  } else { /*작은 사이즈를 제외하고는 , popup으로 유튜브 제공*/
+    openPopup.addEventListener('click', function () {
+      popup.classList.add('active');
+      openPopup.innerText = ('stop_circle');
+    });
+
+    closePopup.addEventListener('click', function () {
+      popup.classList.remove('active');
+      openPopup.innerText = ('play_circle');
+    });
+  }
+}
 
 
 /*scrollbar*/
@@ -29,6 +43,8 @@ scrollBar.addEventListener('input', function () {
   // synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
   synopsis.style.transition = 'none';
   scrollBar.style.background = `linear-gradient(to right, #00B6FF ${scrollValue}%, #eeeeee ${scrollValue}%)`;
+  console.log(scrollValue);
+
 
   if (scrollValue >= scrollBar.max) {
     circle[3].classList.add('active');
@@ -48,12 +64,16 @@ scrollBar.addEventListener('input', function () {
     circle[1].classList.remove('active');
   }
 
+  /*range 조정시 synopsis 넘어갈 수 있도록*/
   if(window.innerWidth>=1200){
     synopsis.style.transform = `translateX(${-scrollValue * 27.5}px)`;
   }else if(window.innerWidth>=768){
-    synopsis.style.transform = `translateX(${-scrollValue * 19}px)`;
+    synopsis.style.transform = `translateX(${-scrollValue * 21}px)`;
   }else{
-    synopsis.style.transform = `translateX(${-scrollValue * 15}px)`;
+    const synopsisWidth = document.querySelector('#synopsis .synGroup').offsetWidth;
+    const moveValue = synopsisWidth/33;
+    console.log(moveValue);
+    synopsis.style.transform = `translateX(${-scrollValue*moveValue}px)`;
   }
 
 
@@ -70,14 +90,12 @@ characters.forEach(function (character, index) {
   itemEl.innerHTML = /*html*/`
 
 <div class="ch_left">
-    <div class="main_thumbnail">
-       <img src="${character.picture}" alt="${character.name}+이미지">
-    </div>
+    <div class="main_thumbnail"></div>
 
     <div class="sub_thumbnail">
-      <div><img src="${character.picture_1}" alt="${character.name}+이미지"></div>
-      <div><img src="${character.picture_2}" alt="${character.name}+이미지"></div>
-      <div><img src="${character.picture_3}" alt="${character.name}+이미지"></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
 </div>
 
@@ -169,11 +187,14 @@ function putDelay(){
 
 /*character thumbnail click*/
 for (let i = 0; i < 6; i++) {
-  let mainImgs = document.querySelector(`.character_${i + 1} .main_thumbnail img`);
-  let subImgs = document.querySelectorAll(`.character_${i + 1} .sub_thumbnail div img`);
+  let mainImgs = document.querySelector(`.character_${i + 1} .main_thumbnail`);
+  let subImgs = document.querySelectorAll(`.character_${i + 1} .sub_thumbnail div`);
   subImgs.forEach(function (sub) {
-    sub.addEventListener('click', function () {
-      mainImgs.src = sub.src;
+    sub.addEventListener('click', function (event) {
+    let subTarget = event.currentTarget;
+     const subUrl = window.getComputedStyle(subTarget).backgroundImage;
+     let mainUrl = window.getComputedStyle(mainImgs).backgroundImage;
+     mainImgs.style.backgroundImage = subUrl;
     });
   });
 }
@@ -209,9 +230,6 @@ const firstBoxes = document.querySelectorAll('.firstDiv>div');
 const secondBoxes = document.querySelectorAll('.secondDiv>div');
 const firstEl = document.querySelector('.firstDiv');
 const secondEl = document.querySelector('.secondDiv');
-activeSecond(firstBoxes,firstEl);
-activeSecond(secondBoxes,secondEl);
-
 
 
 /*second__more*/
@@ -310,6 +328,54 @@ prevBtns.forEach(function(prev){
 });
 
 
+/*first to Third*/
+/*작은 사이즈에서 캐릭터 박스는 basic에서 second를 건너뛰고, 바로 third css를 적용한다*/
+function firstToThird(){
+  const chrBoxes = document.querySelectorAll('.character_box');
+
+  chrBoxes.forEach((chrBox)=>{
+    chrBox.addEventListener('click',function(event){
+      const curTarget = event.currentTarget; /*현재 클릭한 third 클래스를 맨위로 위치시킨다.*/
+      curTarget.style.zIndex = '2';
+
+      chrBoxes.forEach((chrBox)=>{ /*모두 third class로 겹쳐둔다.*/
+        chrBox.classList.add('third');
+      });
+
+    });
+  });
+}
+
+
+
+
+/*Size 별 정리*/
+/*cellPhone size 에서는 바로 basic -> third로 넘어가며,
+나머지는 basic -> second -> third로 넘어간다.S*/
+characterSize();
+function characterSize(){
+  let nowWidth = window.innerWidth;
+
+  window.addEventListener('resize', function () {
+    nowWidth = window.innerWidth;
+  });
+
+  if(nowWidth <= 767){
+    firstToThird();
+    const actor = document.querySelectorAll('.actor') /*actor의 | 문자를 <br>태그로 교체해 줄바꿈 한다*/
+    actor.forEach((act)=>{  
+      let actText = act.innerHTML;
+      let newText = actText.replace(' &nbsp;| &nbsp;','<br>');
+      act.innerHTML = newText;
+    });
+  }else{
+    activeSecond(firstBoxes,firstEl);
+    activeSecond(secondBoxes,secondEl);
+
+  }
+}
+
+
 
 /*header_blur*/
 /*첫 메인 페이지를 지나면 header에 blur를 추가한다*/
@@ -359,8 +425,6 @@ function movingTag() {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('back-to-position');
-    }else if(!(entry.isIntersecting && entry.classList.contains('third','second'))){
-      entry.target.classList.remove('back-to-position');
     }
   });
 });
@@ -368,6 +432,23 @@ function movingTag() {
 const goToTop = document.querySelectorAll('.to-top-chr');
 goToTop.forEach(toTop => observer.observe(toTop));
 
+
+/*character delay*/
+/*작은 사이즈에서 award의 애니메이션 delay 수정*/
+characterDelay();
+function characterDelay(){
+  const secondDiv = document.querySelectorAll('.secondDiv div');
+  let nowWidth = window.innerWidth;
+
+  window.addEventListener('resize', function () {
+    nowWidth = window.innerWidth;
+  });
+
+  secondDiv.forEach((second)=>{
+    second.classList.remove('delay-1');
+    second.classList.add('delay-0');
+  })
+}
 
 /*award delay*/
 /*작은 사이즈에서 award의 애니메이션 delay 수정*/

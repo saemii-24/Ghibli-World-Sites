@@ -1,9 +1,3 @@
-/*size reload*/
-$(function() {
-    $(window).resize(function() {
-      location.reload(); 
-        });
-    });
 
 /*korean<->english*/
 const english = document.getElementById('language-english');
