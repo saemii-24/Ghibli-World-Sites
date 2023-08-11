@@ -192,7 +192,6 @@
         width:350px;
         height: 310px;
         border-radius:20px;
-        /* background-color:red; */
         overflow: hidden;
         padding:45px;
     }
@@ -200,7 +199,6 @@
         width:350px;
         height: 310px;
         border-radius:20px;
-        /* background-color:red; */
         overflow: hidden;
         padding:25px 30px;
     }
@@ -258,7 +256,6 @@
         display: block;
         width:98%;
         background-color: #eee;
-        /* background: linear-gradient(to right, red 20%, black 20%); */
         height: 6px;
         outline:none;
         cursor:pointer;
@@ -475,9 +472,6 @@
     
 
     /*character_box*/
-    #character section{
-        /* overflow: hidden; */
-    }
     #character .full_inner{
         margin-top:150px;
         background-color: rgba(0, 0, 0, 0.3);

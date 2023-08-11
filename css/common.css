@@ -43,6 +43,9 @@
     margin: 150px auto;
     
 }
+.plus{
+    padding: 0 10px;
+}
 
 /*to top fade in*/
 .active_to_top_fade_in{
@@ -85,6 +88,7 @@
 .to-one{
     opacity:0;
     transition: opacity 1s;
+    transition-delay: 0.3s;
 }
 .back-to-opacity.to-one{
     opacity:1;
@@ -184,7 +188,6 @@
         font-weight: 700;
         position: fixed;
         z-index: 10;
-        transition-property: background-color border;
         box-sizing: content-box;
         
     }
@@ -414,7 +417,7 @@
     }
     .wrap{
         width: 100%;
-        /* overflow: hidden; */
+
     }
     
     .inner {
@@ -459,7 +462,6 @@
     header {
         width: 100%;
         height: 72px;
-        /* background-color: blue; */
         font-size: 6em;
         font-weight: 700;
         color:#333;
@@ -807,7 +809,6 @@
     header {
         width: 100%;
         height: 72px;
-        /* background-color: blue; */
         font-size: 6em;
         font-weight: 700;
         color:#333;

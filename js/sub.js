@@ -1,7 +1,12 @@
-import character from '../data/character.js';
-import characters from '../data/character.js'
+import characters from '../data/character.js';
 
 /*youtube_popup*/
+/*유튜브 작동시 header 변경*/
+/*유튜브가 동작할 경우 header와 유튜브 close button이 겹치는 상황 발생.
+이때 header에 blur 입혀주기.*/
+
+
+
 youtubeOpen();
 
 function youtubeOpen() {
@@ -351,7 +356,7 @@ function firstToThird(){
 
 /*Size 별 정리*/
 /*cellPhone size 에서는 바로 basic -> third로 넘어가며,
-나머지는 basic -> second -> third로 넘어간다.S*/
+나머지는 basic -> second -> third로 넘어간다.*/
 characterSize();
 function characterSize(){
   let nowWidth = window.innerWidth;
@@ -474,3 +479,4 @@ function awardDelay(){
     }
   });
 }
+
