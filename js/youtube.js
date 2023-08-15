@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     videoId: '70NhEBzLKU8',
     playerVars:{ 
-        autoplay: true, 
+        autoplay: false, 
         loop: true
     }
   });

@@ -100,7 +100,6 @@ const flipRoute = document.querySelector('.others-flip-all');
 document.addEventListener('scroll', slideLeft);
 function slideLeft() {
     let leftRoute = window.scrollY - 13500;
-    // console.log(leftRoute);
     if (leftRoute < 0) {
         flipRoute.style.transform = 'translateX(' + (-leftRoute) + 'px)';
     } else if (leftRoute >= 0 && leftRoute < 600) {

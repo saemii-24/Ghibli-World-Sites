@@ -911,19 +911,19 @@
         background-color: #00B6FF;
         color:#fff;
         margin-top:10px;
-        bottom:32%;
+        bottom:15%;
         line-height:10rem;
-        padding: 8px 10px 6px;
+        padding: 8px 14px 6px;
     }
     .character_box.third .talk p:nth-child(1){
-        left:50%;
+        top:62%;
         bottom:auto;
-        top:61%;
+        left:-10%;
     }
     .character_box.third .talk p:nth-child(2){
+        top:71%;
         bottom:auto;
-        top:70%;
-        left:55%;
+        left:0%;
     } 
     .character_box.third .more,
     .character_box.third .short{
@@ -931,13 +931,13 @@
     }
     /*character_talk_setting*/
     .character_1.third .talk p:nth-child(2){
-        left:62%;
+        left:5%;
     }
     .character_4.third .talk p:nth-child(2){
-        left:60%;
+        left:5%;
     }
     .character_5.third .talk p:nth-child(2){
-        left:60%;
+        left:5%;
     }
     /*chracter_img_setting*/
 
