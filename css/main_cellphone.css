@@ -45,7 +45,6 @@
     .inner-middle{
         position: relative;
         top:100%;
-        /* background-color: pink; */
         width: 100%;
         height: 100%;
         background-color: 100%;
@@ -208,7 +207,7 @@
     .article_background{
         margin-top:15%;
         width: 100%;
-        height: 220px;
+        height: 33vw;
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 20px;
@@ -245,8 +244,8 @@
     }
     #ghibli_animation_article3-middle .article_background{
         background-image: url('../img/main/aniamtion_totoro_Background1.png');
-        background-size: 120%;
-        background-position: -50px;
+        background-size: 150%;
+        background-position: center bottom;
     }
 
     #ghibli_animation_article3-middle .article_element:nth-of-type(1){
@@ -298,7 +297,6 @@
     display: none;
 }
 #ghibli_others .inner .flip-line {
-    /* background-color: gold; */
     width: 100%;
     height: 3000px;
     padding-bottom: 500px;
@@ -336,7 +334,7 @@
 .others-flip-all .flip-inner {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 33vw;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
@@ -352,7 +350,7 @@
 .flip-line-middle .others-flip .flip-front{
     background-image: url('../img/main/ghibli_musical_1.jpg');
     background-size: cover;
-    background-position: 50% 10%;
+    background-position: 50% 15%;
 }
 
 .flip-line-middle .others-flip #flip-img-2{
@@ -382,13 +380,10 @@
 
 
     /*ghibli_world*/
-
-
-
     #ghibli_world .full_inner#ghibli_world_background {
         margin-top: 50px;
         background-image: url('../img/main/ghibli_world.jpg');
-        background-position: -400px;
+        background-position: right center;
         background-size: cover;
         background-repeat: no-repeat;
         height: 550px;
@@ -408,10 +403,12 @@
 
 
     #ghibli_world .inner_article {
-        position: relative;
-        height: 1200px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        gap:100px;
+        padding-top:150px;
     }
     
     .ghibli_world_tour h3{
@@ -423,16 +420,12 @@
 
     .ghibli_world_tour:nth-child(1) {
         width: 80%;
-        /* background-color: red; */
-        position: absolute;
-        top: 150px;
+
     }
 
     .ghibli_world_tour:nth-child(2) {
         width: 80%;
-        /* background-color: red; */
-        position: absolute;
-        top: 750px;
+
     }
 
     .ghibli_world_tour button {
@@ -441,7 +434,7 @@
 
     .ghibli_world_tour .ghibli_world_tour_img_1 {
         width: 100%;
-        height: 220px;
+        height: 33vw;
         background: url('../img/main/ghibli_world_tour_1.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -451,7 +444,7 @@
 
     .ghibli_world_tour .ghibli_world_tour_img_2 {
         width: 100%;
-        height: 220px;
+        height: 33vw;
         background: url('../img/main/ghibli_world_tour_2.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -468,7 +461,6 @@
     #ghibli_notice .inner {
         overflow: hidden;
         width: 100%;
-        /* background-color: pink; */
     }
 
     #notice_article_align{
@@ -523,40 +515,6 @@
         background-color: rgba(0, 182, 255, 0.1);
         height: 45%;
     }
-
-    /* .notice_right .article_content{
-        display: none;
-    }
-    .notice_right .article_title_big{
-        font-size: 7em;
-        font-family: 'NanumSquare', sans-serif;
-        font-weight: 700;
-        line-height:130%;
-    }
-    .notice_poster{
-        width:36%;
-    }
-    .notice_poster img{
-        width: 100%;
-    }
-
-    #notice_article{
-        display: flex;
-        width: 300%;
-    }
-
-    .ghibli_notice_background{
-        position: absolute;
-        bottom:-4%;
-        z-index: -1;
-        width: 100%;
-        background-color: rgba(0, 182, 255, 0.1);
-        height: 45%;
-    }
-
-    .notice .button_big{
-    margin-top:13%;
-    } */
 
     .slide_button{
         display: flex;
