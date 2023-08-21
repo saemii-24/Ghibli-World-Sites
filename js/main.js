@@ -21,16 +21,16 @@ function headerChangeBig() {
         hdChange.forEach((hd) => {
             hd.classList.remove('hdfirst');
         });
-        imgBox.style.width = 500 + (scroll*1.2)+'px';
-        imgBox.style.height = 500 + (scroll*1.2)+'px';
+        imgBox.style.width = 500 + (scroll * 1.2) + 'px';
+        imgBox.style.height = 500 + (scroll * 1.2) + 'px';
 
     } else if (scroll > 400 && scroll <= 1200) {
         hdChange.forEach((hd) => {
             hd.classList.add('hdfirst');
             hd.classList.remove('hdsecond');
         });
-        imgBox.style.width = (scroll*1.2)+'px';
-        imgBox.style.height = (scroll*1.2)+'px';
+        imgBox.style.width = (scroll * 1.2) + 'px';
+        imgBox.style.height = (scroll * 1.2) + 'px';
 
 
     } else if (scroll > 1200 && scroll <= 3000) {
@@ -46,7 +46,7 @@ function headerChangeBig() {
             hd.classList.remove('hdsecond');
         });
         header.classList.add('header_blur');
-        font.style.fontSize= 20 + scroll / 500 + 'px';
+        font.style.fontSize = 20 + scroll / 500 + 'px';
     }
 }
 
@@ -114,7 +114,10 @@ function slideLeft() {
 
 
 /*notice_slider*/
-    let slideWidth = $('.notice').outerWidth(true);
+let slideWidth = $('.notice').outerWidth(true);
+window.addEventListener('resize', function () {
+    slideWidth = $('.notice').outerWidth(true);
+});
 
 function prev() {
     $('#notice_article .notice:last').prependTo('#notice_article');
@@ -166,14 +169,14 @@ function paginationColor() {
 //color-change
 let observer2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('colorChange');
-      }else{
-        entry.target.classList.remove('colorChange');
-      }
+        if (entry.isIntersecting) {
+            entry.target.classList.add('colorChange');
+        } else {
+            entry.target.classList.remove('colorChange');
+        }
     });
-  });
-  
-  const colorChange = document.querySelectorAll('#change_img_text-middle');
-  colorChange.forEach(change => observer2.observe(change));
+});
+
+const colorChange = document.querySelectorAll('#change_img_text-middle');
+colorChange.forEach(change => observer2.observe(change));
 
