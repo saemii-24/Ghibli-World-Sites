@@ -247,7 +247,6 @@
     #ghibli_animation #ghibli_animation_article1_haku img:nth-child(2) {
         position: absolute;
         width: 42%;
-        bottom: calc(10%+140px);
         right: 10%;
         z-index: 1;
         animation: haku 3s ease alternate infinite;
@@ -260,7 +259,7 @@
         }
 
         from {
-            left: translateY(0px);
+            transform: translateY(0px);
         }
     }
 
