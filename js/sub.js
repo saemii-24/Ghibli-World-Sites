@@ -399,7 +399,7 @@ let nowWidth = window.innerWidth;
 window.addEventListener('resize', function () {
   nowWidth = window.innerWidth;
 });
-console.log(nowWidth);
+// console.log(nowWidth);
 
 movingTag();
 function movingTag() {
