@@ -800,7 +800,7 @@
     .award_box div{
         width: 45%;
         height: 0px;
-        padding-top:40%;
+        padding-top:48%;
         background: url('../img/sub/award.svg') center/cover ;
         position: relative;
     }
