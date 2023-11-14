@@ -30,7 +30,7 @@
     <th style="width:300px">가로 스크롤 카드</th>
   </tr>
   <tr>
-    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/cb12f00a-06d2-4097-a867-ad173a5fe10c" alt="메인 이미지 스크롤 이벤트"></td>
+    <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/289ca4f5-10d0-4b9d-8670-42eea3e84d68" alt="메인 이미지 스크롤 이벤트"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/61337bd2-4d74-4d43-9ddd-84f1df4788c3" alt="pagination"></td>
     <td><img style="width:300px" src="https://github.com/saemii-24/project_2/assets/139088277/3f2e5da9-2542-451a-bd44-9ad95d574d61" alt="가로 스크롤 카드"></td>
   </tr>
